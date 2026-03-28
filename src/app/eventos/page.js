@@ -5,7 +5,7 @@ import eventosData from "../../data/eventos.json";
 import EventosCard from "../../components/EventosCard";
 import "../../styles/eventos.css";
 
-export default function Eventos() {
+export default function Page() {
     const [paginaAtual, setPaginaAtual] = useState(1);
     const eventosPorPagina = 6;
 

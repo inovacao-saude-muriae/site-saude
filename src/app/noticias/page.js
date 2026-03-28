@@ -5,7 +5,7 @@ import noticiasData from "../../data/noticias.json";
 import NoticiasCard from "../../components/NoticiasCard";
 import "../../styles/noticias.css";
 
-export default function Noticias() {
+export default function Page() {
   const [paginaAtual, setPaginaAtual] = useState(1);
   const noticiasPorPagina = 6;
 

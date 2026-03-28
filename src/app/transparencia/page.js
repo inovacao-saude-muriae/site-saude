@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import "../../styles/transparencia.css";
 
-export default function Transparencia() {
+export default function Page() {
   const [selected, setSelected] = useState("ressonancia");
 
   const dashboards = {
