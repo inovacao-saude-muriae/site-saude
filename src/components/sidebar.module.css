@@ -27,7 +27,7 @@
     z-index: 1;
 }
 
-.sidebar .close-btn {
+.sidebar .closeBtn {
     display: none;
 }  
 
@@ -59,7 +59,7 @@
     color: #fff;
 }
 
-.sidebar button:not(.close-btn)::after {
+.sidebar button:not(.closeBtn)::after {
     content: "";
     display: inline-block;
     margin-left: auto;
@@ -70,7 +70,7 @@
     transition: transform 0.2s;
 }
 
-.sidebar button.open:not(.close-btn)::after {
+.sidebar button.open:not(.closeBtn)::after {
   transform: rotate(45deg);
 }
 
@@ -119,7 +119,7 @@
         left: 0; /* aparece */
     }
     
-    .sidebar .close-btn {
+    .sidebar .closeBtn {
         display: block; 
         background: none;
         border: none;

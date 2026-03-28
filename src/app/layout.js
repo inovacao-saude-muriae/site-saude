@@ -16,9 +16,9 @@ export default function RootLayout({ children }) {
               <Header />
               <Banner />
 
-              <div className={styles.layoutbody}>
+              <div className={styles.layoutBody}>
                   <Sidebar />   
-                  <main className={styles.layoutcontent}>
+                  <main className={styles.layoutContent}>
                     {children}
                   </main>
             </div>
