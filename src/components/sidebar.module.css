@@ -11,7 +11,7 @@
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.5);
-    backdrop-filter: blur(6px);   /* aplica o blur no conteúdo atrás */
+    backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     z-index: 9;
 }
@@ -51,27 +51,6 @@
     cursor: pointer;
     transition: background 0.2s, color 0.2s;
     text-decoration: none;
-}
-
-.sidebar a:hover,
-.sidebar button:hover {
-    background-color: #1c76b2;
-    color: #fff;
-}
-
-.sidebar button:not(.closeBtn)::after {
-    content: "";
-    display: inline-block;
-    margin-left: auto;
-    border: solid currentColor;
-    border-width: 0 2px 2px 0;
-    padding: 4px;
-    transform: rotate(-45deg);
-    transition: transform 0.2s;
-}
-
-.sidebar button.open:not(.closeBtn)::after {
-  transform: rotate(45deg);
 }
 
 .sidebar a:hover,

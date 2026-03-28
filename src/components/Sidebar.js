@@ -1,17 +1,20 @@
-"use client"; // <-- adiciona isso na primeira linha
+"use client";
 import React, { useState } from "react";
-import styles from "./sidebar.module.css"
+import styles from "./sidebar.module.css";
 
 export default function Sidebar() {
     const [activeMenu, setActiveMenu] = useState(null);
     const [open, setOpen] = useState(false);
-    const toggleMenu = (menuName) => {setActiveMenu(activeMenu === menuName ? null : menuName);
-};
-  
+
+    const toggleMenu = (menuName) => {
+        setActiveMenu(activeMenu === menuName ? null : menuName);
+    };
+
     return (
         <>
-            <button className={styles.hamburguer} onClick={() => setOpen(!open)}>
-                 ☰
+            {/* Corrigido: agora é styles.hamburger */}
+            <button className={styles.hamburger} onClick={() => setOpen(!open)}>
+                ☰
             </button>
 
             {open && <div className={styles.overlay} onClick={() => setOpen(false)}></div>}
@@ -26,7 +29,8 @@ export default function Sidebar() {
 
                         <li>
                             <button 
-                                onClick={() => toggleMenu("servicos")} className={`${styles.menuBtn} ${activeMenu === "servicos" ? styles.active : ""}`}>
+                                onClick={() => toggleMenu("servicos")} 
+                                className={`${styles.menuBtn} ${activeMenu === "servicos" ? styles.active : ""}`}>
                                 Serviços de Saúde
                             </button>
                             {activeMenu === "servicos" && (
@@ -42,7 +46,8 @@ export default function Sidebar() {
 
                         <li>
                             <button 
-                                onClick={() => toggleMenu("vigilancia")} className={`${styles.menuBtn} ${activeMenu === "vigilancia" ? styles.active : ""}`}>
+                                onClick={() => toggleMenu("vigilancia")} 
+                                className={`${styles.menuBtn} ${activeMenu === "vigilancia" ? styles.active : ""}`}>
                                 Vigilância em Saúde
                             </button>
                             {activeMenu === "vigilancia" && (
@@ -55,7 +60,8 @@ export default function Sidebar() {
 
                         <li>
                             <button 
-                                onClick={() => toggleMenu("digital")} className={`${styles.menuBtn} ${activeMenu === "digital" ? styles.active : ""}`}>
+                                onClick={() => toggleMenu("digital")} 
+                                className={`${styles.menuBtn} ${activeMenu === "digital" ? styles.active : ""}`}>
                                 Saúde Digital
                             </button>
                             {activeMenu === "digital" && (
@@ -68,7 +74,8 @@ export default function Sidebar() {
 
                         <li>
                             <button 
-                                onClick={() => toggleMenu("contatos")} className={`${styles.menuBtn} ${activeMenu === "contatos" ? styles.active : ""}`}>
+                                onClick={() => toggleMenu("contatos")} 
+                                className={`${styles.menuBtn} ${activeMenu === "contatos" ? styles.active : ""}`}>
                                 Contatos
                             </button>
                             {activeMenu === "contatos" && (
@@ -88,7 +95,7 @@ export default function Sidebar() {
                         </li>
                     </ul>
                 </nav>
-             </aside>
+            </aside>
         </>
     );
 }
