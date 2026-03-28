@@ -5,8 +5,10 @@ import Header from "../components/Header";
 import Banner from "../components/Banner"
 import Sidebar from "../components/Sidebar";
 
+
 import styles from './layout.module.css';
 import "./globals.css";
+import ScrollToTop from "./ScrollToTop";
 
 export default function RootLayout({ children }) {
   return (
