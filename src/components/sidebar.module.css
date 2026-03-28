@@ -68,14 +68,17 @@
 }
 
 .submenu {
+    margin-top: 10px;
     margin-left: 15px;
     border-left: 2px solid #ccc;
     padding-left: 10px;
     border-radius: 5px;
+   
 }
 
 .submenu a {
   font-size: 0.8rem;
+   font-size: 14px;
 }
 
 @media (max-width: 768px) {

@@ -103,3 +103,16 @@ input:focus, textarea:focus, select:focus {
   outline: none;
   border-color: var(--primary-color);
 }
+@keyframes pageFade {
+  from {
+    opacity: 0;   /* começa invisível */
+  }
+  to {
+    opacity: 1;   /* aparece suavemente */
+  }
+}
+
+/* aplica a animação em todo o conteúdo */
+body > div {
+  animation: pageFade 0.6s ease-in-out;
+}
