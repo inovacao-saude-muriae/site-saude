@@ -5,20 +5,22 @@ import Header from "../components/Header";
 import Banner from "../components/Banner"
 import Sidebar from "../components/Sidebar";
 
-import "../styles/layout.css";
+import styles from './layout.module.css';
 import "./globals.css";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR">
       <body>
-          <div className="layout">
+          <div className={styles.layout}>
               <Header />
               <Banner />
 
-              <div className="layout-body">
+              <div className={styles.layoutbody}>
                   <Sidebar />   
-                  <main className="layout-content">{children}</main>
+                  <main className={styles.layoutcontent}>
+                    {children}
+                  </main>
             </div>
           </div>
       </body>
