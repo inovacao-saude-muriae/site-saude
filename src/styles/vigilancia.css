@@ -1,0 +1,40 @@
+.vigilanciaSanitaria {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.conteudo {
+  margin-top: 2rem;
+}
+
+.conteudo h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.conteudo h3 {
+  margin-top: 2rem;
+  color: var(--tertiary-color);
+}
+
+.conteudo p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.conteudo ul {
+  margin: 0.5rem 0 1rem 1.5rem;
+  list-style: disc;
+}
+
+.conteudo li {
+  margin-bottom: 0.5rem;
+}
