@@ -5,10 +5,6 @@ import Link from "next/link";
 import "../../../styles/vacina.css";
 
 export default function Page() {
-<<<<<<< HEAD
-  
-=======
->>>>>>> 11bf09884cbe4af1712f56b8286ad7150bea3635
   const assuntos = {
     antirrabica: `A vacina antirrábica é usada para prevenir a raiva...
     Passo a passo:
@@ -53,11 +49,7 @@ export default function Page() {
     <section className="OpcoesVacina">
       {/* Banner */}
       <div className="banner">
-<<<<<<< HEAD
-        <img src="/img/banner-Paginas/vacina.jpg" alt="Vacinação em Muriaé" />
-=======
         <img src="/img/bannerPaginas/vacina.jpg" alt="Vacinação em Muriaé" />
->>>>>>> 11bf09884cbe4af1712f56b8286ad7150bea3635
       </div>
 
       {/* Texto introdutório */}
