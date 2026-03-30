@@ -14,12 +14,7 @@ export default function Page() {
       {/* Banner */}
       <div className="banner">
         <img
-<<<<<<< HEAD
           src="/img/banner-paginas/saudedigital.jpg"
-=======
-          src="/img/banner-paginas/saude-digital.jpg"
->>>>>>> 11bf09884cbe4af1712f56b8286ad7150bea3635
-          alt="Saúde Digital Muriaé"
         />
       </div>
 

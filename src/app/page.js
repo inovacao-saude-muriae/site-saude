@@ -27,14 +27,8 @@ export default function Home() {
   const [direction, setDirection] = useState(1);
 
   const slides = [
-<<<<<<< HEAD
     { id: 1, content: "Editais", imgSrc: "/img/banner-paginas/saude-mulher.jpg" },
     { id: 2, content: "Atendimento médico", imgSrc: "/img/banner-paginas/tuberculose.jpg" },
-=======
-    { id: 1, content: "Editais", imgSrc: "/img/banner-carousel/banner1.jpg" },
-    { id: 2, content: "Atendimento médico", imgSrc: "/img/banner-carousel/banner2.jpg" },
-    { id: 3, content: "Equipe de saúde", imgSrc: "/img/banner-carousel/banner3.jpg" },
->>>>>>> 11bf09884cbe4af1712f56b8286ad7150bea3635
   ];
 
   const nextSlide = useCallback(() => {
