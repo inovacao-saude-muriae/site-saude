@@ -1,9 +1,9 @@
-.vacina {
-  max-width: 1000px;
+.OpcoesVacina {
+  max-width: 1200px;
   margin: 40px auto;
   padding: 0 20px;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+  box-sizing: border-box;
+  text-align: justify;
 }
 
 .banner img {
@@ -36,31 +36,17 @@
 .conteudo {
   margin-top: 20px;
 }
-.OpcoesVacina {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-.OpcoesVacina p {
-  line-height: 1.8rem;   /* altura da linha maior */
-  margin-bottom: 1rem;   /* espaço entre os parágrafos */
-}
 
 .OpcoesVacina .conteudo {
-  margin-top: 20px;
+  margin-top: 5px;
   text-align: left;
   white-space: pre-line;
-  background: #d3ffd3;
+  background: #d3f6ff;
   padding: 20px;
-  border-radius: 8px;
+  border-color: 8px;
   color: #000;
-  line-height: 1.8rem;
   width: 100%;
-  max-width: 1000px;   /* largura máxima em desktop */
+  max-width: 1130px;   /* largura máxima em desktop */
   box-sizing: border-box;
   margin-left: auto;   /* centraliza horizontalmente */
   margin-right: auto;
@@ -97,6 +83,7 @@
   width: 100%;
   height: 120px;
   border-radius: 20px;
+  margin-top: 30px;
 }
 
 .OpcoesVacina button {

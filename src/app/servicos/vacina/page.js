@@ -54,8 +54,13 @@ export default function Page() {
 
       {/* Texto introdutório */}
       <p>
-        A vacinação é uma das estratégias mais eficazes para proteger a saúde da população e
-        promover uma sociedade mais segura e saudável.
+        A vacinação é uma das estratégias mais eficazes para proteger a saúde da população e promover uma sociedade mais segura e saudável. Além de prevenir doenças graves, contribui para a redução da circulação de vírus e bactérias, protegendo especialmente as pessoas mais vulneráveis ​​e aquelas que não podem se vacinar por questões de saúde.
+
+        No Brasil, uma política de vacinação é coordenada pelo Programa Nacional de Imunizações (PNI), que, por meio do Sistema Único de Saúde (SUS), garante acesso gratuito a uma ampla oferta de imunobiológicos. Atualmente, são disponibilizados 47 itens, incluindo vacinas, soros e imunoglobulinas
+
+        As vacinas contemplam tanto o Calendário Nacional de Vacinação que prevê a aplicação de doses ao longo de todas as fases da vida quanto às imunizações específicas destinadas a pessoas com condições clínicas especiais, como pacientes com doenças crônicas ou imunossuprimidos, oferecidas nos Centros de Referência para Imunobiológicos Especiais (CRIE). Também integramos o programa de vacinas contra a COVID-19 e outras indicadas em situações específicas.
+
+        Além da vacinação de rotina, o PNI é responsável pela realização de campanhas anuais, fundamentais para ampliar a cobertura vacinal e garantir a proteção coletiva. Esse trabalho é desenvolvido de forma integrada entre União, estados, municípios e o Distrito Federal, fortalecendo as ações de prevenção em todo o país.
       </p>
 
       {/* Conjunto de botões */}

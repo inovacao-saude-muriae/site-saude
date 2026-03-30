@@ -1,0 +1,48 @@
+{
+  "grupos": [
+    { "nome": "Gestante", "imagem": "/img/grupos/gestante.jpg" },
+    { "nome": "Criança", "imagem": "/img/grupos/crianca.jpg" },
+    { "nome": "Adolescente", "imagem": "/img/grupos/adolescente.jpg" },
+    { "nome": "Adulto", "imagem": "/img/grupos/adulto.jpg" }
+  ],
+  "cards": {
+    "Gestante": [
+      {
+        "id": "gestante-1",
+        "idade": "A qualquer tempo no pré-natal",
+        "detalhes": "Hepatite B (HB - recombinante) - Iniciar ou completar 3 doses, a qualquer tempo do pré-natal\nDoenças evitadas: Proteção contra Hepatite B\n\nDifteria e Tétano (dT) - Iniciar ou completar o esquema de 3 doses com os toxoides de difteria e tétano, a qualquer tempo do pré-natal\nDoenças evitadas: Proteção contra difteria e tétano\n\nOnde tomar?\nNúcleo de Planejamento Familiar, Rua Coronel Izalino, 154 (próximo ao Hospital São Paulo)\n\nDia e horário?\nSegunda, quinta e sexta-feira, das 12h30 às 16h30\n\nDocumentos necessários\nCertidão de nascimento ou declaração de nascido vivo."
+      }
+    ],
+    "Criança": [
+      {
+        "id": "crianca-0a1",
+        "idade": "0 a 1 ano",
+        "detalhes": "BCG, Hepatite B, Pentavalente, Poliomielite, Rotavírus, Pneumocócica, Meningocócica, Tríplice Viral."
+      },
+      {
+        "id": "crianca-1a4",
+        "idade": "1 a 4 anos",
+        "detalhes": "Reforços de Poliomielite, DTP, Tríplice Viral, Varicela, Hepatite A."
+      }
+    ],
+    "Adolescente": [
+      {
+        "id": "adolescente-10a19",
+        "idade": "10 a 19 anos",
+        "detalhes": "HPV, Meningocócica ACWY, reforços de dTpa e Tríplice Viral."
+      }
+    ],
+    "Adulto": [
+      {
+        "id": "adulto-20a59",
+        "idade": "20 a 59 anos",
+        "detalhes": "Influenza anual, reforços de dT, Hepatite B."
+      },
+      {
+        "id": "adulto-60+",
+        "idade": "60+",
+        "detalhes": "Influenza anual, Pneumocócica, reforços de dT."
+      }
+    ]
+  }
+}

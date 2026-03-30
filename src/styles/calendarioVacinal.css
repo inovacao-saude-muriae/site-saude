@@ -1,36 +1,43 @@
 .CalendarioVacinal {
-  text-align: center;
-  padding: 20px;
+   max-width: 1200px;
+   margin: 40px auto;
+   padding: 0 20px;
+   box-sizing: border-box;
+   text-align: justify;
 }
-.CalendarioVacinal p{
+
+.CalendarioVacinal p {
   text-align: justify;
 }
+
 .linha-tempo {
   position: relative;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin: 60px auto;   /* centraliza horizontalmente */
-  width: 100%;         /* ocupa até o limite definido */
+  margin: 60px auto;
+  width: 100%;
 }
 
 .faixa {
   position: absolute;
-  top: 50%; /* centraliza atrás dos círculos */
+  top: 50%;
   left: 0;
   right: 0;
-  height: 90px; /* altura da faixa */
-  background: linear-gradient(90deg, #04398b, #00aaff); /* gradiente azul */
+  height: 90px;
+  background: linear-gradient(90deg, #04398b, #00aaff);
   border-radius: 20px;
-  z-index: 0; /* atrás */
+  z-index: 0;
 }
+
 .grupo {
   position: relative;
-  z-index: 1; /* círculos acima da faixa */
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .circulo {
   position: relative;
   width: 140px;
@@ -46,55 +53,66 @@
   transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
   cursor: pointer;
 }
+
 .circulo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
 }
+
 .titulo {
   position: absolute;
-  bottom: 10px; /* joga o texto para baixo */
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   color: rgba(4, 57, 139, 1);
   font-weight: bold;
   font-size: 14px;
   text-align: center;
-  background: rgba(255,255,255,0.7); /* opcional: faixa semitransparente para legibilidade */
+  background: rgba(255,255,255,0.7);
   padding: 2px 35px;
   border-radius: 6px;
 }
+
 .circulo.ativo {
   border-color: rgba(4, 57, 139, 1);
   transform: translateY(-10px);
   box-shadow: 0 0 25px rgba(4, 57, 139, 0.8);
 }
+
 .circulo:not(.ativo):hover {
   transform: scale(1.05);
   border-color: rgba(4, 57, 139, 1);
   box-shadow: 0 0 20px rgba(4, 57, 139, 1);
 }
+
+/* Cards em grid */
 .cards {
   margin-top: 40px;
-  text-align: left;
-  max-width: 900px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
-.card {
+
+.CardCalendario {
   border: none;
   border-radius: 12px;
-  margin-bottom: 16px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: #fff;
 }
-.card:hover {
+
+.CardCalendario:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
-.card-titulo {
+
+.CardCalendario .card-titulo {
   background: linear-gradient(90deg, #0078d7, #00aaff);
   color: white;
   padding: 14px;
@@ -105,68 +123,29 @@
   font-weight: bold;
   font-size: 15px;
 }
-.card-conteudo {
+
+.CardCalendario .card-conteudo {
   padding: 16px;
   background: #fafafa;
   border-top: 1px solid #eee;
   font-size: 14px;
   line-height: 1.6;
-  white-space: pre-line; /* mantém quebras de linha sem espaços extras */
+  white-space: pre-line;
   text-align: center;
 }
+
 .seta {
   font-size: 14px;
 }
-.box-colorido {
-  background: url("/public/img/ze-gotinha.png") no-repeat center center;
-  background-size: cover;
-  width: 100%;
-  min-height: 30vh; /* ocupa toda a altura da página */
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-
-.conteudo {
-  max-width: 600px;
-}
-
-.box-colorido h2 {
-  font-size: 32px;
-  margin-bottom: 16px;
-}
-
-.box-colorido p {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.btn-vacina {
-  background: #fff;
-  color: #0078d7;
-  font-weight: bold;
-  padding: 12px 20px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.btn-vacina:hover {
-  background: #f0f0f0;
-}
-
+/* Responsivo */
 @media (max-width: 768px) {
   .circulo {
-    position: relative;
     width: 100px;
     height: 100px;
   }
   .faixa {
-    height: 80px; /* altura da faixa */
+    height: 80px;
   }
   .circulo.ativo {
     transform: translateY(-5px);
@@ -175,18 +154,18 @@
 
 @media (max-width: 480px) {
   .linha-tempo {
-    flex-direction: row;   
-    flex-wrap: wrap;       
+    flex-direction: row;
+    flex-wrap: wrap;
   }
   .grupo {
-    width: 45%;           
-    margin: 20px 2%;       
+    width: 45%;
+    margin: 20px 2%;
   }
   .faixa {
     display: none;
   }
   .conector {
-    display: none;         
+    display: none;
   }
   .circulo {
     width: 120px;

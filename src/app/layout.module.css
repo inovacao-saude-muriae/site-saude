@@ -22,6 +22,7 @@
     background:var(--background-color); /* ou outra cor clara */
     flex: 1;
     padding: 20px;
+    min-height: 800px;
 }
 
 @media (max-width: 768px) {
