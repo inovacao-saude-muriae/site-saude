@@ -52,7 +52,7 @@ export default function Page() {
         <img src="/img/bannerPaginas/vacina.jpg" alt="Vacinação em Muriaé" />
       </div>
 
-      {/* Texto introdutório */}
+      {/* Texto introdutóriod */}
       <p>
         A vacinação é uma das estratégias mais eficazes para proteger a saúde da população e promover uma sociedade mais segura e saudável. Além de prevenir doenças graves, contribui para a redução da circulação de vírus e bactérias, protegendo especialmente as pessoas mais vulneráveis ​​e aquelas que não podem se vacinar por questões de saúde.
 
