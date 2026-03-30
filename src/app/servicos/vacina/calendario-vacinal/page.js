@@ -2,13 +2,12 @@
 
 import React, { useState } from "react";
 import "../../../../styles/calendarioVacinal.css";
-import calendario from "../../../../data/calendario.json"; // importa o JSON
+import calendario from "../../../../data/calendario.json";
 
 export default function Page() {
   const [selecionado, setSelecionado] = useState("Gestante");
   const [expandido, setExpandido] = useState(null);
 
-  // pega os dados do JSON
   const grupos = calendario.grupos;
   const cards = calendario.cards;
 
@@ -20,6 +19,7 @@ export default function Page() {
         e quando aplicá-las.
       </p>
 
+      {/* Linha do tempo */}
       <div className="linha-tempo">
         <div className="faixa"></div>
         {grupos.map((grupo) => (
@@ -36,20 +36,28 @@ export default function Page() {
         ))}
       </div>
 
+      {/* Cards em 2 colunas */}
       <div className="cards">
         {cards[selecionado].map((card) => (
-          <div key={card.id} className="CardCalendario">
-            <div
-              className="card-titulo"
-              onClick={() => setExpandido(expandido === card.id ? null : card.id)}
-            >
-              <span>{card.idade}</span>
-              <span className="seta">{expandido === card.id ? "▼" : "▶"}</span>
-            </div>
-            {expandido === card.id && (
-              <div className="card-conteudo">{card.detalhes}</div>
-            )}
-          </div>
+          <div
+  key={card.id}
+  className={`CardCalendario ${expandido === card.id ? "expandido" : ""}`}
+>
+  <div
+    className="card-titulo"
+    onClick={() => setExpandido(expandido === card.id ? null : card.id)}
+  >
+    <span>{card.idade}</span>
+    <span className="seta">{expandido === card.id ? "▼" : "▶"}</span>
+  </div>
+
+  {/* Só renderiza o conteúdo se for o expandido */}
+  {expandido === card.id && (
+    <div className="card-conteudo">
+      {card.detalhes}
+    </div>
+  )}
+</div>
         ))}
       </div>
     </div>
