@@ -10,6 +10,7 @@
   text-align: justify;
 }
 
+/* Linha do tempo */
 .linha-tempo {
   position: relative;
   display: flex;
@@ -86,322 +87,154 @@
   border-color: rgba(4, 57, 139, 1);
   box-shadow: 0 0 20px rgba(4, 57, 139, 1);
 }
-.CalendarioVacinal {
-   max-width: 1200px;
-   margin: 40px auto;
-   padding: 0 20px;
-   box-sizing: border-box;
-   text-align: justify;
+.vacina-nome {
+  color: #04398b;       /* azul forte */
+  font-weight: bold;    /* negrito */
+  font-size: 16px;      /* maior que o texto */
+  margin-bottom: 6px;
 }
 
-.CalendarioVacinal p {
-  text-align: justify;
-}
-
-.linha-tempo {
-  position: relative;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin: 60px auto;
-  width: 100%;
-}
-
-.faixa {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 90px;
-  background: linear-gradient(90deg, #04398b, #00aaff);
-  border-radius: 20px;
-  z-index: 0;
-}
-
-.grupo {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.circulo {
-  position: relative;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 4px solid #00a3f9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-  cursor: pointer;
-}
-
-.circulo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-.titulo {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: rgba(4, 57, 139, 1);
-  font-weight: bold;
+.vacina-card p {
+  margin: 4px 0;
   font-size: 14px;
-  text-align: center;
-  background: rgba(255,255,255,0.7);
-  padding: 2px 35px;
+  color: #333;
+}
+
+.vacina-separador {
+  border: 0;
+  border-top: 1px dashed #aaa;
+  margin: 12px 0;
+}
+
+.vacina-card {
+  padding: 12px;
+  background: #fff;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.vacina-separador {
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 12px 0;
+}
+
+.info-extra {
+  margin-top: 15px;
+  background: #f0f8ff;
+  padding: 10px;
   border-radius: 6px;
 }
+/* 📱 Mobile pequeno (até 480px) */
+@media screen and (max-width: 480px) {
+    .linha-tempo {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+        gap: 20px;
+        margin: 30px auto;
+    }
 
-.circulo.ativo {
-  border-color: rgba(4, 57, 139, 1);
-  transform: translateY(-10px);
-  box-shadow: 0 0 25px rgba(4, 57, 139, 0.8);
+    .faixa {
+        display: none; /* esconde a faixa */
+    }
+
+    .circulo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .titulo {
+        font-size: 12px;
+        padding: 2px 15px;
+    }
 }
 
-.circulo:not(.ativo):hover {
-  transform: scale(1.05);
-  border-color: rgba(4, 57, 139, 1);
-  box-shadow: 0 0 20px rgba(4, 57, 139, 1);
+/* 📱 Mobile médio (481px – 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .linha-tempo {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+        gap: 25px;
+        margin: 0 auto;
+    }
+
+    .faixa {
+        display: none; /* esconde a faixa */
+    }
+
+    .circulo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .titulo {
+        font-size: 13px;
+        padding: 2px 20px;
+    }
 }
 
-.CalendarioVacinal {
-   max-width: 1200px;
-   margin: 40px auto;
-   padding: 0 20px;
-   box-sizing: border-box;
-   text-align: justify;
+/* 💻 Tablet (769px – 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .linha-tempo {
+        justify-content: space-around;
+        margin: 0 auto;
+    }
+
+    .faixa {
+        height: 70px;
+    }
+
+    .circulo {
+        width: 130px;
+        height: 130px;
+    }
+
+    .titulo {
+        font-size: 14px;
+        padding: 2px 30px;
+    }
 }
 
-.CalendarioVacinal p {
-  text-align: justify;
+/* 💻 Notebook (1025px – 1366px) */
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+    .linha-tempo {
+        justify-content: space-evenly;
+        margin: 60px auto;
+    }
+
+    .faixa {
+        height: 80px;
+    }
+
+    .circulo {
+        width: 140px;
+        height: 140px;
+    }
+
+    .titulo {
+        font-size: 15px;
+        padding: 2px 35px;
+    }
 }
 
-.linha-tempo {
-  position: relative;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin: 60px auto;
-  width: 100%;
-}
+/* 🖥️ Desktop grande (1367px+) */
+@media screen and (min-width: 1367px) {
+    .linha-tempo {
+        justify-content: space-evenly;
+        margin: 70px auto;
+    }
 
-.faixa {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 90px;
-  background: linear-gradient(90deg, #04398b, #00aaff);
-  border-radius: 20px;
-  z-index: 0;
-}
+    .faixa {
+        height: 90px;
+    }
 
-.grupo {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+    .circulo {
+        width: 160px;
+        height: 160px;
+    }
 
-.circulo {
-  position: relative;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 4px solid #00a3f9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-  cursor: pointer;
-}
-
-.circulo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-.titulo {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: rgba(4, 57, 139, 1);
-  font-weight: bold;
-  font-size: 14px;
-  text-align: center;
-  background: rgba(255,255,255,0.7);
-  padding: 2px 35px;
-  border-radius: 6px;
-}
-
-.circulo.ativo {
-  border-color: rgba(4, 57, 139, 1);
-  transform: translateY(-10px);
-  box-shadow: 0 0 25px rgba(4, 57, 139, 0.8);
-}
-
-.circulo:not(.ativo):hover {
-  transform: scale(1.05);
-  border-color: rgba(4, 57, 139, 1);
-  box-shadow: 0 0 20px rgba(4, 57, 139, 1);
-}
-
-.cards {
-  margin-top: 40px;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 cards por linha */
-  gap: 20px;
-}
-
-.CardCalendario {
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  background: #fff;
-  transition: all 0.3s ease;
-}
-
-.CardCalendario:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-}
-
-.card-titulo {
-  background: linear-gradient(90deg, #0078d7, #00aaff);
-  color: white;
-  padding: 14px;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: bold;
-  font-size: 15px;
-}
-
-.seta {
-  font-size: 14px;
-}
-
-.card-conteudo {
-  padding: 16px;
-  background: #fafafa;
-  border-top: 1px solid #eee;
-  font-size: 14px;
-  line-height: 1.6;
-  white-space: pre-line;
-  text-align: center;
-}
-
-.CardCalendario.expandido {
-  transform: scale(1.02);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .circulo {
-    width: 100px;
-    height: 100px;
-  }
-  .faixa {
-    height: 80px;
-  }
-  .circulo.ativo {
-    transform: translateY(-5px);
-  }
-  .cards {
-    grid-template-columns: 1fr; /* 1 card por linha em tablet/celular */
-  }
-  .card-titulo {
-    font-size: 14px;
-    padding: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .linha-tempo {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  .grupo {
-    width: 45%;
-    margin: 20px 2%;
-  }
-  .faixa {
-    display: none;
-  }
-  .conector {
-    display: none;
-  }
-  .circulo {
-    width: 120px;
-    height: 120px;
-  }
-  .cards {
-    grid-template-columns: 1fr; /* 1 card por linha no celular */
-  }
-  .card-titulo {
-    font-size: 13px;
-    padding: 10px;
-  }
-}
-
-.seta {
-  font-size: 14px;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .circulo {
-    width: 100px;
-    height: 100px;
-  }
-  .faixa {
-    height: 80px;
-  }
-  .circulo.ativo {
-    transform: translateY(-5px);
-  }
-}
-
-@media (max-width: 480px) {
-  .linha-tempo {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  .grupo {
-    width: 45%;
-    margin: 20px 2%;
-  }
-  .faixa {
-    display: none;
-  }
-  .conector {
-    display: none;
-  }
-  .circulo {
-    width: 120px;
-    height: 120px;
-  }
+    .titulo {
+        font-size: 16px;
+        padding: 2px 40px;
+    }
 }

@@ -1,0 +1,92 @@
+.cirurgia-geral-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.cirurgia-geral-titulo {
+    font-weight: bold;
+    text-align: center;
+    color: var(--text-color-secondary);
+    margin-bottom: 30px;
+    border-bottom: 3px solid var(--text-color-secondary);
+    padding-bottom: 10px;
+}
+
+.cirurgia-geral-texto {
+    text-align: justify;
+    font-size: 1rem;
+    color: #333;
+}
+
+.cirurgia-geral-bloco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 6px;
+    background: rgb(239, 247, 255); 
+    border-left: 6px solid #75baff;
+}
+
+.cirurgia-geral-bloco h3 {
+    font-size: 1.3rem;
+    color: #3b3b3b;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+/* Imagem do Fluxo */
+.cirurgia-geral-fluxo-img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 6px;
+    cursor: zoom-in;
+    max-width: 400px;   
+    width: 350px;        
+    height: auto;      
+}
+
+.cirurgia-geral-pactuacao-img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 6px;
+    cursor: zoom-in;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+
+.cirurgia-geral-fluxo-img-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.cirurgia-geral-fluxo-img-wrapper:hover::after {
+    opacity: 1;
+}
+
+.cirurgia-geral-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+    z-index: 9999;
+}
+
+.cirurgia-geral-modal-img-wrapper {
+    position: relative;
+    width: 90%;
+    height: 90%;
+}
+
+.cirurgia-geral-modal-img {
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 20px #000;
+    padding: 20px;
+}

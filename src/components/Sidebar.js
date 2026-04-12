@@ -164,7 +164,7 @@ export default function Sidebar() {
                                     Fluxos Assistenciais
                                 </span>
                             </Link>
-                        </li>
+                        </li>                        
                     </ul>
                 </nav>
             </aside>

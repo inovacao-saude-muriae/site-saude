@@ -1,0 +1,82 @@
+.cintilografia-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Título principal da página */
+.cintilografia-titulo {
+    font-weight: bold;
+    text-align: center;
+    color: var(--text-color-secondary);
+    margin-bottom: 30px;
+    border-bottom: 3px solid var(--text-color-secondary);
+    padding-bottom: 10px;
+}
+
+/* Texto explicativo */
+.cintilografia-texto {
+    line-height: 1.6;
+    text-align: justify;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Blocos internos (Fluxo e Pactuação) */
+.cintilografia-bloco {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 6px;
+    background: rgb(239, 247, 255); /* fundo verde claro */
+    border-left: 6px solid #75baff;
+}
+
+.cintilografia-bloco h3 {
+    font-size: 1.3rem;
+    color: #3b3b3b;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* Imagens clicáveis */
+.cintilografia-fluxo-img-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.cintilografia-fluxo-img {
+    max-width: 100%;
+    border-radius: 6px;
+    cursor: zoom-in;
+}
+
+.cintilografia-fluxo-img-wrapper:hover::after {
+  opacity: 1;
+}
+
+/* Modal de zoom */
+.cintilografia-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+  z-index: 9999;
+}
+
+.cintilografia-modal-img-wrapper {
+  position: relative;
+  width: 90%;
+  height: 90%;
+}
+
+.cintilografia-modal-img {
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 0 20px #000;
+  padding: 20px;
+}

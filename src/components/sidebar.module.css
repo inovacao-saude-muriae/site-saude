@@ -17,7 +17,7 @@
 }
 
 .sidebar {
-   width: 270px;
+    width: 270px;
     background: var(--background-color);
     color: var(--text-color-secondary);
     padding: 20px;
@@ -61,49 +61,49 @@
 }
 
 .iconWrapper {
-  position: relative;
-  width: 24px;   /* ajuste conforme tamanho do ícone */
-  height: 24px;
-  display: inline-block;
+    position: relative;
+    width: 24px;   /* ajuste conforme tamanho do ícone */
+    height: 24px;
+    display: inline-block;
 }
 
 .icon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: opacity 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease;
 }
 
 /* Ícone padrão visível normalmente */
 .iconDefault {
-  opacity: 1;
+     opacity: 1;
 }
 
 /* Ícone hover escondido normalmente */
 .iconHover {
-  opacity: 0;
+    opacity: 0;
 }
 
 /* Hover: troca os ícones */
 .menuLink:hover .iconDefault,
 .menuBtn:hover .iconDefault {
-  opacity: 0;
+    opacity: 0;
 }
 
 .menuLink:hover .iconHover,
 .menuBtn:hover .iconHover {
-  opacity: 1;
+    opacity: 1;
 }
 
 /* Ativo: mantém o hover mesmo sem passar o mouse */
 .menuBtn.active .iconDefault,
 .menuLink.active .iconDefault {
-  opacity: 0;
+    opacity: 0;
 }
 
 .menuBtn.active .iconHover,
 .menuLink.active .iconHover {
-  opacity: 1;
+    opacity: 1;
 }
 
 /* Bloco da seta à direita */
@@ -178,7 +178,7 @@
         left: -271px; 
         height: 100%;
         transition: left 0.3s ease;
-        z-index: 10;
+        z-index: 30;
         background-color: var(--primary-color);
         color: #fff;
     }
@@ -196,4 +196,20 @@
         cursor: pointer;
         margin-bottom: 20px;
     }
+    /* Ícones sempre brancos */
+  .iconDefault {
+    opacity: 0 !important; /* esconde o ícone padrão */
+  }
+
+  .iconHover {
+    opacity: 1 !important; /* mostra sempre o ícone branco */
+  }
+
+  /* Remove efeito hover nos ícones */
+  .menuBtn:hover .iconDefault,
+  .menuBtn:hover .iconHover,
+  .menuLink:hover .iconDefault,
+  .menuLink:hover .iconHover {
+    opacity: 1 !important;
+  }
 }

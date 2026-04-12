@@ -1,0 +1,57 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.texto {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.botao {
+  flex: 1 1 200px; /* todos terão pelo menos 200px de largura */
+  text-align: center;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.botao:hover {
+  background-color: #005bb5;
+  transform: scale(1.05); /* leve aumento no hover */
+}
+
+.tabelaContainer {
+  margin-top: 20px;
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela th,
+.tabela td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.tabela th {
+  background-color: #f4f4f4;
+  text-align: left;
+}

@@ -6,6 +6,7 @@
   text-align: justify;
 }
 
+/* Banner */
 .banner img {
   width: 100%;
   height: auto;
@@ -13,26 +14,78 @@
   margin-bottom: 30px;
 }
 
+/* Conjunto de botões */
+.conjuntoBotoes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #053d8e;
+  width: 100%;
+  min-height: 120px;
+  border-radius: 20px;
+  margin-top: 30px;
+  padding: 15px;
+}
+
 .botoes {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin: 20px 0;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
 }
 
-.botoes button {
-  padding: 10px 15px;
-  border: none;
-  background-color: #004080;
+/* Botões padrão */
+.OpcoesVacina button {
+  flex: 1 1 200px;
+  max-width: 220px;
+  padding: 14px 22px;
+  background: linear-gradient(135deg, #0077cc, #005fa3);
   color: #fff;
-  border-radius: 4px;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+  text-align: center;
 }
 
-.botoes button.ativo {
-  background-color: #16a085;
+/* Botão Calendário Vacinal (Link estilizado) */
+.linkBtn {
+  flex: 1 1 200px;
+  max-width: 220px;
+  padding: 14px 22px;
+  background: linear-gradient(135deg, #0077cc, #005fa3);
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none; /* remove sublinhado */
 }
 
+/* Hover */
+.OpcoesVacina button:hover,
+.linkBtn:hover {
+  background: linear-gradient(135deg, #0095ff, #0077cc);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 16px rgba(0,0,0,0.3);
+}
+
+/* Ativo */
+.OpcoesVacina button.ativo,
+.linkBtn.ativo {
+  background: linear-gradient(135deg, #c58e00, #c58e00);
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(0,0,0,0.4);
+}
+
+/* Conteúdo dinâmico */
 .conteudo {
   margin-top: 20px;
 }
@@ -43,15 +96,12 @@
   white-space: pre-line;
   background: #d3f6ff;
   padding: 20px;
-  border-color: 8px;
   color: #000;
   width: 100%;
-  max-width: 1130px;   /* largura máxima em desktop */
+  max-width: 1130px;
   box-sizing: border-box;
-  margin-left: auto;   /* centraliza horizontalmente */
+  margin-left: auto;
   margin-right: auto;
-
-  /* efeito de surgimento */
   animation: aparecer 0.4s ease;
 }
 
@@ -66,63 +116,81 @@
   }
 }
 
-.OpcoesVacina .botoes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px; /* espaço entre os botões */
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 100%;
-}
+/* Responsividade */
 
-.conjuntoBotoes {
-  display: flex;
-  align-items: center;
-  background-color: #053d8e;
-  width: 100%;
-  height: 120px;
-  border-radius: 20px;
-  margin-top: 30px;
-}
+/* 📱 até 480px → botões em coluna */
+@media screen and (max-width: 480px) {
+  .conjuntoBotoes {
+    flex-direction: column;
+    min-height: auto;
+    padding: 20px;
+  }
 
-.OpcoesVacina button {
-  flex: 1 1 200px;
-  max-width: 220px;
-  padding: 14px 22px;
-  background: linear-gradient(135deg, #0077cc, #005fa3); /* fundo azul degradê */
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: 600;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.25); /* sombra atrás */
-  transition: all 0.3s ease;
-}
+  .botoes {
+    flex-direction: column;
+    gap: 12px;
+  }
 
-.OpcoesVacina button:hover {
-  background: linear-gradient(135deg, #0095ff, #0077cc); /* muda o degradê */
-  transform: translateY(-4px) scale(1.05); /* efeito levantar e aumentar */
-  box-shadow: 0 10px 16px rgba(0,0,0,0.3); /* sombra mais intensa */
-}
+  .OpcoesVacina button,
+  .linkBtn {
+    max-width: 100%;
+    flex: 1 1 auto;
+    font-size: 0.9rem;
+    padding: 12px;
+  }
 
-.OpcoesVacina button.ativo {
-  background: linear-gradient(135deg, #c58e00, #c58e00); /* cor de destaque */
-  color: #fff;
-  transform: scale(1.05);
-  box-shadow: 0 0 12px rgba(0,0,0,0.4);
-}
-
-@media (max-width: 768px) {
   .OpcoesVacina .conteudo {
-    max-width: 100%;   /* ocupa toda a tela em tablets e celulares */
+    font-size: 0.95rem;
+    line-height: 1.6rem;
+    max-width: 100%;
     padding: 15px;
   }
 }
 
-@media (max-width: 480px) {
+/* 📱 481px – 768px → botões em 2 colunas */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .botoes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .OpcoesVacina button,
+  .linkBtn {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
   .OpcoesVacina .conteudo {
-    font-size: 0.95rem; /* texto um pouco menor em telas muito pequenas */
-    line-height: 1.6rem;
+    max-width: 100%;
+    padding: 15px;
+  }
+}
+
+/* 💻 769px – 1024px → botões em 3 colunas */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .botoes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+}
+
+/* 💻 1025px – 1366px → botões em linha, centralizados */
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+  .botoes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* 🖥️ 1367px+ → botões maiores */
+@media screen and (min-width: 1367px) {
+  .OpcoesVacina button,
+  .linkBtn {
+    max-width: 250px;
+    font-size: 1.1rem;
+    padding: 16px 24px;
   }
 }
