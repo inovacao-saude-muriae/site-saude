@@ -1,0 +1,21 @@
+.oncologia-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Título principal da página */
+.oncologia-titulo {
+    font-weight: bold;
+    text-align: center;
+    color: var(--text-color-secondary);
+    margin-bottom: 30px;
+    border-bottom: 3px solid var(--text-color-secondary);
+    padding-bottom: 10px;
+}
+
+/* Texto explicativo */
+.oncologia-texto {
+    text-align: justify;
+    color: #333;
+}

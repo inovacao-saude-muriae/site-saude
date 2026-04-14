@@ -1,10 +1,10 @@
-.cirurgia-geral-container {
+.cirurgia-vascular-container {
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
 }
 
-.cirurgia-geral-titulo {
+.cirurgia-vascular-titulo {
     font-weight: bold;
     text-align: center;
     color: var(--text-color-secondary);
@@ -12,14 +12,22 @@
     border-bottom: 3px solid var(--text-color-secondary);
     padding-bottom: 10px;
 }
-
-.cirurgia-geral-texto {
+/* Título da seção selecionada (ex: Angioplastia) */
+.cirurgia-vascular-subtitulo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #3b3b3b;
+  margin: 20px 0;
+  border-left: 6px solid var(--text-color-secondary);
+  padding-left: 12px;
+}
+.cirurgia-vascular-texto {
     text-align: justify;
     font-size: 1rem;
     color: #333;
 }
 
-.cirurgia-geral-bloco {
+.cirurgia-vascular-bloco {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,14 +37,43 @@
     background: rgb(231, 231, 231);
 }
 
-.cirurgia-geral-bloco h3 {
+.cirurgia-vascular-bloco h3 {
     font-size: 1.3rem;
     color: #3b3b3b;
     margin-bottom: 10px;
     letter-spacing: 1px;
 }
+
+.cirurgia-vascular-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+.cirurgia-vascular-botao {
+  flex: 1 1 200px;
+  text-align: center;
+  background-color: var(--text-color-secondary);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.cirurgia-vascular-botao-ativo {
+  background-color: #005bb5;
+  color: #fff;
+  border: 2px solid #003f7f;
+}
+.cirurgia-vascular-botao:hover {
+  background-color: #005bb5;
+  transform: scale(1.02);
+}
 /* Imagem do Fluxo */
-.cirurgia-geral-fluxo-img {
+.cirurgia-vascular-fluxo-img {
     display: block;
     margin: 0 auto;
     border-radius: 6px;
@@ -46,7 +83,7 @@
     height: auto;      
 }
 
-.cirurgia-geral-pactuacao-img {
+.cirurgia-vascular-pactuacao-img {
     display: block;
     margin: 0 auto;
     border-radius: 6px;
@@ -56,16 +93,16 @@
     height: auto;
 }
 
-.cirurgia-geral-fluxo-img-wrapper {
+.cirurgia-vascular-fluxo-img-wrapper {
     position: relative;
     display: inline-block;
 }
 
-.cirurgia-geral-fluxo-img-wrapper:hover::after {
+.cirurgia-vascular-fluxo-img-wrapper:hover::after {
     opacity: 1;
 }
 
-.cirurgia-geral-modal {
+.cirurgia-vascular-modal {
     position: fixed;
     inset: 0;
     background: rgba(255,255,255,0.95);
@@ -76,13 +113,13 @@
     z-index: 9999;
 }
 
-.cirurgia-geral-modal-img-wrapper {
+.cirurgia-vascular-modal-img-wrapper {
     position: relative;
     width: 90%;
     height: 90%;
 }
 
-.cirurgia-geral-modal-img {
+.cirurgia-vascular-modal-img {
     object-fit: contain;
     border-radius: 8px;
     box-shadow: 0 0 20px #000;

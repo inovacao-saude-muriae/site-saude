@@ -13,7 +13,7 @@ export default function Page() {
     "Oncologia",
     "Oftalmologia",
     "Ortopedia e Traumatologia",
-    "Ressonância",
+    "Ressonancia",
     "Tomografia",
     "Urologia",
   ];

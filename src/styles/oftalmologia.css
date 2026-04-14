@@ -1,10 +1,10 @@
-.cirurgia-geral-container {
+.oftalmologia-container {
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
 }
 
-.cirurgia-geral-titulo {
+.oftalmologia-titulo {
     font-weight: bold;
     text-align: center;
     color: var(--text-color-secondary);
@@ -13,13 +13,13 @@
     padding-bottom: 10px;
 }
 
-.cirurgia-geral-texto {
+.oftalmologia-texto {
     text-align: justify;
     font-size: 1rem;
     color: #333;
 }
 
-.cirurgia-geral-bloco {
+.oftalmologia-bloco {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,14 +29,14 @@
     background: rgb(231, 231, 231);
 }
 
-.cirurgia-geral-bloco h3 {
+.oftalmologia-bloco h3 {
     font-size: 1.3rem;
     color: #3b3b3b;
     margin-bottom: 10px;
     letter-spacing: 1px;
 }
-/* Imagem do Fluxo */
-.cirurgia-geral-fluxo-img {
+
+.oftalmologia-fluxo-img {
     display: block;
     margin: 0 auto;
     border-radius: 6px;
@@ -46,7 +46,7 @@
     height: auto;      
 }
 
-.cirurgia-geral-pactuacao-img {
+.oftalmologia-pactuacao-img {
     display: block;
     margin: 0 auto;
     border-radius: 6px;
@@ -56,16 +56,16 @@
     height: auto;
 }
 
-.cirurgia-geral-fluxo-img-wrapper {
+.oftalmologia-fluxo-img-wrapper {
     position: relative;
     display: inline-block;
 }
 
-.cirurgia-geral-fluxo-img-wrapper:hover::after {
+.oftalmologia-fluxo-img-wrapper:hover::after {
     opacity: 1;
 }
 
-.cirurgia-geral-modal {
+.oftalmologia-modal {
     position: fixed;
     inset: 0;
     background: rgba(255,255,255,0.95);
@@ -76,13 +76,13 @@
     z-index: 9999;
 }
 
-.cirurgia-geral-modal-img-wrapper {
+.oftalmologia-modal-img-wrapper {
     position: relative;
     width: 90%;
     height: 90%;
 }
 
-.cirurgia-geral-modal-img {
+.oftalmologia-modal-img {
     object-fit: contain;
     border-radius: 8px;
     box-shadow: 0 0 20px #000;

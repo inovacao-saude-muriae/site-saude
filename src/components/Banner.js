@@ -1,10 +1,37 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import styles from './banner.module.css';
+import Image from "next/image";
 
 export default function Banner() {
-    return (
-        <section className={styles.Banner}>
-            <img src="/img/banner.jpeg" alt="Banner" className="banner-img" />
-        </section>
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => setIsMobile(window.innerWidth <= 768);
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
+  return (
+    <section className={styles.banner}>
+      {isMobile ? (
+        <Image 
+          src="/img/banner-mobile.png" 
+          alt="Banner Mobile" 
+          width={800} 
+          height={600} 
+          className={styles.bannerImg} 
+        />
+      ) : (
+        <Image 
+          src="/img/banner.jpeg" 
+          alt="Banner Desktop" 
+          width={1920} 
+          height={1080} 
+          className={styles.bannerImg} 
+        />
+      )}
+    </section>
   );
 }

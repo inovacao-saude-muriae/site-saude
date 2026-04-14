@@ -1,10 +1,10 @@
-.cirurgia-geral-container {
+.ortopedia-container {
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
 }
 
-.cirurgia-geral-titulo {
+.ortopedia-titulo {
     font-weight: bold;
     text-align: center;
     color: var(--text-color-secondary);
@@ -12,41 +12,75 @@
     border-bottom: 3px solid var(--text-color-secondary);
     padding-bottom: 10px;
 }
-
-.cirurgia-geral-texto {
+.ortopedia-subtitulo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #3b3b3b;
+  margin: 20px 0;
+  border-left: 6px solid var(--text-color-secondary);
+  padding-left: 12px;
+}
+.ortopedia-texto {
     text-align: justify;
     font-size: 1rem;
     color: #333;
 }
 
-.cirurgia-geral-bloco {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.ortopedia-bloco {
     margin-top: 20px;
     padding: 15px;
     border-radius: 6px;
     background: rgb(231, 231, 231);
 }
 
-.cirurgia-geral-bloco h3 {
+.ortopedia-bloco h3 {
     font-size: 1.3rem;
     color: #3b3b3b;
     margin-bottom: 10px;
     letter-spacing: 1px;
 }
+
+.ortopedia-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+.ortopedia-botao {
+  flex: 1 1 200px;
+  text-align: center;
+  background-color: var(--text-color-secondary);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.ortopedia-botao:hover {
+  background-color: #005bb5;
+  transform: scale(1.02);
+}
+
+.ortopedia-botao-ativo {
+  background-color: #005bb5;
+  color: #fff;
+  border: 2px solid #003f7f;
+}
 /* Imagem do Fluxo */
-.cirurgia-geral-fluxo-img {
+.ortopedia-fluxo-img {
     display: block;
     margin: 0 auto;
     border-radius: 6px;
     cursor: zoom-in;
-    max-width: 400px;   
-    width: 350px;        
+    max-width: 600;   
+    width: 600;        
     height: auto;      
 }
 
-.cirurgia-geral-pactuacao-img {
+.ortopedia-pactuacao-img {
     display: block;
     margin: 0 auto;
     border-radius: 6px;
@@ -56,16 +90,16 @@
     height: auto;
 }
 
-.cirurgia-geral-fluxo-img-wrapper {
+.ortopedia-fluxo-img-wrapper {
     position: relative;
     display: inline-block;
 }
 
-.cirurgia-geral-fluxo-img-wrapper:hover::after {
+.ortopedia-fluxo-img-wrapper:hover::after {
     opacity: 1;
 }
 
-.cirurgia-geral-modal {
+.ortopedia-modal {
     position: fixed;
     inset: 0;
     background: rgba(255,255,255,0.95);
@@ -76,13 +110,13 @@
     z-index: 9999;
 }
 
-.cirurgia-geral-modal-img-wrapper {
+.ortopedia-modal-img-wrapper {
     position: relative;
     width: 90%;
     height: 90%;
 }
 
-.cirurgia-geral-modal-img {
+.ortopedia-modal-img {
     object-fit: contain;
     border-radius: 8px;
     box-shadow: 0 0 20px #000;

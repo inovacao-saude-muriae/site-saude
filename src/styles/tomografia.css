@@ -1,11 +1,11 @@
-.cintilografia-container {
+.tomografia-container {
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
 }
 
 /* Título principal da página */
-.cintilografia-titulo {
+.tomografia-titulo {
     font-weight: bold;
     text-align: center;
     color: var(--text-color-secondary);
@@ -15,20 +15,20 @@
 }
 
 /* Texto explicativo */
-.cintilografia-texto {
+.tomografia-texto {
     text-align: justify;
     color: #333;
 }
 
 /* Blocos internos (Fluxo e Pactuação) */
-.cintilografia-bloco {
+.tomografia-bloco {
     margin-top: 20px;
     padding: 15px;
     border-radius: 6px;
     background: rgb(231, 231, 231);
 }
 
-.cintilografia-bloco h3 {
+.tomografia-bloco h3 {
     font-size: 1.3rem;
     color: #3b3b3b;
     margin-bottom: 10px;
@@ -36,23 +36,23 @@
 }
 
 /* Imagens clicáveis */
-.cintilografia-fluxo-img-wrapper {
+.tomografia-fluxo-img-wrapper {
     position: relative;
     display: inline-block;
 }
 
-.cintilografia-fluxo-img {
+.tomografia-fluxo-img {
     max-width: 100%;
     border-radius: 6px;
     cursor: zoom-in;
 }
 
-.cintilografia-fluxo-img-wrapper:hover::after {
+.tomografia-fluxo-img-wrapper:hover::after {
   opacity: 1;
 }
 
 /* Modal de zoom */
-.cintilografia-modal {
+.tomografia-modal {
   position: fixed;
   inset: 0;
   background: rgba(255,255,255,0.95);
@@ -63,13 +63,13 @@
   z-index: 9999;
 }
 
-.cintilografia-modal-img-wrapper {
+.tomografia-modal-img-wrapper {
   position: relative;
   width: 90%;
   height: 90%;
 }
 
-.cintilografia-modal-img {
+.tomografia-modal-img {
   object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 0 20px #000;
