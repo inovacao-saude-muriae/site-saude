@@ -14,7 +14,7 @@ export default function Page() {
       {/* Banner */}
       <div className="banner">
         <img
-          src="/img/banner-Paginas/ccz.jpg"
+          src="/img/banner-paginas/ccz.jpg"
           alt="Centro de Controle de Zoonoses"
         />
       </div>

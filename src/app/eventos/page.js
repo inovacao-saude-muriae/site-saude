@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import eventosData from "../../data/eventos.json";
 import EventosCard from "../../components/EventosCard";
 import "../../styles/eventos.css";
+import { compareIsoDateDesc } from "../../lib/date";
 
 export default function Page() {
     const [paginaAtual, setPaginaAtual] = useState(1);
@@ -11,7 +12,7 @@ export default function Page() {
 
     // ordenar por data (mais recentes primeiro)
     const eventosOrdenados = [...eventosData].sort(
-        (a, b) => new Date(b.data) - new Date(a.data)
+        (a, b) => compareIsoDateDesc(a.data, b.data)
     );
 
     // calcular índice inicial e final

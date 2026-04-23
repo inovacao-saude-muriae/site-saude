@@ -1,0 +1,25 @@
+services:
+  web-saude-app:
+    build:
+      context: /data/projetos/web-saude
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "3007:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_TELEMETRY_DISABLED=1
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        # reservations:
+        # cpus: '0.25'
+        # memory: 256M
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:3000/api/health" ]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s

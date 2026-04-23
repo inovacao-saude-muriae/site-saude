@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import Link from "next/link";
 import eventosData from "../../../data/eventos.json";
 import "../../../styles/eventosDetalhes.css";
+import { formatIsoDateToPtBr } from "../../../lib/date";
 
 // Import Swiper + módulos
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -34,7 +35,7 @@ export default function EventosDetalhes() {
       <img src={evento.imgSrc} alt={evento.titulo} className="evento-banner" />
       <h2>{evento.titulo}</h2>
       <span className="evento-data">
-        {new Date(evento.data).toLocaleDateString("pt-BR")}
+        {formatIsoDateToPtBr(evento.data)}
       </span>
       <p>{evento.descricao}</p>
 

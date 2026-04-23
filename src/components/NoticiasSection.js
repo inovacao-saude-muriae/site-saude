@@ -2,10 +2,11 @@ import Link from "next/link";
 import CardNoticia from "./NoticiasCard";
 import noticiasData from "../data/noticias.json";
 import styles from "./noticiasSection.module.css"; // CSS só da seção
+import { compareIsoDateDesc } from "../lib/date";
 
 export default function NoticiasSection() {
   const noticiasOrdenadas = [...noticiasData].sort(
-    (a, b) => new Date(b.data_publicacao) - new Date(a.data_publicacao)
+    (a, b) => compareIsoDateDesc(a.data_publicacao, b.data_publicacao)
   );
 
   return (

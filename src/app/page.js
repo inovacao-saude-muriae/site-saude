@@ -1,4 +1,3 @@
-"use client";
 import styles from "./page.module.css";
 import Carousel from "../components/Carousel";
 import NoticiasSection from "../components/NoticiasSection";

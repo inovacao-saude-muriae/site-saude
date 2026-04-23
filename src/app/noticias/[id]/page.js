@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import noticiasData from "../../../data/noticias.json";
 import "../../../styles/noticiasDetalhes.css";
+import { formatIsoDateToPtBr } from "../../../lib/date";
 
 export default function NoticiasDetalhes() {
   const params = useParams();
@@ -37,7 +38,7 @@ export default function NoticiasDetalhes() {
       />
       <h2>{noticia.titulo}</h2>
       <span className="noticia-data">
-        {new Date(noticia.data_publicacao).toLocaleDateString("pt-BR")}
+        {formatIsoDateToPtBr(noticia.data_publicacao)}
       </span>
 
       {/* Renderiza o conteúdo do arquivo Markdown */}

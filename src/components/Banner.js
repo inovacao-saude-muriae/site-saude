@@ -16,20 +16,22 @@ export default function Banner() {
   return (
     <section className={styles.banner}>
       {isMobile ? (
-        <Image 
-          src="/img/banner-mobile.png" 
-          alt="Banner Mobile" 
-          width={800} 
-          height={600} 
-          className={styles.bannerImg} 
+        <Image
+          src="/img/banner-mobile.png"
+          alt="Banner Mobile"
+          width={800}
+          height={600}
+          className={styles.bannerImg}
         />
       ) : (
-        <Image 
-          src="/img/banner.jpeg" 
-          alt="Banner Desktop" 
-          width={1920} 
-          height={1080} 
-          className={styles.bannerImg} 
+        <Image
+          src="/img/banner.jpeg"
+          alt="Banner Desktop"
+          width={1920}
+          height={1080}
+          loading="eager"
+          priority
+          className={styles.bannerImg}
         />
       )}
     </section>

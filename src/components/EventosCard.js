@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import "../styles/eventos.css";
+import { formatIsoDateToPtBr } from "../lib/date";
 
 export default function EventosCard({ evento }) {
   return (
@@ -11,7 +12,7 @@ export default function EventosCard({ evento }) {
       <div className="evento-info">
         {/* Data primeiro */}
         <span className="evento-data">
-          {new Date(evento.data).toLocaleDateString("pt-BR")}
+          {formatIsoDateToPtBr(evento.data)}
         </span>
         {/* Título azul */}
         <h3 className="evento-titulo">{evento.titulo}</h3>

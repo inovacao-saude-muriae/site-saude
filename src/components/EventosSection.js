@@ -1,10 +1,11 @@
 import Link from "next/link";
 import eventosData from "../data/eventos.json";
 import styles from "./eventosSection.module.css";
+import { compareIsoDateDesc, formatIsoDateToPtBr } from "../lib/date";
 
 export default function EventosSection() {
   const eventosRecentes = [...eventosData]
-    .sort((a, b) => new Date(b.data) - new Date(a.data))
+    .sort((a, b) => compareIsoDateDesc(a.data, b.data))
     .slice(0, 3);
 
   return (
@@ -15,11 +16,7 @@ export default function EventosSection() {
           <Link key={evento.id} href={`/eventos/${evento.id}`} className={styles.eventCard}>
             <img src={evento.imgSrc} alt={evento.titulo} className={styles.eventoBanner} />
             <span className={styles.eventoData}>
-              {new Date(evento.data).toLocaleDateString("pt-BR", {
-                day: "2-digit",
-                month: "2-digit",
-                year: "numeric"
-              })}
+              {formatIsoDateToPtBr(evento.data)}
             </span>
             <h4 className={styles.eventoTitulo}>{evento.titulo}</h4>
             <p className={styles.eventoDesc}>{evento.resumo}</p>
