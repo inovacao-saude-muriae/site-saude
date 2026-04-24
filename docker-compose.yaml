@@ -1,7 +1,7 @@
 services:
   web-saude-app:
     build:
-      context: /data/projetos/web-saude
+      context: .
       dockerfile: Dockerfile
     restart: unless-stopped
     ports:
