@@ -11,14 +11,15 @@ export default function Page() {
       "https://app.powerbi.com/view?r=eyJrIjoiMjkwY2U1MTEtNjEzNC00ZWViLWE0MmYtZjRiY2U2ODE2Njg4IiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9",
     fisioterapia:
       "https://app.powerbi.com/view?r=eyJrIjoiNTQwNDM0NWMtMDQ3MC00MjVkLTliOWEtOTg3Y2Y4OTkzYWIzIiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9",
+	cirurgia:
+      "https://app.powerbi.com/view?r=eyJrIjoiM2MzMWRhNDQtYzAyMC00YmU4LTkyMmMtMjc0Y2QzNTg0YjAwIiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9",
     consultas:
       "https://app.powerbi.com/view?r=eyJrIjoiZDVjMzcyOGQtY2I4YS00MzNiLTg5ZTUtZTg3Y2U0Mjg0M2RmIiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9",
     tomografia:
       "https://app.powerbi.com/view?r=eyJrIjoiMzJjMjk4OWUtZjZiYS00NTMxLWExODUtNTU2OWY4NjFiNDlhIiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9",
     ressonancia:
       "https://app.powerbi.com/view?r=eyJrIjoiNmNlYWZjMzQtZTJmOC00NmIyLWFkZTctMTRhNGM3ZTgzZWIxIiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9",
-    cirurgia:
-      "https://app.powerbi.com/view?r=eyJrIjoiM2MzMWRhNDQtYzAyMC00YmU4LTkyMmMtMjc0Y2QzNTg0YjAwIiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9",
+    
   };
 
   return (
@@ -33,19 +34,19 @@ export default function Page() {
           Catarata e Pterígio
         </button>
 
-        <button
-          className={selected === "consultas" ? "active" : ""}
-          onClick={() => setSelected("consultas")}
-        >
-          Consultas e Exames
-        </button>
-
-        <button
+		<button
           className={selected === "cirurgia" ? "active" : ""}
           onClick={() => setSelected("cirurgia")}
         >
           Cirurgias Eletivas
         </button>
+
+        <button
+          className={selected === "consultas" ? "active" : ""}
+          onClick={() => setSelected("consultas")}
+        >
+          Consultas e Exames
+        </button>       
 
         <button
           className={selected === "fisioterapia" ? "active" : ""}
