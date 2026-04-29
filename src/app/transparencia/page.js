@@ -17,6 +17,8 @@ export default function Page() {
       "https://app.powerbi.com/view?r=eyJrIjoiMzJjMjk4OWUtZjZiYS00NTMxLWExODUtNTU2OWY4NjFiNDlhIiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9",
     ressonancia:
       "https://app.powerbi.com/view?r=eyJrIjoiNmNlYWZjMzQtZTJmOC00NmIyLWFkZTctMTRhNGM3ZTgzZWIxIiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9",
+	Cirurgias:
+      "https://app.powerbi.com/view?r=eyJrIjoiM2MzMWRhNDQtYzAyMC00YmU4LTkyMmMtMjc0Y2QzNTg0YjAwIiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9",
   };
 
   return (
