@@ -17,7 +17,7 @@ export default function Page() {
       "https://app.powerbi.com/view?r=eyJrIjoiMzJjMjk4OWUtZjZiYS00NTMxLWExODUtNTU2OWY4NjFiNDlhIiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9",
     ressonancia:
       "https://app.powerbi.com/view?r=eyJrIjoiNmNlYWZjMzQtZTJmOC00NmIyLWFkZTctMTRhNGM3ZTgzZWIxIiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9",
-    Cirurgia:
+    cirurgia:
       "https://app.powerbi.com/view?r=eyJrIjoiM2MzMWRhNDQtYzAyMC00YmU4LTkyMmMtMjc0Y2QzNTg0YjAwIiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9",
   };
 
@@ -32,6 +32,7 @@ export default function Page() {
         >
           Catarata e Pterígio
         </button>
+
         <button
           className={selected === "consultas" ? "active" : ""}
           onClick={() => setSelected("consultas")}
@@ -52,6 +53,7 @@ export default function Page() {
         >
           Fisioterapia
         </button>
+
         <button
           className={selected === "ressonancia" ? "active" : ""}
           onClick={() => setSelected("ressonancia")}
