@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import styles from './banner.module.css';
+import styles from "./banner.module.css";
 import Image from "next/image";
 
 export default function Banner() {
@@ -25,7 +25,7 @@ export default function Banner() {
         />
       ) : (
         <Image
-          src="/img/banner.jpeg"
+          src="/img/banner-desktop.png"
           alt="Banner Desktop"
           width={1920}
           height={1080}
