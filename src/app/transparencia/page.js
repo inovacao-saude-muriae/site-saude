@@ -38,15 +38,17 @@ export default function Page() {
 			>
 			Consultas e Exames
 			</button>
-			<button
-			className={selected === "fisioterapia" ? "active" : ""}
-			onClick={() => setSelected("fisioterapia")}
-			>
-			Cirurgias Eletivas
-			</button>
+
 			<button
 			className={selected === "cirurgia" ? "active" : ""}
 			onClick={() => setSelected("cirurgia")}
+			>
+			Cirurgias Eletivas
+			</button>
+
+			<button
+			className={selected === "fisioterapia" ? "active" : ""}
+			onClick={() => setSelected("fisioterapia")}
 			>
 			Fisioterapia
 			</button>
@@ -56,7 +58,7 @@ export default function Page() {
 			>
 			Ressonância
 			</button>
-
+			
 			<button
 			className={selected === "tomografia" ? "active" : ""}
 			onClick={() => setSelected("tomografia")}
