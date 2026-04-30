@@ -10,10 +10,27 @@ import styles from './layout.module.css';
 import "./globals.css";
 import ScrollToTop from "./ScrollToTop";
 
-// Nota: Em Next.js App Router, se usar "use client", 
-// a metadata deve ser exportada de um arquivo separado ou layout de servidor.
-// Mas para fins de funcionalidade, manteremos a lógica aqui:
+export const metadata = {
+  // title: "Página Inicial | Web Saúde", // TODO: Utilizar este para títulos dinâmicos em cada página, melhorando o SEO e a experiência do usuário. Para isso, cada página deve exportar seu próprio título específico.
+  title: "Web Saúde | Secretaria Municipal de Saúde de Muriaé - MG",
 
+  description: `
+    Portal da Secretaria Municipal de Saúde de Muriaé - MG.
+    Informações sobre serviços, campanhas, notícias e 
+      eventos relacionados à saúde pública na cidade e região.
+    Acesse para ficar atualizado sobre as ações e iniciativas da 
+    Secretaria Municipal de Saúde.
+  `,
+
+  icons: {
+    icon: [
+      { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon/favicon.ico" },
+    ],
+    shortcut: "/favicon/favicon.ico",
+  },
+};
 export default function RootLayout({ children }) {
   // Estado que controla se a Sidebar está aberta ou fechada
   const [isMenuOpen, setIsMenuOpen] = useState(false);
