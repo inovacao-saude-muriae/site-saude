@@ -63,7 +63,6 @@
     text-decoration: none;
 }
 
-/* Ícones */
 .iconWrapper {
     position: relative;
     width: 24px;
@@ -105,20 +104,23 @@
 @media (max-width: 768px) {
     .hamburger {
         display: block; 
-        position: relative;     /* Faz ele seguir a ordem do HTML */
-        width: 100%;            /* Ocupa a largura total da tela */
+        position: relative;     
+        width: 100%;            /* Largura total */
         height: auto;           
-        background-color: #ffffff; /* Fundo branco da barra */
-        color: #333;            /* Cor do ícone hamburguer */
-        padding: 5px 20px;     /* Espaço interno para não colar nas bordas */
-        text-align: left;       /* Alinha o ícone à esquerda */        
-        /* Estética */
-        border: none;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08); 
+        background-color: #1c76b2; /* Fundo do menu */
+        color: #FFF;            
+        padding: 10px 20px;     
+        text-align: left;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        
+        /* AQUI ESTÁ O RESPIRO */
+        margin-top: 20px;       /* Espaço entre o banner e o menu */
+        margin-bottom: 10px;    /* Espaço entre o menu e o conteúdo abaixo */
+        
         z-index: 10;
     }
 
-    /* Ajuste da Sidebar no Mobile */
+    /* Ajustes Sidebar Mobile */
     .sidebar {
         background-color: #1c76b2; 
         color: #fff;
@@ -135,8 +137,6 @@
     }
 
     .sidebar a, .sidebar button { color: #fff; }
-    
-    /* Força ícones ficarem visíveis no fundo azul da sidebar mobile */
     .iconDefault { opacity: 0 !important; }
     .iconHover { opacity: 1 !important; }
 }
