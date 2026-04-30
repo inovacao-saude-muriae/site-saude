@@ -37,10 +37,11 @@ export default function RootLayout({ children }) {
         <ScrollToTop />
         <div className={styles.layout}>
           <Header />
+          <Sidebar />
           <Banner />
 
           <div className={styles.layoutBody}>
-            <Sidebar />
+            
             <main className={styles.layoutContent}>
               {children}
             </main>

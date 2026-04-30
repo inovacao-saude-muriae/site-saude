@@ -1,10 +1,10 @@
+/* --- CONFIGURAÇÕES GERAIS --- */
 .hamburger {
     display: none; 
     font-size: 28px;
     background: none;
     border: none;
     cursor: pointer;
-    margin: 20px; 
 }
 
 .overlay {
@@ -13,24 +13,34 @@
     background: rgba(0,0,0,0.5);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
-    z-index: 9;
+    z-index: 99;
 }
 
 .sidebar {
     width: 270px;
-    background: var(--background-color);
-    color: var(--text-color-secondary);
+    background: var(--background-color, #fff);
+    color: var(--text-color-secondary, #333);
     padding: 20px;
     border-right: 1px solid #cacaca;
     box-shadow: 5px 0 5px -2px rgba(0, 0, 0, 0.3);
-    z-index: 1;
+    z-index: 1000;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: -280px; 
+    transition: left 0.3s ease;
+}
+
+.sidebar.open {
+    left: 0;
 }
 
 .sidebar .closeBtn {
     display: none;
-}  
+}   
 
 .sidebar li {
+    list-style: none;
     margin-bottom: 10px;
 }
 
@@ -38,14 +48,14 @@
 .sidebar a,
 .sidebar button {
     display: flex;              
-    justify-content: space-between; /* esquerda e direita */
+    justify-content: space-between;
     align-items: center;        
     width: 100%;
     padding: 8px;
     text-align: left;
     border: none;
     background: none;
-    color: inherit;
+    color: #000;
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
@@ -53,16 +63,10 @@
     text-decoration: none;
 }
 
-/* Ícone + texto agrupados à esquerda */
-.left {
-    display: flex;
-    align-items: center;
-    gap: 8px; /* espaço entre ícone e texto */
-}
-
+/* Ícones */
 .iconWrapper {
     position: relative;
-    width: 24px;   /* ajuste conforme tamanho do ícone */
+    width: 24px;
     height: 24px;
     display: inline-block;
 }
@@ -74,69 +78,16 @@
     transition: opacity 0.3s ease;
 }
 
-/* Ícone padrão visível normalmente */
-.iconDefault {
-     opacity: 1;
-}
+.iconDefault { opacity: 1; }
+.iconHover { opacity: 0; }
 
-/* Ícone hover escondido normalmente */
-.iconHover {
-    opacity: 0;
-}
+.menuLink:hover .iconDefault, .menuBtn:hover .iconDefault { opacity: 0; }
+.menuLink:hover .iconHover, .menuBtn:hover .iconHover { opacity: 1; }
 
-/* Hover: troca os ícones */
-.menuLink:hover .iconDefault,
-.menuBtn:hover .iconDefault {
-    opacity: 0;
-}
-
-.menuLink:hover .iconHover,
-.menuBtn:hover .iconHover {
-    opacity: 1;
-}
-
-/* Ativo: mantém o hover mesmo sem passar o mouse */
-.menuBtn.active .iconDefault,
-.menuLink.active .iconDefault {
-    opacity: 0;
-}
-
-.menuBtn.active .iconHover,
-.menuLink.active .iconHover {
-    opacity: 1;
-}
-
-/* Bloco da seta à direita */
-.right {
-    display: flex;
-    align-items: center;
-    margin-left: auto; /* força ficar encostado à direita */
-}
-
-.sidebar a:hover,
-.sidebar button:hover {
+.sidebar a:hover, .sidebar button:hover {
     background-color: #1c76b2;
     color: #fff;
     border-radius: 5px;
-}
-
-.sidebar button.active {
-    background-color: #145a86; 
-    color: #fff;
-    font-weight: 600;
-    border-radius: 5px;
-}
-
-.submenu {
-    margin-top: 10px;
-    margin-left: 15px;
-    border-left: 2px solid #ccc;
-    padding-left: 10px;
-    border-radius: 5px;
-}
-
-.submenu a {
-    font-size: 14px;
 }
 
 /* Setas */
@@ -144,47 +95,33 @@
     display: inline-block;
     width: 8px;
     height: 8px;
-    border-right: 2px solid var(--text-color-secondary);
-    border-bottom: 2px solid var(--text-color-secondary);
-    transform: rotate(-45deg); /* seta para direita */
+    border-right: 2px solid #333;
+    border-bottom: 2px solid #333;
+    transform: rotate(-45deg);
     transition: transform 0.2s ease;
 }
 
-.active .arrow {
-    transform: rotate(45deg); /* seta para baixo */
-}
-
-/* Hover seta */
-.menuBtn:hover .arrow {
-    border-right-color: #fff;
-    border-bottom-color: #fff;
-}
-/* Seta no botão ativo */
-.menuBtn.active .arrow {
-    border-right-color: #fff;
-    border-bottom-color: #fff;
-}
-
-
-/* Responsivo */
+/* --- RESPONSIVO (MOBILE) --- */
 @media (max-width: 768px) {
     .hamburger {
         display: block; 
+        position: relative;     /* Faz ele seguir a ordem do HTML */
+        width: 100%;            /* Ocupa a largura total da tela */
+        height: auto;           
+        background-color: #ffffff; /* Fundo branco da barra */
+        color: #333;            /* Cor do ícone hamburguer */
+        padding: 5px 20px;     /* Espaço interno para não colar nas bordas */
+        text-align: left;       /* Alinha o ícone à esquerda */        
+        /* Estética */
+        border: none;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08); 
+        z-index: 10;
     }
 
+    /* Ajuste da Sidebar no Mobile */
     .sidebar {
-        position: fixed;
-        top: 0;
-        left: -271px; 
-        height: 100%;
-        transition: left 0.3s ease;
-        z-index: 30;
-        background-color: var(--primary-color);
+        background-color: #1c76b2; 
         color: #fff;
-    }
-
-    .sidebar.open {
-        left: 0; /* aparece */
     }
     
     .sidebar .closeBtn {
@@ -196,20 +133,10 @@
         cursor: pointer;
         margin-bottom: 20px;
     }
-    /* Ícones sempre brancos */
-  .iconDefault {
-    opacity: 0 !important; /* esconde o ícone padrão */
-  }
 
-  .iconHover {
-    opacity: 1 !important; /* mostra sempre o ícone branco */
-  }
-
-  /* Remove efeito hover nos ícones */
-  .menuBtn:hover .iconDefault,
-  .menuBtn:hover .iconHover,
-  .menuLink:hover .iconDefault,
-  .menuLink:hover .iconHover {
-    opacity: 1 !important;
-  }
+    .sidebar a, .sidebar button { color: #fff; }
+    
+    /* Força ícones ficarem visíveis no fundo azul da sidebar mobile */
+    .iconDefault { opacity: 0 !important; }
+    .iconHover { opacity: 1 !important; }
 }
