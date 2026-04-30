@@ -38,22 +38,33 @@ export default function Page() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!selectedPet) return;
+    if (!selectedPet || isSending) return;
 
-    const form = new FormData(e.target);
-    const data = Object.fromEntries(form.entries());
+    setIsSending(true);
+    const form = e.target;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
     data.animal = selectedPet.nome;
 
-    await fetch("https://script.google.com/macros/s/AKfycbxUUUek2JT-XM_zDaK44_4kYQq6gLNo4x8w4fe1kr46ubM4Kmn98suVymRL_XF14IYg/exec", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: { "Content-Type": "application/json" },
-    });
-
-    alert("Dados enviados com sucesso!");
-    setSelectedPet(null);
-    setStep(1);
-  };
+    try {
+      // Configuração para Google Apps Script (CORS Blindado)
+      await fetch("https://script.google.com/macros/s/AKfycbxUUUek2JT-XM_zDaK44_4kYQq6gLNo4x8w4fe1kr46ubM4Kmn98suVymRL_XF14IYg/exec", {
+        method: "POST",
+        mode: "no-cors", // Crucial para não travar no navegador
+        headers: {
+          "Content-Type": "text/plain", // Engana o pre-flight do CORS
+        },
+        body: JSON.stringify(data),
+      });
+    // Se chegou aqui, mudamos para a tela de sucesso
+          setStep(4);
+        } catch (error) {
+          console.error("Erro ao enviar:", error);
+          alert("Houve um problema ao enviar o formulário. Tente novamente.");
+        } finally {
+          setIsSending(false);
+        }
+      };
 
   return (
     <section className="adocaoPage">
