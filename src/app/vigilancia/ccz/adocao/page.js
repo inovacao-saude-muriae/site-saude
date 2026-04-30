@@ -5,16 +5,17 @@ import animais from "../../../../data/animais.json";
 import "../../../../styles/adocao.css";
 
 export default function Page() {
-  const [selectedFilter, setSelectedFilter] = useState(null); // guarda o filtro escolhido
-  const [filter, setFilter] = useState(null);                 // guarda o filtro aplicado
+  const [selectedFilter, setSelectedFilter] = useState(null); 
+  const [filter, setFilter] = useState(null);               
   const [selectedPet, setSelectedPet] = useState(null);
   const [step, setStep] = useState(1);
-  const [aceitouTermo, setAceitouTermo] = useState(false);    // novo estado para o termo
+  const [aceitouTermo, setAceitouTermo] = useState(false);    
   const [currentPage, setCurrentPage] = useState(1);
+  const [isSending, setIsSending] = useState(false); // Estado para loading
 
   const petsPerPage = 12;
 
-  // Aplica o filtro só quando clicar em "Pesquisar"
+  // Aplica o filtro
   const filteredPets = filter
     ? animais.filter(p => {
         if (filter === "macho") return p.sexo === "macho";
@@ -26,7 +27,6 @@ export default function Page() {
       })
     : animais;
 
-  // Paginação
   const totalPages = Math.ceil(filteredPets.length / petsPerPage);
   const startIndex = (currentPage - 1) * petsPerPage;
   const currentPets = filteredPets.slice(startIndex, startIndex + petsPerPage);
@@ -56,15 +56,16 @@ export default function Page() {
         },
         body: JSON.stringify(data),
       });
-    // Se chegou aqui, mudamos para a tela de sucesso
-          setStep(4);
-        } catch (error) {
-          console.error("Erro ao enviar:", error);
-          alert("Houve um problema ao enviar o formulário. Tente novamente.");
-        } finally {
-          setIsSending(false);
-        }
-      };
+
+      // Se chegou aqui, mudamos para a tela de sucesso
+      setStep(4);
+    } catch (error) {
+      console.error("Erro ao enviar:", error);
+      alert("Houve um problema ao enviar o formulário. Tente novamente.");
+    } finally {
+      setIsSending(false);
+    }
+  };
 
   return (
     <section className="adocaoPage">
