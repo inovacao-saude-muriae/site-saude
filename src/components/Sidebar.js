@@ -3,41 +3,42 @@ import React, { useState } from "react";
 import Link from "next/link"; 
 import styles from "./sidebar.module.css";
 
-export default function Sidebar() {
+// Agora recebemos 'open' e 'setOpen' como props do Layout
+export default function Sidebar({ open, setOpen }) {
     const [activeMenu, setActiveMenu] = useState(null);
-    const [open, setOpen] = useState(false);
 
     const toggleMenu = (menuName) => {
         setActiveMenu(activeMenu === menuName ? null : menuName);
     };
 
+    // Função auxiliar para fechar o menu ao clicar em um link (opcional, melhora UX)
+    const closeMenu = () => {
+        if (setOpen) setOpen(false);
+    };
+
     return (
         <>
-            {/* Botão hamburguer */}
-            <button className={styles.hamburger} onClick={() => setOpen(!open)}>
-                ☰
-            </button>
+            {/* Overlay: Só aparece se o menu estiver aberto */}
+            {open && <div className={styles.overlay} onClick={closeMenu}></div>}
 
-            {/* Overlay */}
-            {open && <div className={styles.overlay} onClick={() => setOpen(false)}></div>}
-
-            {/* Sidebar */}
+            {/* Sidebar: A classe 'open' é controlada pela prop externa */}
             <aside className={`${styles.sidebar} ${open ? styles.open : ""}`}>
-                <button className={styles.closeBtn} onClick={() => setOpen(false)}>×</button>
+                
+                {/* Botão de Fechar interno da Sidebar */}
+                <button className={styles.closeBtn} onClick={() => setOpen(false)}> &times; </button>
+                
                 <nav>
                     <ul>
                         {/* Página Inicial */}
                         <li>
-                            <Link href="/" className={styles.menuLink}>
+                            <Link href="/" className={styles.menuLink} onClick={closeMenu}>
                                 <span className={styles.left}>
                                     <span className={styles.iconWrapper}>
-                                        {/* Ícone padrão */}
                                         <img src="/img/icon/home.png" alt="Home" className={`${styles.icon} ${styles.iconDefault}`} />
-                                        {/* Ícone hover */}
                                         <img src="/img/icon/home-hover.png" alt="Home Hover" className={`${styles.icon} ${styles.iconHover}`} />
                                     </span>
                                     Página Inicial
-                                    </span>
+                                </span>
                             </Link>
                         </li>
 
@@ -59,11 +60,11 @@ export default function Sidebar() {
                             </button>
                             {activeMenu === "servicos" && (
                                 <ul className={styles.submenu}>
-                                    <li><Link href="/servicos/atendimento-domiciliar">Atendimento Domiciliar</Link></li>
-                                    <li><Link href="/servicos/farmacia-municipal">Farmácia Municipal</Link></li>
-                                    <li><Link href="/servicos/laboratorio-municipal">Laboratório Municipal</Link></li>
-                                    <li><Link href="/servicos/pace">Doação de sangue</Link></li>
-                                    <li><Link href="/servicos/vacina">Vacina</Link></li>
+                                    <li><Link href="/servicos/atendimento-domiciliar" onClick={closeMenu}>Atendimento Domiciliar</Link></li>
+                                    <li><Link href="/servicos/farmacia-municipal" onClick={closeMenu}>Farmácia Municipal</Link></li>
+                                    <li><Link href="/servicos/laboratorio-municipal" onClick={closeMenu}>Laboratório Municipal</Link></li>
+                                    <li><Link href="/servicos/pace" onClick={closeMenu}>Doação de sangue</Link></li>
+                                    <li><Link href="/servicos/vacina" onClick={closeMenu}>Vacina</Link></li>
                                 </ul>
                             )}
                         </li>
@@ -86,8 +87,8 @@ export default function Sidebar() {
                             </button>
                             {activeMenu === "vigilancia" && (
                                 <ul className={styles.submenu}>
-                                    <li><Link href="/vigilancia/ccz">CCZ</Link></li>
-                                    <li><Link href="/vigilancia/vigilancia-sanitaria">Vigilância Sanitária</Link></li>
+                                    <li><Link href="/vigilancia/ccz" onClick={closeMenu}>CCZ</Link></li>
+                                    <li><Link href="/vigilancia/vigilancia-sanitaria" onClick={closeMenu}>Vigilância Sanitária</Link></li>
                                 </ul>
                             )}
                         </li>
@@ -110,8 +111,8 @@ export default function Sidebar() {
                             </button>
                             {activeMenu === "digital" && (
                                 <ul className={styles.submenu}>
-                                    <li><Link href="/digital/app-saude-digital">App Saúde Digital</Link></li>
-                                    <li><Link href="/digital/app-meu-sus">App Meu SUS Digital</Link></li>
+                                    <li><Link href="/digital/app-saude-digital" onClick={closeMenu}>App Saúde Digital</Link></li>
+                                    <li><Link href="/digital/app-meu-sus" onClick={closeMenu}>App Meu SUS Digital</Link></li>
                                 </ul>
                             )}
                         </li>
@@ -134,15 +135,15 @@ export default function Sidebar() {
                             </button>
                             {activeMenu === "contatos" && (
                                 <ul className={styles.submenu}>
-                                    <li><Link href="/contatos/contatos">Contatos</Link></li>
-                                    <li><Link href="/contatos/ouvidoria">Ouvidoria</Link></li>
+                                    <li><Link href="/contatos/contatos" onClick={closeMenu}>Contatos</Link></li>
+                                    <li><Link href="/contatos/ouvidoria" onClick={closeMenu}>Ouvidoria</Link></li>
                                 </ul>
                             )}
                         </li>
 
                         {/* Transparência */}
                         <li>
-                            <Link href="/transparencia" className={styles.menuLink}>
+                            <Link href="/transparencia" className={styles.menuLink} onClick={closeMenu}>
                                 <span className={styles.left}>
                                     <span className={styles.iconWrapper}>
                                         <img src="/img/icon/transparencia.png" alt="Transparência" className={`${styles.icon} ${styles.iconDefault}`} />
@@ -155,7 +156,7 @@ export default function Sidebar() {
 
                         {/* Fluxos Assistenciais */}
                         <li>
-                            <Link href="/fluxos-assistenciais" className={styles.menuLink}>
+                            <Link href="/fluxos-assistenciais" className={styles.menuLink} onClick={closeMenu}>
                                 <span className={styles.left}>
                                     <span className={styles.iconWrapper}>
                                         <img src="/img/icon/servico-saude.png" alt="Fluxos Assistenciais" className={`${styles.icon} ${styles.iconDefault}`} />

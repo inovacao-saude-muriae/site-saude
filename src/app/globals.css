@@ -118,3 +118,41 @@ input:focus, textarea:focus, select:focus {
 body > div {
   animation: pageFade 0.6s ease-in-out;
 }
+/* --- ESTILO DO MENU HAMBURGUER (MOBILE BAR) --- */
+
+/* 1. Esconde o botão por padrão (Desktop) */
+.hamburger-mobile-bar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* 2. Transforma o botão em uma barra horizontal no Mobile */
+  .hamburger-mobile-bar {
+    display: block;               /* Faz o botão aparecer */
+    width: 100%;                  /* Ocupa a largura toda da tela */
+    background-color: #ffffff;    /* Fundo branco */
+    color: var(--primary-color);  /* Usa o azul do seu :root */
+    font-size: 24px;
+    font-weight: 600;
+    text-align: left;
+    padding: 6px 20px;
+    border: none;
+    cursor: pointer;
+    
+    /* Sombra suave para destacar do fundo */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    
+    /* OS RESPIROS (MARGENS) */
+    margin-top: 0px;             /* Espaço abaixo do Header */
+    margin-bottom: 15px;          /* Espaço acima do Banner */
+    
+    /* Garante que ele fique acima de outros elementos do corpo */
+    position: relative;
+    z-index: 10;
+  }
+
+  /* 3. Ajuste para a Sidebar não bugar o scroll lateral */
+  body {
+    overflow-x: hidden;
+  }
+}
