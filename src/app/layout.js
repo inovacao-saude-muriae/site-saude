@@ -1,13 +1,17 @@
 import React from "react";
 import Header from "../components/Header";
+import Banner from "../components/Banner"
+import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
-import clientLayout from "./clienteLayout"; // Use o arquivo que você já tem
+
 import styles from './layout.module.css';
 import "./globals.css";
 import ScrollToTop from "./ScrollToTop";
 
 export const metadata = {
-  title: "Secretaria Municipal de Saúde de Muriaé - MG",
+  // title: "Página Inicial | Web Saúde", // TODO: Utilizar este para títulos dinâmicos em cada página, melhorando o SEO e a experiência do usuário. Para isso, cada página deve exportar seu próprio título específico.
+  title: "Web Saúde | Secretaria Municipal de Saúde de Muriaé - MG",
+
   description: `
     Portal da Secretaria Municipal de Saúde de Muriaé - MG.
     Informações sobre serviços, campanhas, notícias e 
@@ -15,6 +19,7 @@ export const metadata = {
     Acesse para ficar atualizado sobre as ações e iniciativas da 
     Secretaria Municipal de Saúde.
   `,
+
   icons: {
     icon: [
       { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -32,12 +37,14 @@ export default function RootLayout({ children }) {
         <ScrollToTop />
         <div className={styles.layout}>
           <Header />
-          
-          {/* O seu ClienteLayout entra aqui abraçando o conteúdo dinâmico */}
-          <clientLayout>
-            {children}
-          </clientLayout>
+          <Banner />
 
+          <div className={styles.layoutBody}>
+            <Sidebar />
+            <main className={styles.layoutContent}>
+              {children}
+            </main>
+          </div>
           <Footer />
         </div>
       </body>

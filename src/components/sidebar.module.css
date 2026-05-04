@@ -1,222 +1,215 @@
-/* --- SIDEBAR BASE (DESKTOP) --- */
-.sidebar {
-    width: 270px;
-    background-color: var(--background-color, #f8f8f8);
-    color: var(--text-color-secondary, #1c76b2);
-    padding: 10px;
-    border-right: 1px solid #cacaca;
-    box-shadow: 5px 0 5px -2px rgba(0, 0, 0, 0.1);
-    position: relative; 
-    height: auto;
-    min-height: 100vh;
-    z-index: 1;
+.hamburger {
+    display: none; 
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 20px; 
 }
-/* OVERLAY COM BLUR (MOBILE) */
+
 .overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.3); /* Fundo escurecido leve */
-    backdrop-filter: blur(8px);    /* EFEITO DE BLUR ATRÁS DO MENU */
-    -webkit-backdrop-filter: blur(8px);
-    z-index: 998;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 9;
 }
-.closeBtn {
-    display: none !important;
+
+.sidebar {
+    width: 270px;
+    background: var(--background-color);
+    color: var(--text-color-secondary);
+    padding: 20px;
+    border-right: 1px solid #cacaca;
+    box-shadow: 5px 0 5px -2px rgba(0, 0, 0, 0.3);
+    z-index: 1;
 }
+
+.sidebar .closeBtn {
+    display: none;
+}  
 
 .sidebar li {
-    list-style: none;
-    margin-bottom: 10px; /* Mantém o espaçamento vertical entre os itens */
+    margin-bottom: 10px;
 }
 
+/* Links e botões principais */
 .sidebar a,
 .sidebar button {
     display: flex;              
-    justify-content: space-between;
+    justify-content: space-between; /* esquerda e direita */
     align-items: center;        
     width: 100%;
-    padding: 10px 12px;
+    padding: 8px;
     text-align: left;
     border: none;
-    background: transparent;
-    color: #333; /* Cor do texto padrão no desktop */
+    background: none;
+    color: inherit;
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
-    border-radius: 5px;
-    transition: all 0.2s ease-in-out;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
 }
 
-/* HOVER: FUNDO AZUL E TEXTO BRANCO */
-.sidebar a:hover, 
-.sidebar button:hover,
-.sidebar .active { 
-    background-color: #1c76b2 !important; /* Seu azul principal */
-    color: #ffffff !important;           /* Texto branco */
-}
-
-/* Garantir que a seta também mude de cor no hover */
-.sidebar a:hover .arrow,
-.sidebar button:hover .arrow,
-.sidebar .active .arrow {
-    border-color: #ffffff !important;
-}
-
-/* --- ESTRUTURA INTERNA (ÍCONE + TEXTO) --- */
+/* Ícone + texto agrupados à esquerda */
 .left {
     display: flex;
     align-items: center;
+    gap: 8px; /* espaço entre ícone e texto */
 }
 
 .iconWrapper {
     position: relative;
-    width: 24px;
+    width: 24px;   /* ajuste conforme tamanho do ícone */
     height: 24px;
-    margin-right: 15px; /* Respiro apenas à direita do ícone */
-    flex-shrink: 0;
+    display: inline-block;
 }
 
 .icon {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
     transition: opacity 0.3s ease;
 }
 
-.iconHover { opacity: 0; }
-
-/* Troca os ícones no hover e no estado ativo */
-.sidebar a:hover .iconDefault, 
-.sidebar button:hover .iconDefault,
-.sidebar .active .iconDefault { 
-    opacity: 0; 
+/* Ícone padrão visível normalmente */
+.iconDefault {
+     opacity: 1;
 }
 
-.sidebar a:hover .iconHover, 
-.sidebar button:hover .iconHover,
-.sidebar .active .iconHover { 
-    opacity: 1; 
+/* Ícone hover escondido normalmente */
+.iconHover {
+    opacity: 0;
 }
 
-/* --- SETAS --- */
+/* Hover: troca os ícones */
+.menuLink:hover .iconDefault,
+.menuBtn:hover .iconDefault {
+    opacity: 0;
+}
+
+.menuLink:hover .iconHover,
+.menuBtn:hover .iconHover {
+    opacity: 1;
+}
+
+/* Ativo: mantém o hover mesmo sem passar o mouse */
+.menuBtn.active .iconDefault,
+.menuLink.active .iconDefault {
+    opacity: 0;
+}
+
+.menuBtn.active .iconHover,
+.menuLink.active .iconHover {
+    opacity: 1;
+}
+
+/* Bloco da seta à direita */
+.right {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* força ficar encostado à direita */
+}
+
+.sidebar a:hover,
+.sidebar button:hover {
+    background-color: #1c76b2;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.sidebar button.active {
+    background-color: #145a86; 
+    color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.submenu {
+    margin-top: 10px;
+    margin-left: 15px;
+    border-left: 2px solid #ccc;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+
+.submenu a {
+    font-size: 14px;
+}
+
+/* Setas */
 .arrow {
     display: inline-block;
     width: 8px;
     height: 8px;
-    border-right: 2px solid #333;
-    border-bottom: 2px solid #333;
-    transform: rotate(-45deg);
-    transition: all 0.3s ease;
+    border-right: 2px solid var(--text-color-secondary);
+    border-bottom: 2px solid var(--text-color-secondary);
+    transform: rotate(-45deg); /* seta para direita */
+    transition: transform 0.2s ease;
 }
 
 .active .arrow {
-    transform: rotate(45deg);
+    transform: rotate(45deg); /* seta para baixo */
 }
 
-.sidebar button:hover .arrow,
-.active .arrow {
-    border-color: #fff;
+/* Hover seta */
+.menuBtn:hover .arrow {
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+}
+/* Seta no botão ativo */
+.menuBtn.active .arrow {
+    border-right-color: #fff;
+    border-bottom-color: #fff;
 }
 
-/* --- SUBMENU --- */
-.submenu {
-    margin-top: 5px;
-    margin-left: 39px; /* Alinhado com o início do texto do menu pai */
-    border-left: 2px solid #ddd;
-    padding-left: 15px;
-    padding-bottom: 10px;
-}/* --- CONFIGURAÇÕES DO MOBILE (768px) --- */
+
+/* Responsivo */
 @media (max-width: 768px) {
-    
+    .hamburger {
+        display: block; 
+    }
+
     .sidebar {
-        position: fixed !important;
+        position: fixed;
         top: 0;
-        left: -280px;
-        width: 270px;
-        height: 100vh;
-        background-color: #1c76b2 !important; /* Fundo azul da barra */
-        z-index: 9999;
-        padding-top: 80px !important;
-        transition: left 0.3s ease-in-out;
+        left: -271px; 
+        height: 100%;
+        transition: left 0.3s ease;
+        z-index: 30;
+        background-color: var(--primary-color);
+        color: #fff;
     }
 
     .sidebar.open {
-        left: 0 !important;
-    }
-
-    /* O BOTÃO X (FECHAR) */
-    .closeBtn {
-        display: flex !important;
-        position: absolute !important;
-        top: 20px !important;
-        right: 20px !important;
-        width: 40px !important;
-        height: 40px !important;
-        background-color: rgba(255, 255, 255, 0.2) !important;
-        color: #ffffff !important;
-        border-radius: 50% !important;
-        align-items: center !important;
-        justify-content: center !important;
-        font-size: 30px !important;
-        border: none !important;
-        cursor: pointer !important;
-        line-height: 0 !important;
-    }
-
-    /* ESTADO NORMAL DO MENU (ANTES DE SELECIONAR OU PASSAR O MOUSE) */
-    .sidebar a, 
-    .sidebar button.menuBtn {
-        color: #ffffff !important; /* Letra branca sobre fundo azul */
-        background-color: transparent !important;
-        transition: all 0.2s ease;
-    }
-
-    /* HOVER E ESTADO SELECIONADO (ACTIVE) */
-    /* Aqui resolvemos o problema da letra sumindo */
-    .sidebar a:hover, 
-    .sidebar button.menuBtn:hover,
-    .sidebar .active { 
-        background-color: #ffffff !important; /* Fundo fica branco */
-        color: #1c76b2 !important;            /* LETRA FICA AZUL (para aparecer no fundo branco) */
-        border-radius: 8px !important;
-    }
-
-    /* Ajuste das Setas no Hover/Active */
-    .sidebar a:hover .arrow,
-    .sidebar button.menuBtn:hover .arrow,
-    .sidebar .active .arrow {
-        border-color: #1c76b2 !important; /* Seta fica azul no fundo branco */
-    }
-
-    /* Ajuste dos Ícones no Hover/Active */
-    /* Quando selecionado ou hover, mostramos o ícone colorido (Default) */
-    .sidebar a:hover .iconDefault, 
-    .sidebar button.menuBtn:hover .iconDefault,
-    .sidebar .active .iconDefault {
-        opacity: 1 !important;
+        left: 0; /* aparece */
     }
     
-    /* Quando selecionado ou hover, escondemos o ícone branco (Hover/Light) */
-    .sidebar a:hover .iconHover, 
-    .sidebar button.menuBtn:hover .iconHover,
-    .sidebar .active .iconHover {
-        opacity: 0 !important;
+    .sidebar .closeBtn {
+        display: block; 
+        background: none;
+        border: none;
+        font-size: 40px;
+        color: #fff;
+        cursor: pointer;
+        margin-bottom: 20px;
     }
+    /* Ícones sempre brancos */
+  .iconDefault {
+    opacity: 0 !important; /* esconde o ícone padrão */
+  }
 
-    /* ESTADO PADRÃO DOS ÍCONES (SEM HOVER) */
-    .iconDefault { opacity: 0 !important; } /* Esconde o colorido */
-    .iconHover { opacity: 1 !important; }   /* Mostra o branco */
-    .arrow { border-color: #ffffff !important; } /* Seta branca padrão */
-}
+  .iconHover {
+    opacity: 1 !important; /* mostra sempre o ícone branco */
+  }
 
-/* --- OVERLAY (BLUR) --- */
-.overlay {
-    position: fixed !important;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.4) !important;
-    backdrop-filter: blur(8px) !important;
-    -webkit-backdrop-filter: blur(8px) !important;
-    z-index: 9998;
+  /* Remove efeito hover nos ícones */
+  .menuBtn:hover .iconDefault,
+  .menuBtn:hover .iconHover,
+  .menuLink:hover .iconDefault,
+  .menuLink:hover .iconHover {
+    opacity: 1 !important;
+  }
 }
