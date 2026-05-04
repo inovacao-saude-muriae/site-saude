@@ -1,11 +1,11 @@
-"use client";
+"use client"; 
 
 import React, { useState } from "react";
-import Sidebar from "../components/Sidebar";
 import Banner from "../components/Banner";
+import Sidebar from "../components/Sidebar";
 import styles from './layout.module.css';
 
-export default function ClientLayout({ children }) {
+export default function ClienteLayout({ children }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (

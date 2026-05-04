@@ -1,15 +1,14 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import ClientLayout from "./ClientLayout"; // Importe o novo componente
+import ClienteLayout from "./ClienteLayout"; // Use o arquivo que você já tem
 import styles from './layout.module.css';
 import "./globals.css";
 import ScrollToTop from "./ScrollToTop";
 
-// A metadata agora funciona porque este é um Server Component!
 export const metadata = {
-  title: "Secretaria Municipal de Saúde de Muriaé - MG",
-  description: "Portal da Secretaria Municipal de Saúde de Muriaé - MG...",
+  title: "Web Saúde | Secretaria Municipal de Saúde de Muriaé - MG",
+  description: "Portal da Secretaria Municipal de Saúde...",
   icons: {
     icon: [
       { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -28,10 +27,10 @@ export default function RootLayout({ children }) {
         <div className={styles.layout}>
           <Header />
           
-          {/* O ClientLayout cuida da interatividade do menu */}
-          <ClientLayout>
+          {/* O seu ClienteLayout entra aqui abraçando o conteúdo dinâmico */}
+          <ClienteLayout>
             {children}
-          </ClientLayout>
+          </ClienteLayout>
 
           <Footer />
         </div>
