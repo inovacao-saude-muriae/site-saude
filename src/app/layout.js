@@ -1,14 +1,20 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import ClienteLayout from "./ClienteLayout"; // Use o arquivo que você já tem
+import clientLayout from "./clienteLayout"; // Use o arquivo que você já tem
 import styles from './layout.module.css';
 import "./globals.css";
 import ScrollToTop from "./ScrollToTop";
 
 export const metadata = {
-  title: "Web Saúde | Secretaria Municipal de Saúde de Muriaé - MG",
-  description: "Portal da Secretaria Municipal de Saúde...",
+  title: "Secretaria Municipal de Saúde de Muriaé - MG",
+  description: `
+    Portal da Secretaria Municipal de Saúde de Muriaé - MG.
+    Informações sobre serviços, campanhas, notícias e 
+      eventos relacionados à saúde pública na cidade e região.
+    Acesse para ficar atualizado sobre as ações e iniciativas da 
+    Secretaria Municipal de Saúde.
+  `,
   icons: {
     icon: [
       { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -28,9 +34,9 @@ export default function RootLayout({ children }) {
           <Header />
           
           {/* O seu ClienteLayout entra aqui abraçando o conteúdo dinâmico */}
-          <ClienteLayout>
+          <clientLayout>
             {children}
-          </ClienteLayout>
+          </clientLayout>
 
           <Footer />
         </div>
