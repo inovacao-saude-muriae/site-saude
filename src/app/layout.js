@@ -9,7 +9,6 @@ import "./globals.css";
 import ScrollToTop from "./ScrollToTop";
 
 export const metadata = {
-  // title: "Página Inicial | Web Saúde", // TODO: Utilizar este para títulos dinâmicos em cada página, melhorando o SEO e a experiência do usuário. Para isso, cada página deve exportar seu próprio título específico.
   title: "Secretaria Municipal de Saúde de Muriaé - MG",
 
   description: `

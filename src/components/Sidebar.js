@@ -14,10 +14,11 @@ export default function Sidebar() {
     return (
         <>
             {/* Botão hamburguer */}
-            <button className={styles.hamburger} onClick={() => setOpen(!open)}>
-                ☰
-            </button>
-
+            <div className={styles.topBar}>
+                <button className={styles.hamburger} onClick={() => setOpen(!open)}>
+                    ☰
+                </button>
+            </div>
             {/* Overlay */}
             {open && <div className={styles.overlay} onClick={() => setOpen(false)}></div>}
 
