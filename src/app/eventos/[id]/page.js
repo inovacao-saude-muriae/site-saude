@@ -76,37 +76,37 @@ export default function EventosDetalhes() {
     }
   };
 
-  const baixarComprovante = async () => {
-  const doc = new jsPDF("p", "mm", "a4");
+      const baixarComprovante = async () => {
+      const doc = new jsPDF("p", "mm", "a4");
 
-  // Carregar imagem do evento
-  const img = new Image();
-  img.src = evento.imgSrc;
+      // Carregar imagem como base64
+      const response = await fetch(evento.imgSrc);
+      const blob = await response.blob();
+      const reader = new FileReader();
 
-  img.onload = () => {
-    // largura total da página
-    doc.addImage(img, "PNG", 0, 0, 210, 60);
+      reader.onloadend = () => {
+        const base64data = reader.result;
 
-    // Texto abaixo da imagem
-    doc.setFontSize(16);
-    doc.text("Comprovante de Inscrição", 20, 80);
+        doc.addImage(base64data, "PNG", 0, 0, 210, 60);
 
-    doc.setFontSize(12);
-    doc.text(`Local: ${evento.local}`, 20, 95);
-    doc.text(`Nome: ${comprovante.nome}`, 20, 110);
-    doc.text(`Evento: ${comprovante.evento}`, 20, 125);
+        doc.setFontSize(16);
+        doc.text("Comprovante de Inscrição", 20, 80);
 
-    // Data do evento (do JSON)
-    doc.text(`Data do Evento: ${formatIsoDateToPtBr(evento.data)}`, 20, 140);
+        doc.setFontSize(12);
+        doc.text(`Local: ${evento.local}`, 20, 95);
+        doc.text(`Nome: ${comprovante.nome}`, 20, 110);
+        doc.text(`Evento: ${comprovante.evento}`, 20, 125);
+        doc.text(`Data do Evento: ${formatIsoDateToPtBr(evento.data)}`, 20, 140);
 
-    // Data da inscrição (local, sem UTC)
-    const dataInscricao = new Date();
-    const dataInscricaoFormatada = dataInscricao.toLocaleDateString("pt-BR");
-    doc.text(`Data da Inscrição: ${dataInscricaoFormatada}`, 20, 155);
+        const dataInscricao = new Date().toLocaleDateString("pt-BR");
+        doc.text(`Data da Inscrição: ${dataInscricao}`, 20, 155);
 
-    doc.save("comprovante-inscricao.pdf");
-  };
-};
+        doc.save("comprovante-inscricao.pdf");
+      };
+
+      reader.readAsDataURL(blob);
+    };
+
 
 
 
