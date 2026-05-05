@@ -66,5 +66,31 @@
             "/img/eventos/galeria/evento3/14.jpg",
             "/img/eventos/galeria/evento3/15.jpg"
         ]
+    },
+    {
+        "id": 4,
+        "titulo": "Simpósio COSEMS",
+        "resumo": "Encontro regional de saúde",
+        "descricao": "O simpósio reúne gestores e profissionais para debater políticas públicas e avanços na saúde.",
+        "imgSrc": "/img/eventos/simposio1.png",
+        "data": "2026-05-21",
+        "tipo": "simposio",
+         "local": "Centro de Convenções de Muriaé - MG",
+        "cronograma": [
+            { "hora": "9h", "programacao": "Credenciamento e café de boas-vindas" },
+            { "hora": "10h", "programacao": "Abertura - Composição da mesa: Marcos Guarino, Luiza Agostini, Felício Rodrigues Silva, Franklin Leandro Neto, Marcelo Luiz da Silva Pereira" },
+            { "hora": "10h30", "programacao": "Palestra - Dra. Ana Luiza Lamas de Barros (Tema: Regulação de Atendimentos de Urgência)" },
+            { "hora": "12h", "programacao": "Almoço" },
+            { "hora": "13h30", "programacao": "Abertura Oficial do COSEMS pelas Gerais" },
+            { "hora": "14h - 17h", "programacao": "Programação COSEMS pelas Gerais" }
+            ],
+        "formulario": [
+            { "label": "Nome completo", "name": "nome", "type": "text", "required": true },
+            { "label": "Municipio", "name": "municipio", "type": "text", "required": true },
+            { "label": "Cargo/função", "name": "cargo/funcao", "type": "text", "required": true },
+            { "label": "Email", "name": "email", "type": "text", "required": false },
+            { "label": "Telefone", "name": "telefone", "type": "text", "required": false }
+        ],
+        "scriptUrl": "https://script.google.com/macros/s/AKfycbwDyUaKoI6ptX85kKkVnOfBJJ_ikOkuteLY97fbFlsUDE3zxxDYWgem2iNNmrzrhm-C/exec"
     }
 ]

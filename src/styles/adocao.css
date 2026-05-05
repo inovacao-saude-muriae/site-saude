@@ -1,141 +1,140 @@
 .adocaoPage {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 20px;
+    max-width: 1200px;
+    padding: 20px;
 }
 .banner img {
-  width: 100%;
-  height: auto;   /* deixa a altura proporcional */
-  border-radius: 8px;
-  margin-bottom: 30px;
+    width: 100%;
+    height: auto;   /* deixa a altura proporcional */
+    border-radius: 8px;
+    margin-bottom: 30px;
 }
 /* Filtros centralizados */
 .filtros {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 20px; /* espaçamento entre filtros e botões extras */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px; /* espaçamento entre filtros e botões extras */
 }
 
 .filtros button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
-  border: none;
-  background: #f0f0f0;
-  color: #333;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: none;
+    background: #f0f0f0;
+    color: #333;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s ease;
 }
 
 .filtros button:hover {
-  background: #0077cc;
-  color: #fff;
+    background: #0077cc;
+    color: #fff;
 }
 
 .filtro-icon {
-  width: 20px;
-  height: 20px;
+    width: 20px;
+    height: 20px;
 }
 
 /* Botões extras (Pesquisar e Limpar) abaixo dos filtros */
 .filtros-extra {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin-bottom: 30px; /* espaçamento entre botões extras e os cards */
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 30px; /* espaçamento entre botões extras e os cards */
 }
 
 .filtros-extra button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
-  border: none;
-  background: #f0f0f0;
-  color: #333;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: none;
+    background: #f0f0f0;
+    color: #333;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s ease;
 }
 
 .filtros-extra button:hover {
-  background: #0077cc;
-  color: #fff;
+    background: #0077cc;
+    color: #fff;
 }
 
 /* Ícones dos filtros e botões extras */
 .filtro-icon {
-  width: 20px;
-  height: 20px;
+    width: 20px;
+    height: 20px;
 }
 
 
 /* Container dos cards responsivo */
 .CardsAnimais {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(1, 1fr); /* padrão: 1 coluna */
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(1, 1fr); /* padrão: 1 coluna */
 }
 
 /* Cada card */
 .cardAnimal {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  padding: 15px;
-  text-align: center;
-  transition: transform 0.2s ease;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s ease;
 }
 
 .cardAnimal:hover {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 
 .cardAnimal img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 6px;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
 }
 
 .cardAnimal h3 {
-  margin: 10px 0;
-  font-size: 18px;
+    margin: 10px 0;
+    font-size: 18px;
 }
 
 .cardAnimal button {
-  padding: 8px 12px;
-  background: var(--text-color-secondary);
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+    padding: 8px 12px;
+    background: var(--text-color-secondary);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .cardAnimal button:hover {
-  background: #218838;
+    background: #218838;
 }
 .pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 50px;
 }
 
 .pagination button {
-  padding: 8px 14px;
-  border: 1px solid #ccc;
-  background: var(--primary-color);
-  cursor: pointer;
-  border-radius: 8px;
-  color: #fff;
+    padding: 8px 14px;
+    border: 1px solid #ccc;
+    background: var(--primary-color);
+    cursor: pointer;
+    border-radius: 8px;
+    color: #fff;
 }
 
 .pagination button:disabled {
@@ -371,7 +370,13 @@
 }
 
 @media (max-width: 480px) {
-     .CardsAnimais {
+    .adocaoPage {
+      margin: auto;
+  }
+  .banner img{
+   display: none;
+  }
+  .CardsAnimais {
     grid-template-columns: repeat(1, 1fr);
   }
   .modal-content {
@@ -396,7 +401,10 @@
 
 /* Responsividade para modal */
 @media (max-width: 768px) {
-    .CardsAnimais {
+  .banner img{
+    display: none;
+  }
+  .CardsAnimais {
     grid-template-columns: repeat(2, 1fr);
   }
 

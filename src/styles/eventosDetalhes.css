@@ -1,6 +1,6 @@
 .evento-detalhe {
-  width: 100%;        /* ocupa toda a largura disponível */
-  max-width: 1000px;  /* só limita em telas grandes */
+  width: 100%;
+  max-width: 1000px;
   margin: 40px auto;
   padding: 0 20px;
 }
@@ -15,13 +15,6 @@
   width: 100%;
   height: auto;
   border-radius: 8px;
-  margin-bottom: 20px;
-}
-
-.evento-detalhe p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #444;
   margin-bottom: 20px;
 }
 
@@ -54,221 +47,203 @@
   background: #1e40af;
 }
 
-.evento-galeria {
-  margin-top: 30px;
-}
-
-.evento-galeria-foto {
+/* ===================== */
+/* Cronograma do Simpósio */
+/* ===================== */
+.cronograma {
   width: 100%;
-  height: 160px;
-  object-fit: cover;
+  border-collapse: collapse;
+  margin: 30px 0;
+  font-size: 1rem;
+  background: #fff;
   border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.2s;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.evento-galeria-foto:hover {
-  transform: scale(1.05);
+.cronograma th {
+  background: #2563eb;
+  color: #fff;
+  text-align: left;
+  padding: 12px 16px;
 }
 
-/* Swiper pagination abaixo do carousel */
-.swiper-pagination {
-  position: relative !important;
-  margin-top: 15px;
+.cronograma td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
 }
 
-/* Modal */
+.cronograma tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+.cronograma td:first-child {
+  font-weight: bold;
+  width: 120px;
+  color: #111827;
+}
+
+/* ===================== */
+/* Status do Evento       */
+/* ===================== */
+.evento-status {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.evento-status.encerrado { background: #dc2626; color: #fff; }
+.evento-status.andamento { background: #6b7280; color: #fff; }
+.evento-status.proximo   { background: #16a34a; color: #fff; }
+
+/* ===================== */
+/* Modal com blur         */
+/* ===================== */
 .modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.8);
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5); /* fundo escuro */
+  backdrop-filter: blur(5px);  /* aplica blur */
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 999;
 }
 
-.modal-content img {
-  max-width: 600px;
-  max-height: 70vh;
+.modal-content {
+  background: #fff;
+  padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-/* Botão X */
 .modal-close {
   position: absolute;
-  top: 20px;
-  right: 30px;
-  background: rgba(0,0,0,0.6);
+  top: 10px; right: 10px;
+  background: transparent;
   border: none;
-  font-size: 1.5rem;
-  color: #fff;
+  font-size: 1.2rem;
   cursor: pointer;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
+}
+
+/* ===================== */
+/* Formulário             */
+/* ===================== */
+.form-simposio {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-simposio label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-simposio input {
+  margin-top: 6px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.finalizar-btn {
+  margin-top: 20px;
+  background: #16a34a;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
   transition: background 0.2s;
 }
 
-.modal-close:hover {
-  background: rgba(255,255,255,0.2);
+.finalizar-btn:hover {
+  background: #15803d;
+}
+.buttonGreen {
+  background: #16a34a; /* verde */
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s;
+  margin-top: 15px;
+}
+
+.buttonGreen:hover {
+  background: #15803d; /* verde mais escuro */
+}
+.check-icon {
+  font-size: 3rem;
+  color: #16a34a; /* verde */
+  margin-bottom: 15px;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: aparecerCheck 0.6s ease forwards;
+}
+
+@keyframes aparecerCheck {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-20deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
 }
 
 /* ===================== */
-/* Responsividade        */
+/* Botão amarelo          */
 /* ===================== */
-
-/* 📱 Celular pequeno */
-@media screen and (max-width: 480px) {
-  .evento-detalhe h2 {
-    font-size: 1.4rem;
-  }
-  .evento-banner {
-    height: 140px;
-  }
-  .evento-galeria-foto {
-    height: 100px;
-  }
-  .modal-content img {
-    max-width: 90%;
-    max-height: 60vh;
-  }
+.buttonYellow {
+  background: #facc15;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
-/* 📱 Celular grande / Tablet pequeno */
-@media screen and (min-width: 481px) and (max-width: 768px) {
-  .evento-detalhe h2 {
-    font-size: 1.6rem;
-  }
-  .evento-banner {
-    height: 160px;
-  }
-  .evento-galeria-foto {
-    height: 120px;
-  }
-  .modal-content img {
-    max-width: 80%;
-    max-height: 65vh;
-  }
+.buttonYellow:hover {
+  background: #eab308;
 }
 
-/* 💻 Tablet grande / Notebook pequeno */
-@media screen and (min-width: 769px) and (max-width: 1233px) {
-  .evento-detalhe h2 {
-    font-size: 1.8rem;
+/* ===================== */
+/* Responsividade         */
+/* ===================== */
+@media screen and (max-width: 600px) {
+  .cronograma th, .cronograma td {
+    padding: 10px;
+    font-size: 0.9rem;
   }
-  .evento-banner {
-    height: 180px;
+  .cronograma td:first-child {
+    width: 90px;
   }
-  .evento-detalhe{
-    width: 700px;
-  }
- 
-  .evento-galeria-foto {
-    height: 140px;
-  }
-  .modal-content img {
-    max-width: 70%;
-    max-height: 65vh;
-  }
-}/* 📱 Celular pequeno */
-@media screen and (max-width: 480px) {
-  .evento-detalhe {
-    width: 100%;
-    padding: 0 10px;
-  }
-  .evento-detalhe h2 {
-    font-size: 1.4rem;
-  }
-  .evento-banner {
-    height: 140px;
-  }
-  .evento-galeria-foto {
-    height: 100px;
-  }
-  .modal-content img {
-    max-width: 90%;
-    max-height: 60vh;
-  }
-}
-
-/* 📱 Celular grande / Tablet pequeno */
-@media screen and (min-width: 481px) and (max-width: 768px) {
-  .evento-detalhe {
-    max-width: 750px;
-    padding: 0 15px;
-  }
-  .evento-detalhe h2 {
-    font-size: 1.6rem;
-  }
-  .evento-banner {
-    height: 160px;
-  }
-  .evento-galeria-foto {
-    height: 120px;
-  }
-  .modal-content img {
-    max-width: 85%;
-    max-height: 65vh;
-  }
-}
-
-/* 💻 Tablet grande / Notebook pequeno */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  .evento-detalhe {
-    
-    max-width: 500px;
-    padding: 0 20px;
-  }
-  .evento-detalhe h2 {
-    font-size: 1.8rem;
-  }
-  .evento-banner {
-    height: 180px;
-  }
-  .evento-galeria-foto {
-    height: 140px;
-  }
-  .modal-content img {
-    max-width: 75%;
-    max-height: 65vh;
-  }
-}
-
-/* 💻 Notebook / Desktop médio */
-@media screen and (min-width: 1025px) and (max-width: 1366px) {
-  .evento-detalhe {
-    padding: 0 20px;
-  }
-  .evento-detalhe h2 {
-    font-size: 2rem;
-  }
-  .evento-banner {
-    height: 200px;
-  }
-  .evento-galeria-foto {
-    height: 160px;
-  }
-}
-
-/* 🖥️ Desktop grande */
-@media screen and (min-width: 1367px) {
-  .evento-detalhe {
-    padding: 0 20px;
-  }
-  .evento-detalhe h2 {
-    font-size: 2.2rem;
-  }
-  .evento-banner {
-    height: 240px;
-  }
-  .evento-galeria-foto {
-    height: 180px;
+  .modal-content {
+    max-width: 95%;
   }
 }

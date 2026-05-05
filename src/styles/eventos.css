@@ -24,7 +24,9 @@
   background: #fafafa;
   text-decoration: none;
   color: #333;
-  transition: background 0.2s, transform 0.2s;
+  transition:
+    background 0.2s,
+    transform 0.2s;
 }
 
 .event-card:hover {
@@ -64,6 +66,36 @@
   font-size: 0.85rem;
   color: #555;
 }
+/* Botão vermelho de encerrado */
+/* Botão de status genérico */
+.evento-status {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+/* Vermelho para encerrado */
+.evento-status.encerrado {
+  background: #dc2626;
+  color: #fff;
+}
+
+/* Cinza para em andamento */
+.evento-status.andamento {
+  background: #6b7280;
+  color: #fff;
+}
+
+/* Verde para próximo */
+.evento-status.proximo {
+  background: #16a34a;
+  color: #fff;
+}
+
 
 /* Paginação igual ao noticias */
 .paginacao {
