@@ -206,11 +206,18 @@ export default function EventosDetalhes() {
             <form onSubmit={handleSubmit} className="form-simposio">
               {evento.formulario.map((campo, index) => (
                 <label key={index}>
-                  {campo.label} {campo.required && "*"}
+                  {campo.label} *
                   <input
                     name={campo.name}
-                    type={campo.type}
-                    required={campo.required}
+                    type={campo.name === "email" ? "email" : "text"} 
+                    required
+                    pattern={campo.name === "email" ? ".*@.*" : undefined}
+                    onInvalid={(e) => {
+                      if (campo.name === "email") {
+                        e.target.setCustomValidity("Este não é um email válido");
+                      }
+                    }}
+                    onInput={(e) => e.target.setCustomValidity("")} // limpa mensagem ao digitar
                   />
                 </label>
               ))}
@@ -221,6 +228,7 @@ export default function EventosDetalhes() {
           </div>
         </div>
       )}
+
 
       {/* Modal comprovante */}
       {step === 2 && comprovante && (
