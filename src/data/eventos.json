@@ -75,7 +75,7 @@
         "imgSrc": "/img/eventos/simposio1.png",
         "data": "2026-05-21",
         "tipo": "simposio",
-         "local": "Centro de Convenções de Muriaé - MG",
+         "local": "Teatro Belmira",
         "cronograma": [
             { "hora": "9h", "programacao": "Credenciamento e café de boas-vindas" },
             { "hora": "10h", "programacao": "Abertura - Composição da mesa: Marcos Guarino, Luiza Agostini, Felício Rodrigues Silva, Franklin Leandro Neto, Marcelo Luiz da Silva Pereira" },
