@@ -7,12 +7,10 @@ import eventosData from "../../../data/eventos.json";
 import "../../../styles/eventosDetalhes.css";
 import { formatIsoDateToPtBr } from "../../../lib/date";
 import Image from "next/image";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-
 import jsPDF from "jspdf";
 
 export default function EventosDetalhes() {
@@ -76,43 +74,45 @@ export default function EventosDetalhes() {
     }
   };
 
-      const baixarComprovante = async () => {
-      const doc = new jsPDF("p", "mm", "a4");
+  const baixarComprovante = async () => {
+    const doc = new jsPDF("p", "mm", "a4");
 
-      // Carregar imagem como base64
-      const response = await fetch(evento.imgSrc);
-      const blob = await response.blob();
-      const reader = new FileReader();
+    const response = await fetch(evento.imgSrc);
+    const blob = await response.blob();
+    const reader = new FileReader();
 
-      reader.onloadend = () => {
-        const base64data = reader.result;
+    reader.onloadend = () => {
+      const base64data = reader.result;
 
-        doc.addImage(base64data, "PNG", 0, 0, 210, 60);
+      doc.addImage(base64data, "PNG", 0, 0, 210, 60);
 
-        doc.setFontSize(16);
-        doc.text("Comprovante de Inscrição", 20, 80);
+      doc.setFontSize(16);
+      doc.text("Comprovante de Inscrição", 20, 80);
 
-        doc.setFontSize(12);
-        doc.text(`Local: ${evento.local}`, 20, 95);
-        doc.text(`Nome: ${comprovante.nome}`, 20, 110);
-        doc.text(`Evento: ${comprovante.evento}`, 20, 125);
-        doc.text(`Data do Evento: ${formatIsoDateToPtBr(evento.data)}`, 20, 140);
+      doc.setFontSize(12);
+      doc.text(`Local: ${evento.local || "—"}`, 20, 95);
+      doc.text(`Nome: ${comprovante.nome}`, 20, 110);
+      doc.text(`Evento: ${comprovante.evento}`, 20, 125);
+      doc.text(`Data do Evento: ${formatIsoDateToPtBr(evento.data)}`, 20, 140);
 
-        const dataInscricao = new Date().toLocaleDateString("pt-BR");
-        doc.text(`Data da Inscrição: ${dataInscricao}`, 20, 155);
+      const dataInscricao = new Date().toLocaleDateString("pt-BR");
+      doc.text(`Data da Inscrição: ${dataInscricao}`, 20, 155);
 
-        doc.save("comprovante-inscricao.pdf");
-      };
-
-      reader.readAsDataURL(blob);
+      doc.save("comprovante-inscricao.pdf");
     };
 
-
-
+    reader.readAsDataURL(blob);
+  };
 
   return (
     <article className="evento-detalhe">
-      <Image src={evento.imgSrc} alt={evento.titulo} width={1000} height={200} className="evento-banner"/>
+      <Image
+        src={evento.imgSrc}
+        alt={evento.titulo}
+        width={1000}
+        height={200}
+        className="evento-banner"
+      />
 
       <h2>{evento.titulo}</h2>
       <span className="evento-data">{formatIsoDateToPtBr(evento.data)}</span>
@@ -120,29 +120,76 @@ export default function EventosDetalhes() {
 
       <p>{evento.descricao}</p>
 
-      <h3>Cronograma</h3>
-        <table className="cronograma">
-          <thead>
-            <tr>
-              <th>Horário</th>
-              <th>Tema</th>
-              <th>Palestrante</th>
-            </tr>
-          </thead>
-          <tbody>
-            {evento.cronograma?.map((item, index) => (
-              <tr key={index}>
-                <td>{item.hora}</td>
-                <td>{item.tema}</td>
-                <td>{item.palestrante}</td>
+      {/* Cronograma só aparece se existir */}
+      {evento.cronograma && evento.cronograma.length > 0 && (
+        <>
+          <h3>Cronograma</h3>
+          <table className="cronograma">
+            <thead>
+              <tr>
+                <th>Horário</th>
+                <th>Tema</th>
+                <th>Palestrante</th>
               </tr>
+            </thead>
+            <tbody>
+              {evento.cronograma.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.hora}</td>
+                  <td>{item.tema}</td>
+                  <td>{item.palestrante}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
+      )}
+
+      {/* Galeria só aparece se existir */}
+      {evento.galeria && evento.galeria.length > 0 && (
+        <div className="evento-galeria">
+          <h3>Galeria</h3>
+          <Swiper
+            modules={[Pagination, Autoplay]}
+            spaceBetween={10}
+            slidesPerView={3}
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+          >
+            {evento.galeria.map((foto, index) => (
+              <SwiperSlide key={index}>
+                <Image
+                  src={foto}
+                  alt={`${evento.titulo} foto ${index + 1}`}
+                  width={250}   // largura da miniatura
+                  height={150}  // altura da miniatura
+                  className="evento-galeria-foto"
+                  onClick={() => setFotoSelecionadaIndex(index)}
+                />
+              </SwiperSlide>
             ))}
-          </tbody>
-        </table>
+          </Swiper>
 
+          {/* Modal para ampliar foto */}
+          {fotoSelecionadaIndex !== null && (
+            <div className="modal">
+              <button className="modal-close" onClick={fecharModal}>✕</button>
+              <div className="modal-content">
+                <Image
+                  src={evento.galeria[fotoSelecionadaIndex]}
+                  alt="Foto ampliada"
+                  width={800}
+                  height={500}
+                  className="foto-ampliada"
+                />
+              </div>
+            </div>
+          )}
+        </div>
+      )}
 
-      {/* Botão amarelo abaixo do cronograma */}
-      {status?.texto === "Próximo" && step === 0 && (
+      {/* Botão inscrição só aparece em simpósio */}
+      {evento.formulario && status?.texto === "Próximo" && step === 0 && (
         <div className="formulario-inscricao">
           <button onClick={() => setStep(1)} className="buttonYellow">
             Inscreva-se no simpósio
@@ -151,7 +198,7 @@ export default function EventosDetalhes() {
       )}
 
       {/* Modal formulário */}
-      {step === 1 && (
+      {step === 1 && evento.formulario && (
         <div className="modal">
           <div className="modal-content">
             <button className="modal-close" onClick={fecharModal}>✕</button>
@@ -190,7 +237,6 @@ export default function EventosDetalhes() {
             <button onClick={baixarComprovante} className="buttonGreen">
               Baixar Comprovante (PDF)
             </button>
-
           </div>
         </div>
       )}
