@@ -77,13 +77,20 @@
         "tipo": "simposio",
          "local": "Teatro Belmira",
         "cronograma": [
-            { "hora": "9h", "programacao": "Credenciamento e café de boas-vindas" },
-            { "hora": "10h", "programacao": "Abertura - Composição da mesa: Marcos Guarino, Luiza Agostini, Felício Rodrigues Silva, Franklin Leandro Neto, Marcelo Luiz da Silva Pereira" },
-            { "hora": "10h30", "programacao": "Palestra - Dra. Ana Luiza Lamas de Barros (Tema: Regulação de Atendimentos de Urgência)" },
-            { "hora": "12h", "programacao": "Almoço" },
-            { "hora": "13h30", "programacao": "Abertura Oficial do COSEMS pelas Gerais" },
-            { "hora": "14h - 17h", "programacao": "Programação COSEMS pelas Gerais" }
-            ],
+            { "hora": "08:30", "tema": "Boas-vindas (breakfast e credenciamento)", "palestrante": "" },
+  { "hora": "09:00", "tema": "Abertura - Composição da mesa", "palestrante": "" },
+  { "hora": "09:30", "tema": "Fluxos assistenciais a tratamentos em prestadores de Muriaé - Onde acessar os serviços?", "palestrante": "Cláudia Moreira – Diretora de Linhas de Cuidados" },
+  { "hora": "09:30", "tema": "Tecnologia como ferramenta de informação - Descubra Muriaé", "palestrante": "Jefinny Souza – Chefe de tecnologia da informação" },
+  { "hora": "09:30", "tema": "Fluxos de acesso GRS Ubá", "palestrante": "Wallace Dias Andre" },
+  { "hora": "10:00", "tema": "Mesa redonda - Da regulação à Judicialização: as formas de acesso aos serviços SUS", "palestrante": "Fabiana Erica de Souza – Coordenadora de Acesso à Serviços de Saúde da GRS Ubá" },
+  { "hora": "11:00", "tema": "Tempo para questionamentos da plateia", "palestrante": "" },
+  { "hora": "11:30", "tema": "Pausa para almoço", "palestrante": "" },
+  { "hora": "13:00", "tema": "Retorno do almoço", "palestrante": "" },
+  { "hora": "13:15", "tema": "Reabertura das apresentações", "palestrante": "Luiza Agostini de Andrade" },
+  { "hora": "13:30", "tema": "Contratos e PPI – direitos e desafios na gestão do SUS", "palestrante": "Márcia Moraes" },
+  { "hora": "15:00", "tema": "Debates e tira dúvidas", "palestrante": "Márcia Moraes e Luiza Agostini" },
+  { "hora": "16:00", "tema": "Encerramento Oficial", "palestrante": "" }   
+        ],
         "formulario": [
             { "label": "Nome completo", "name": "nome", "type": "text", "required": true },
             { "label": "Municipio", "name": "municipio", "type": "text", "required": true },

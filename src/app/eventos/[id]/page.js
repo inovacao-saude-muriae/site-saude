@@ -6,6 +6,7 @@ import Link from "next/link";
 import eventosData from "../../../data/eventos.json";
 import "../../../styles/eventosDetalhes.css";
 import { formatIsoDateToPtBr } from "../../../lib/date";
+import Image from "next/image";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
@@ -111,31 +112,34 @@ export default function EventosDetalhes() {
 
   return (
     <article className="evento-detalhe">
-      <img src={evento.imgSrc} alt={evento.titulo} className="evento-banner" />
+      <Image src={evento.imgSrc} alt={evento.titulo} width={1000} height={200} className="evento-banner"/>
+
       <h2>{evento.titulo}</h2>
       <span className="evento-data">{formatIsoDateToPtBr(evento.data)}</span>
       {status && <span className={status.classe}>{status.texto}</span>}
 
       <p>{evento.descricao}</p>
 
-      {/* Cronograma */}
       <h3>Cronograma</h3>
-      <table className="cronograma">
-        <thead>
-          <tr>
-            <th>Horário</th>
-            <th>Programação</th>
-          </tr>
-        </thead>
-        <tbody>
-          {evento.cronograma?.map((item, index) => (
-            <tr key={index}>
-              <td>{item.hora}</td>
-              <td>{item.programacao}</td>
+        <table className="cronograma">
+          <thead>
+            <tr>
+              <th>Horário</th>
+              <th>Tema</th>
+              <th>Palestrante</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {evento.cronograma?.map((item, index) => (
+              <tr key={index}>
+                <td>{item.hora}</td>
+                <td>{item.tema}</td>
+                <td>{item.palestrante}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
 
       {/* Botão amarelo abaixo do cronograma */}
       {status?.texto === "Próximo" && step === 0 && (
