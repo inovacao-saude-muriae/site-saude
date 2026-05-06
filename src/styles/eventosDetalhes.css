@@ -97,7 +97,7 @@
 }
 
 .evento-status.encerrado { background: #6b7280; color: #fff; }
-.evento-status.andamento { background: #dc2626; color: #fff; }
+.evento-status.andamento { background: #fdcc02; color: #fff; }
 .evento-status.proximo   { background: #16a34a; color: #fff; }
 
 /* ===================== */

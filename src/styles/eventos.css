@@ -80,13 +80,13 @@
 
 /* Vermelho para encerrado */
 .evento-status.encerrado {
-  background: #dc2626;
+  background: #6b7280;
   color: #fff;
 }
 
 /* Cinza para em andamento */
 .evento-status.andamento {
-  background: #6b7280;
+  background: #fdcc02;
   color: #fff;
 }
 
