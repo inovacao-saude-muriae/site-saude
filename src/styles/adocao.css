@@ -1,13 +1,10 @@
 .adocaoPage {
-    max-width: 1200px;
     padding: 20px;
 }
-.banner img {
-    width: 100%;
-    height: auto;   /* deixa a altura proporcional */
-    border-radius: 8px;
-    margin-bottom: 30px;
+.banner {
+  margin-bottom: 20px; /* separa do filtro */
 }
+
 /* Filtros centralizados */
 .filtros {
     display: flex;
@@ -398,7 +395,6 @@
   }
 }
 
-
 /* Responsividade para modal */
 @media (max-width: 768px) {
   .banner img{
@@ -407,22 +403,18 @@
   .CardsAnimais {
     grid-template-columns: repeat(1, 1fr);
   }
-
   .modal-content {
     width: 86%;
-   
-    }
+  }
   .modal-info {
     flex-direction: column;   /* imagem em cima, texto embaixo */
     align-items: center;
     text-align: center;
   }
-
   .modal-img {
     width: 50%;
     height: auto;
   }
-
   .adotar-btn {
     align-self: center;       /* botão centralizado */
   }
@@ -432,10 +424,9 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
 @media (min-width: 1440px) {
   .CardsAnimais {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import animais from "../../../../data/animais.json";
 import "../../../../styles/adocao.css";
+import Image from "next/image";
 
 export default function Page() {
   const [selectedFilter, setSelectedFilter] = useState(null);
@@ -13,7 +14,7 @@ export default function Page() {
   const [currentPage, setCurrentPage] = useState(1);
   const [isSending, setIsSending] = useState(false);
 
-  const petsPerPage = 12;
+  const petsPerPage = 15;
 
   // Aplica o filtro
   const filteredPets = filter
@@ -82,51 +83,58 @@ export default function Page() {
   return (
     <section className="adocaoPage">
       {/* Banner */}
-      <div className="banner">
-        <img src="/img/banner-paginas/Adote.jpg" alt="Banner Adoção" />
+      <div className="banner" style={{ position: "relative", width: "100%", height: "400px" }}>
+        <Image 
+          src="/img/banner-paginas/Adote.jpg" 
+          alt="Banner Adoção" 
+          width={1440} 
+          height={400} 
+          style={{ borderRadius: "8px", width: "100%", height: "auto" }} 
+          priority
+        />
       </div>
 
       {/* Filtros principais */}
       <div className="filtros">
         <button onClick={() => setSelectedFilter("cachorro")}>
-          <img src="/img/icon/dog.png" alt="Cachorro" className="filtro-icon" />
+          <Image src="/img/icon/dog.png" alt="Cachorro" className="filtro-icon" width={20} height={20} />
           Cachorro
         </button>
         <button onClick={() => setSelectedFilter("gato")}>
-          <img src="/img/icon/cat.png" alt="Gato" className="filtro-icon" />
+          <Image src="/img/icon/cat.png" alt="Gato" className="filtro-icon" width={20} height={20} />
           Gato
         </button>
         <button onClick={() => setSelectedFilter("filhote")}>
-          <img src="/img/icon/baby.png" alt="Filhote" className="filtro-icon" />
+          <Image src="/img/icon/baby.png" alt="Filhote" className="filtro-icon" width={20} height={20} />
           Filhote
         </button>
         <button onClick={() => setSelectedFilter("macho")}>
-          <img src="/img/icon/male.png" alt="Macho" className="filtro-icon" />
+          <Image src="/img/icon/male.png" alt="Macho" className="filtro-icon" width={20} height={20} />
           Macho
         </button>
         <button onClick={() => setSelectedFilter("femea")}>
-          <img src="/img/icon/female.png" alt="Fêmea" className="filtro-icon" />
+          <Image src="/img/icon/female.png" alt="Fêmea" className="filtro-icon" width={20} height={20} />
           Fêmea
         </button>
       </div>
 
       {/* Botões extras */}
-      <div className="filtros-extra">
-        <button onClick={() => setFilter(selectedFilter)}>
-          <img src="/img/icon/search.png" alt="Pesquisar" className="filtro-icon" />
-          Pesquisar
-        </button>
-        <button onClick={() => { setSelectedFilter(null); setFilter(null); }}>
-          <img src="/img/icon/clear.png" alt="Limpar" className="filtro-icon" />
-          Limpar
-        </button>
-      </div>
+        <div className="filtros-extra">
+          <button onClick={() => setFilter(selectedFilter)}>
+            <Image src="/img/icon/search.png" alt="Pesquisar" className="filtro-icon" width={20} height={20} />
+            Pesquisar
+          </button>
+          <button onClick={() => { setSelectedFilter(null); setFilter(null); }}>
+            <Image src="/img/icon/clear.png" alt="Limpar" className="filtro-icon" width={20} height={20} />
+            Limpar
+          </button>
+        </div>
 
       {/* Cards */}
       <div className="CardsAnimais">
         {currentPets.map((pet, index) => (
           <div key={`${pet.id}-${index}`} className="cardAnimal">
-            <img src={pet.foto} alt={pet.nome} />
+            <Image src={pet.foto} alt={pet.nome} width={300} height={180} />
             <h3>
               {pet.nome} {pet.sexo === "macho" ? "♂" : "♀"}
             </h3>
@@ -156,27 +164,28 @@ export default function Page() {
               ×
             </button>
 
-            {step === 1 && (
-              <div className="modal-body">
-                <div className="modal-info">
-                  <img src={selectedPet.foto} alt={selectedPet.nome} className="modal-img" />
-                  <div className="modal-text">
-                    <h2>
-                      {selectedPet.nome}{" "}
-                      {selectedPet.sexo === "macho" ? (
-                        <img src="/img/icon/male.png" alt="Macho" className="sexo-icon" />
-                      ) : (
-                        <img src="/img/icon/female.png" alt="Fêmea" className="sexo-icon" />
-                      )}
-                    </h2>
-                    <p>{selectedPet.descricao}</p>
+            {/* Modal */}
+              {step === 1 && (
+                <div className="modal-body">
+                  <div className="modal-info">
+                    <Image src={selectedPet.foto} alt={selectedPet.nome} className="modal-img" width={200} height={300} />
+                    <div className="modal-text">
+                      <h2>
+                        {selectedPet.nome}{" "}
+                        {selectedPet.sexo === "macho" ? (
+                          <Image src="/img/icon/male.png" alt="Macho" className="sexo-icon" width={20} height={20} />
+                        ) : (
+                          <Image src="/img/icon/female.png" alt="Fêmea" className="sexo-icon" width={20} height={20} />
+                        )}
+                      </h2>
+                      <p>{selectedPet.descricao}</p>
+                    </div>
                   </div>
+                  <button className="adotar-btn" onClick={() => setStep(2)}>
+                    Adotar
+                  </button>
                 </div>
-                <button className="adotar-btn" onClick={() => setStep(2)}>
-                  Adotar
-                </button>
-              </div>
-            )}
+              )}
 
             {step === 2 && (
               <div className="termo-adocao">
