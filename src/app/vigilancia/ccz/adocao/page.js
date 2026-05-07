@@ -83,15 +83,8 @@ export default function Page() {
   return (
     <section className="adocaoPage">
       {/* Banner */}
-      <div className="banner" style={{ position: "relative", width: "100%", height: "400px" }}>
-        <Image 
-          src="/img/banner-paginas/Adote.jpg" 
-          alt="Banner Adoção" 
-          width={1440} 
-          height={400} 
-          style={{ objectFit: "cover", borderRadius: "8px" }} 
-          priority
-        />
+      <div className="banner" style={{ position: "relative", width: "100%", height: "250px" }}>
+        <Image src="/img/banner-paginas/Adote.jpg" alt="Banner Adoção" width={1440} height={250} style={{ objectFit: "cover", borderRadius: "8px" }} priority />
       </div>
 
       {/* Filtros principais */}
@@ -136,7 +129,12 @@ export default function Page() {
           <div key={`${pet.id}-${index}`} className="cardAnimal">
             <Image src={pet.foto} alt={pet.nome} width={300} height={180} />
             <h3>
-              {pet.nome} {pet.sexo === "macho" ? "♂" : "♀"}
+              {pet.nome} 
+              {pet.sexo === "macho" ? (
+                <Image src="/img/icon/male.png" alt="Macho" className="sexo-icon" width={20} height={20} />
+                  ) : (
+                  <Image src="/img/icon/female.png" alt="Fêmea" className="sexo-icon" width={20} height={20} />
+              )}
             </h3>
             <button onClick={() => { setSelectedPet(pet); setStep(1); }}>
               Conheça o Pet
@@ -190,36 +188,33 @@ export default function Page() {
             {step === 2 && (
               <div className="termo-adocao">
                 <h3>Adoção CCZ – TERMO DE ADOÇÃO E GUARDA RESPONSÁVEL</h3>
-                <p>
-                  Ao adotar um animal, assumo a responsabilidade de garantir seu bem-estar físico e psicológico...
-                </p>
-                <label className="checkbox-termo">
-                  <input
-                    type="checkbox"
-                    checked={aceitouTermo}
-                    onChange={(e) => setAceitouTermo(e.target.checked)}
-                  />{" "}
-                  Li e aceito o termo de adoção
-                </label>
-                <button className="continuar-btn" disabled={!aceitouTermo} onClick={() => setStep(3)}>
-                  Continuar
-                </button>
+                  <p>
+                    Ao adotar um animal, assumo a responsabilidade de garantir seu bem-estar físico e psicológico...
+                  </p>
+                  <label className="checkbox-termo">
+                    <input
+                      type="checkbox"
+                      checked={aceitouTermo}
+                      onChange={(e) => setAceitouTermo(e.target.checked)}
+                    />{" "}
+                    Li e aceito o termo de adoção
+                  </label>
+                  <button className="continuar-btn" disabled={!aceitouTermo} onClick={() => setStep(3)}>Continuar</button>
               </div>
             )}
 
             {step === 3 && (
               <form onSubmit={handleSubmit} className="form-adocao">
                 <h3>Dados do Adotante</h3>
-                <label>Nome completo *<input name="nome" placeholder="Digite seu nome completo" required /></label>
-                <label>CPF *<input name="cpf" placeholder="Digite seu CPF" required /></label>
-                <label>Telefone (com DDD) *<input name="telefone" placeholder="Ex: (32) 99999-9999" required /></label>
-                <label>Rua *<input name="rua" placeholder="Digite sua rua" required /></label>
-                <label>Número *<input name="numero" placeholder="Número da residência" required /></label>
-                <label>Bairro *<input name="bairro" placeholder="Digite seu bairro" required /></label>
-                <label>Cidade *<input name="cidade" placeholder="Digite sua cidade" required /></label>
-                <button type="submit" className="finalizar-btn" disabled={isSending}>
-                  {isSending ? "Enviando..." : "Finalizar Adoção"}
-                </button>
+                  <label>Nome completo *<input name="nome" placeholder="Digite seu nome completo" required /></label>
+                  <label>CPF *<input name="cpf" placeholder="Digite seu CPF" required /></label>
+                  <label>Telefone (com DDD) *<input name="telefone" placeholder="Ex: (32) 99999-9999" required /></label>
+                  <label>Rua *<input name="rua" placeholder="Digite sua rua" required /></label>
+                  <label>Número *<input name="numero" placeholder="Número da residência" required /></label>
+                  <label>Bairro *<input name="bairro" placeholder="Digite seu bairro" required /></label>
+                  <label>Cidade *<input name="cidade" placeholder="Digite sua cidade" required /></label>
+                
+                  <button type="submit" className="finalizar-btn" disabled={isSending}> {isSending ? "Enviando..." : "Finalizar Adoção"}</button>
               </form>
             )}
 
