@@ -103,6 +103,10 @@
 .cardAnimal h3 {
     margin: 10px 0;
     font-size: 18px;
+    display: flex;              /* permite alinhar texto + ícone */
+    align-items: center;        /* centraliza verticalmente */
+    justify-content: center;    /* centraliza horizontalmente */
+    gap: 6px;                   /* espaço entre nome e ícone */
 }
 
 .cardAnimal button {
@@ -208,6 +212,7 @@
   vertical-align: middle;
   margin-left: 6px;
 }
+
 .modal-img {
   width: 200px;
   height: 300px;

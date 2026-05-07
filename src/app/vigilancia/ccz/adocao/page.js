@@ -89,7 +89,7 @@ export default function Page() {
           alt="Banner Adoção" 
           width={1440} 
           height={400} 
-          style={{ borderRadius: "8px", width: "100%", height: "auto" }} 
+          style={{ objectFit: "cover", borderRadius: "8px" }} 
           priority
         />
       </div>
