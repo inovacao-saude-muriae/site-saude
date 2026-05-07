@@ -6,55 +6,55 @@ import "../../../../styles/adocao.css";
 import Image from "next/image";
 
 export default function Page() {
-  const [selectedFilter, setSelectedFilter] = useState(null);
-  const [filter, setFilter] = useState(null);
-  const [selectedPet, setSelectedPet] = useState(null);
-  const [step, setStep] = useState(1);
-  const [aceitouTermo, setAceitouTermo] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [isSending, setIsSending] = useState(false);
+    const [selectedFilter, setSelectedFilter] = useState(null);
+    const [filter, setFilter] = useState(null);
+    const [selectedPet, setSelectedPet] = useState(null);
+    const [step, setStep] = useState(1);
+    const [aceitouTermo, setAceitouTermo] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [isSending, setIsSending] = useState(false);
 
-  const petsPerPage = 15;
+    const petsPerPage = 15;
 
-  // Aplica o filtro
-  const filteredPets = filter
-    ? animais.filter((p) => {
-        if (filter === "macho") return p.sexo === "macho";
-        if (filter === "femea") return p.sexo === "femea";
-        if (filter === "gato") return p.especie === "gato";
-        if (filter === "cachorro") return p.especie === "cachorro";
-        if (filter === "filhote") return p.filhote;
-        return false;
-      })
-    : animais;
+    // Aplica o filtro
+    const filteredPets = filter
+        ? animais.filter((p) => {
+            if (filter === "macho") return p.sexo === "macho";
+            if (filter === "femea") return p.sexo === "femea";
+            if (filter === "gato") return p.especie === "gato";
+            if (filter === "cachorro") return p.especie === "cachorro";
+            if (filter === "filhote") return p.filhote;
+            return false;
+        })
+        : animais;
 
-  const totalPages = Math.ceil(filteredPets.length / petsPerPage);
-  const startIndex = (currentPage - 1) * petsPerPage;
-  const currentPets = filteredPets.slice(startIndex, startIndex + petsPerPage);
+    const totalPages = Math.ceil(filteredPets.length / petsPerPage);
+    const startIndex = (currentPage - 1) * petsPerPage;
+    const currentPets = filteredPets.slice(startIndex, startIndex + petsPerPage);
 
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+    const handlePageChange = (page) => {
+        setCurrentPage(page);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!selectedPet || isSending) return;
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (!selectedPet || isSending) return;
 
-    setIsSending(true);
-    const form = e.target;
-    const formData = new FormData(form);
+        setIsSending(true);
+        const form = e.target;
+        const formData = new FormData(form);
 
-    // Criamos o payload explicitamente para garantir a ordem das colunas na planilha
-    const data = {
-      nome: formData.get("nome"),
-      cpf: formData.get("cpf"),
-      telefone: formData.get("telefone"),
-      rua: formData.get("rua"),
-      numero: formData.get("numero"),
-      bairro: formData.get("bairro"),
-      cidade: formData.get("cidade"),
-      animal: selectedPet.nome, // O animal será a última coluna (após a data gerada pelo Script)
+        // Criamos o payload explicitamente para garantir a ordem das colunas na planilha
+        const data = {
+        nome: formData.get("nome"),
+        cpf: formData.get("cpf"),
+        telefone: formData.get("telefone"),
+        rua: formData.get("rua"),
+        numero: formData.get("numero"),
+        bairro: formData.get("bairro"),
+        cidade: formData.get("cidade"),
+        animal: selectedPet.nome, // O animal será a última coluna (após a data gerada pelo Script)
     };
 
     try {
@@ -83,7 +83,7 @@ export default function Page() {
   return (
     <section className="adocaoPage">
       {/* Banner */}
-      <div className="banner" style={{ position: "relative", width: "100%", height: "250px" }}>
+      <div className="banner" style={{ position: "relative", width: "100%", height: "300px" }}>
         <Image src="/img/banner-paginas/Adote.jpg" alt="Banner Adoção" width={1440} height={250} style={{ objectFit: "cover", borderRadius: "8px" }} priority />
       </div>
 

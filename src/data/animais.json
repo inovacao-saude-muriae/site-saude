@@ -89,15 +89,6 @@
     "foto": "/img/animais/Cardosinha.jpeg"
   },
   {
-    "id": 11,
-    "nome": "Carlinha",
-    "especie": "Cachorro",
-    "sexo": "femea",
-    "filhote": "false",
-    "descricao": "",
-    "foto": "/img/animais/Carlinha.jpeg"
-  },
-  {
     "id": 12,
     "nome": "Chicó",
     "especie": "Cachorro",
@@ -105,15 +96,6 @@
     "filhote": "false",
     "descricao": "O Chicó é um SRD caramelo padrão, de porte médio, com cerca de 5 anos. Está castrado, vacinado, vermifugado e com a saúde em dia, pronto para viver uma nova fase ao lado de quem compreenda seu jeitinho. É um cão instável, que precisa de espaço e uma rotina tranquila para se sentir seguro. No CCZ desde 2025, ele aguarda por alguém que respeite seus limites e ofereça o ambiente ideal para que ele possa florescer. Se você tem um quintal, paciência e muito carinho para oferecer, o Chicó pode ser o companheiro que estava faltando na sua vida.",
     "foto": "/img/animais/Chicó.jpeg"
-  },
-  {
-    "id": 13,
-    "nome": "Cleo",
-    "especie": "Cachorro",
-    "sexo": "femea",
-    "filhote": "false",
-    "descricao": "",
-    "foto": "/img/animais/Cleo.jpeg"
   },
   {
     "id": 14,
@@ -175,7 +157,7 @@
     "especie": "Cachorro",
     "sexo": "femea",
     "filhote": "false",
-    "descricao": "",
+    "descricao": "Jaqueline é SRD mestiça com pitbul, porte médio, dócil, carinhosa, com bastante energia, castrada, vermifugada e vacinada, tem 3 anos e está no CCZ desde 2025",
     "foto": "/img/animais/Jaqueline.jpeg"
   },
   {
@@ -242,15 +224,6 @@
     "foto": "/img/animais/Manqueta.jpeg"
   },
   {
-    "id": 28,
-    "nome": "Maria",
-    "especie": "Cachorro",
-    "sexo": "femea",
-    "filhote": "false",
-    "descricao": "",
-    "foto": "/img/animais/Maria.jpeg"
-  },
-  {
     "id": 29,
     "nome": "Meg",
     "especie": "Cachorro",
@@ -285,15 +258,6 @@
     "filhote": "false",
     "descricao": "A Moana é uma SRD de porte pequeno, com apenas 3 meses, e já mostra que veio ao mundo para conquistar corações. Está no CCZ desde 2025, esperando por uma família que a acolha com responsabilidade e carinho. Ela é dócil, amorosa e muito carinhosa — perfeita para quem deseja acompanhar o crescimento de uma parceira leal desde os primeiros passos. Já está vacinada e vermifugada, pronta para começar uma nova história ao seu lado. Se você sonha em ter uma companheirinha para a vida toda, venha conhecer a Moana. Ela pode ser o início de uma linda jornada.",
     "foto": "/img/animais/Moana.jpeg"
-  },
-  {
-    "id": 33,
-    "nome": "Morceguinha",
-    "especie": "Cachorro",
-    "sexo": "femea",
-    "filhote": "false",
-    "descricao": "",
-    "foto": "/img/animais/Morceguinha.jpeg"
   },
   {
     "id": 34,
@@ -368,21 +332,12 @@
     "foto": "/img/animais/Tupam.jpeg"
   },
   {
-    "id": 42,
-    "nome": "Valente",
-    "especie": "Cachorro",
-    "sexo": "macho",
-    "filhote": "false",
-    "descricao": "",
-    "foto": "/img/animais/Valente.jpeg"
-  },
-  {
     "id": 43,
     "nome": "Ze",
     "especie": "Cachorro",
     "sexo": "macho",
     "filhote": "false",
-    "descricao": "",
+    "descricao": "Esse peludinho já está castrado, vacinado contra a raiva, com controle de ectoparasitas em dia e vermifugado — ou seja, prontinho para ser adotado com segurança e responsabilidade! Ele é dócil, carinhoso e brincalhão, o tipo de companheiro que transforma qualquer dia comum em uma aventura cheia de afeto. Se você está em busca de um amigo fiel, alegre e cheio de amor para dar, venha conhecê-lo. Ele pode ser o novo integrante da sua família!",
     "foto": "/img/animais/Ze.jpeg"
   },
   {
@@ -391,7 +346,7 @@
     "especie": "Cachorro",
     "sexo": "macho",
     "filhote": "false",
-    "descricao": "",
+    "descricao": "Esse SRD caramelo padrão, de porte médio, tem 5 anos e está no CCZ desde 2025, esperando por alguém que enxergue seu coração gigante. O Zé é dócil, brincalhão e muito companheiro — adora uma boa companhia, um momento de diversão e, claro, muito carinho. Já está castrado, vacinado e vermifugado, prontinho para ser acolhido com responsabilidade e afeto. Se você procura um amigo leal, divertido e cheio de amor pra dar, venha conhecer o Zé Grilo. Ele pode ser o parceiro ideal para completar sua família.",
     "foto": "/img/animais/Ze_Grilo.jpeg"
   }
 ]
