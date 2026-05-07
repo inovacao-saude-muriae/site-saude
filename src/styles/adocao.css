@@ -136,6 +136,34 @@
     width: 100%;
     position: relative;
 }
+.modal h2{
+    display: flex;
+    color: var(--text-color-primary);
+    flex-direction: row;
+    align-items: center;
+}
+/* Modal padrão (desktop) */
+.modal-info {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row; /* imagem à esquerda, texto à direita */
+    gap: 20px;
+}
+.sexo-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-left: 6px;
+}
+.modal-img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.modal-text {
+    flex: 1;
+}
 @keyframes fadeIn {
     from { opacity: 0; }
     to   { opacity: 1; }
@@ -159,31 +187,7 @@
     flex-direction: column; /* botão sempre abaixo */
     gap: 20px;
 }
-.modal h2{
-    color: var(--text-color-primary);
-}
-/* Modal padrão (desktop) */
-.modal-info {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    flex-direction: row; /* imagem à esquerda, texto à direita */
-}
-.sexo-icon {
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
-    margin-left: 6px;
-}
-.modal-img {
-    width: 200px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-.modal-text {
-    flex: 1;
-}
+
 /* Paginação */
 .pagination {
     display: flex;
