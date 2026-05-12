@@ -30,7 +30,7 @@ export default function UrologiaPage() {
       <div className="urologia-bloco">
         <h3>Fluxo</h3>
         <Image
-          src="/img/fluxos-assistenciais/urologia/fluxo.png"
+          src="public/img/fluxos-assistenciais/urologia/fluxo.png"
           alt="Fluxo Assistencial Urologia"
           width={800}
           height={600}
