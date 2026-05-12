@@ -1,12 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
-import "../../../styles/ressonancia.css"; // podemos reaproveitar o mesmo CSS
+import "../../../styles/ressonancia.css";
 
-export default function RessonanciafiaPage() {
-  const [zoomImage, setZoomImage] = useState(null);
-
+export default function RessonanciaPage() {
   return (
     <div className="ressonancia-container">
       {/* Título principal */}
@@ -25,54 +22,26 @@ export default function RessonanciafiaPage() {
       {/* Bloco Fluxo */}
       <div className="ressonancia-bloco">
         <h3>Fluxo</h3>
-        <div className="ressonancia-fluxo-img-wrapper">
-          <Image
-            src="/img/fluxos-assistenciais/ressonancia/fluxo.png"
-            alt="Fluxo Assistencial ressonancia"
-            width={800}
-            height={600}
-            className="ressonancia-fluxo-img"
-            onClick={() =>
-              setZoomImage(
-                "/img/fluxos-assistenciais/ressonancia/fluxo.png"
-              )
-            }
-          />
-        </div>
+        <Image
+          src="/img/fluxos-assistenciais/ressonancia/fluxo.png"
+          alt="Fluxo Assistencial Ressonância"
+          width={800}
+          height={600}
+          className="ressonancia-fluxo-img"
+        />
       </div>
 
       {/* Bloco Pactuação */}
       <div className="ressonancia-bloco">
         <h3>Pactuação</h3>
-        <div className="ressonancia-fluxo-img-wrapper">
-          <Image
-            src="/img/fluxos-assistenciais/ressonancia/pactuacao.png"
-            alt="Pactuação ressonancia"
-            width={800}
-            height={600}
-            className="ressonancia-fluxo-img"
-            onClick={() =>
-              setZoomImage(
-                "/img/fluxos-assistenciais/ressonancia/pactuacao.png"
-              )
-            }
-          />
-        </div>
+        <Image
+          src="/img/fluxos-assistenciais/ressonancia/pactuacao.png"
+          alt="Pactuação Ressonância"
+          width={800}
+          height={600}
+          className="ressonancia-fluxo-img"
+        />
       </div>
-
-      {/* Modal de Zoom */}
-      {zoomImage && (
-        <div className="ressonancia-modal" onClick={() => setZoomImage(null)}>
-          <div className="ressonancia-modal-img-wrapper">
-            <Image
-              src={zoomImage}
-              alt="Zoom"
-              fill
-              className="ressonancia-modal-img"
-            />
-          </div>
-        </div>
-      )}
     </div>
   );
 }

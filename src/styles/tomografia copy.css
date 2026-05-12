@@ -1,0 +1,83 @@
+.tomografia-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Título principal da página */
+.tomografia-titulo {
+    font-weight: bold;
+    text-align: center;
+    color: var(--text-color-secondary);
+    margin-bottom: 30px;
+    border-bottom: 3px solid var(--text-color-secondary);
+    padding-bottom: 10px;
+}
+
+/* Texto explicativo */
+.tomografia-texto {
+    text-align: justify;
+    color: #333;
+}
+
+/* Blocos internos (Fluxo e Pactuação) */
+.tomografia-bloco {
+    background: #f8f8f8;
+    border-radius: 6px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    padding: 15px;
+    display: flex;
+}
+
+.tomografia-bloco h3 {
+    font-size: 1.3rem;
+    color: #3b3b3b;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+/* Imagens clicáveis */
+.tomografia-fluxo-img-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.tomografia-fluxo-img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 6px;
+    cursor: zoom-in;
+}
+
+.tomografia-fluxo-img-wrapper:hover::after {
+  opacity: 1;
+}
+
+/* Modal de zoom */
+.tomografia-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+  z-index: 9999;
+}
+
+.tomografia-modal-img-wrapper {
+  position: relative;
+  width: 90%;
+  height: 90%;
+}
+
+.tomografia-modal-img {
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 0 20px #000;
+  padding: 20px;
+}

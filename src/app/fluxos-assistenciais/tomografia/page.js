@@ -1,16 +1,13 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
-import "../../../styles/tomografia.css"; // podemos reaproveitar o mesmo CSS
+import "../../../styles/tomografia.css";
 
-export default function TomografiafiaPage() {
-  const [zoomImage, setZoomImage] = useState(null);
-
+export default function TomografiaPage() {
   return (
     <div className="tomografia-container">
       {/* Título principal */}
-      <h1 className="tomografia-titulo">Ressonância</h1>
+      <h1 className="tomografia-titulo">Tomografia</h1>
 
       {/* Texto explicativo */}
       <p className="tomografia-texto">
@@ -26,54 +23,26 @@ export default function TomografiafiaPage() {
       {/* Bloco Fluxo */}
       <div className="tomografia-bloco">
         <h3>Fluxo</h3>
-        <div className="tomografia-fluxo-img-wrapper">
-          <Image
-            src="/img/fluxos-assistenciais/tomografia/fluxo.png"
-            alt="Fluxo Assistencial tomografia"
-            width={800}
-            height={600}
-            className="tomografia-fluxo-img"
-            onClick={() =>
-              setZoomImage(
-                "/img/fluxos-assistenciais/tomografia/fluxo.png"
-              )
-            }
-          />
-        </div>
+        <Image
+          src="/img/fluxos-assistenciais/tomografia/fluxo.png"
+          alt="Fluxo Assistencial Tomografia"
+          width={800}
+          height={600}
+          className="tomografia-fluxo-img"
+        />
       </div>
 
       {/* Bloco Pactuação */}
       <div className="tomografia-bloco">
         <h3>Pactuação</h3>
-        <div className="tomografia-fluxo-img-wrapper">
-          <Image
-            src="/img/fluxos-assistenciais/tomografia/pactuacao.png"
-            alt="Pactuação tomografia"
-            width={800}
-            height={600}
-            className="tomografia-fluxo-img"
-            onClick={() =>
-              setZoomImage(
-                "/img/fluxos-assistenciais/tomografia/pactuacao.png"
-              )
-            }
-          />
-        </div>
+        <Image
+          src="/img/fluxos-assistenciais/tomografia/pactuacao.png"
+          alt="Pactuação Tomografia"
+          width={800}
+          height={600}
+          className="tomografia-fluxo-img"
+        />
       </div>
-
-      {/* Modal de Zoom */}
-      {zoomImage && (
-        <div className="tomografia-modal" onClick={() => setZoomImage(null)}>
-          <div className="tomografia-modal-img-wrapper">
-            <Image
-              src={zoomImage}
-              alt="Zoom"
-              fill
-              className="tomografia-modal-img"
-            />
-          </div>
-        </div>
-      )}
     </div>
   );
 }

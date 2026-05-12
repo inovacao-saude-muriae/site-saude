@@ -32,8 +32,9 @@ export default function CirurgiaGeralPage() {
             <Image
             src="/img/fluxos-assistenciais/oftalmologia/pactuacao.png"
             alt="Pactuação Cirurgia Geral"
-            width={800}
-            height={600}
+            width={0} // não força tamanho fixo
+            height={200} // não força tamanho fixo
+            sizes="100vw" // ocupa largura disponível
             className="oftalmologia-pactuacao-img"
             onClick={() =>
                 setZoomImage("/img/fluxos-assistenciais/oftalmologia/pactuacao.png")

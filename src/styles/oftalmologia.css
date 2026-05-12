@@ -20,13 +20,13 @@
 }
 
 .oftalmologia-bloco {
-    display: flex;
+    background: #f8f8f8;
+    border-radius: 6px;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
     padding: 15px;
-    border-radius: 6px;
-    background: rgb(231, 231, 231);
+    display: flex;
 }
 
 .oftalmologia-bloco h3 {
@@ -37,13 +37,12 @@
 }
 
 .oftalmologia-fluxo-img {
-    display: block;
-    margin: 0 auto;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
     border-radius: 6px;
-    cursor: zoom-in;
-    max-width: 400px;   
-    width: 350px;        
-    height: auto;      
+    cursor: zoom-in;     
 }
 
 .oftalmologia-pactuacao-img {

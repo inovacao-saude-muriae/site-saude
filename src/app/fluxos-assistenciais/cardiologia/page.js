@@ -5,8 +5,31 @@ import Image from "next/image";
 import "../../../styles/cardiologia.css";
 
 export default function CardiologiaPage() {
-    const [selected, setSelected] = useState("Angioplastia");
-    const [zoomImage, setZoomImage] = useState(null);
+  const [selected, setSelected] = useState("Angioplastia");
+  const [zoomImage, setZoomImage] = useState(null);
+
+  // estados para zoom/pan
+  const [scale, setScale] = useState(1);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [dragging, setDragging] = useState(false);
+  const [start, setStart] = useState({ x: 0, y: 0 });
+
+  const handleWheel = (e) => {
+    e.preventDefault();
+    setScale((prev) => Math.min(Math.max(prev + e.deltaY * -0.001, 1), 5));
+  };
+
+  const handleMouseDown = (e) => {
+    setDragging(true);
+    setStart({ x: e.clientX - position.x, y: e.clientY - position.y });
+  };
+
+  const handleMouseMove = (e) => {
+    if (!dragging) return;
+    setPosition({ x: e.clientX - start.x, y: e.clientY - start.y });
+  };
+
+  const handleMouseUp = () => setDragging(false);
 
     const conteudos = {
         Angioplastia: {
@@ -26,8 +49,9 @@ export default function CardiologiaPage() {
                     <Image
                     src="/img/fluxos-assistenciais/cardiologia/angioplastia/fluxo.png"
                     alt="Fluxo Assistencial Angioplastia"
-                    width={800}
-                    height={600}
+                    width={1081} // não força tamanho fixo
+                    height={1241} // não força tamanho fixo
+                    sizes="100vw" // ocupa largura disponível
                     className="cardiologia-fluxo-img"
                     onClick={() =>
                         setZoomImage(
@@ -91,10 +115,12 @@ export default function CardiologiaPage() {
                     <h3>Fluxo</h3>
                     <Image
                         src="/img/fluxos-assistenciais/cardiologia/cateterismo/fluxo.png"
-                        alt="Fluxo Assistencial Angioplastia"
-                        width={800}
-                        height={600}
+                        alt="Fluxo Assistencial Cateterismo"
+                        width={761} // não força tamanho fixo
+                        height={756} // não força tamanho fixo
+                        sizes="100vw" // ocupa largura disponível
                         className="cardiologia-fluxo-img"
+                        style={{ width: "auto", height: "auto", maxWidth: "100%", objectFit: "contain" }}
                         onClick={() => setZoomImage("/img/fluxos-assistenciais/cardiologia/cateterismo/fluxo.png")}
                     />
                 </div>
@@ -130,8 +156,9 @@ export default function CardiologiaPage() {
                     <Image
                         src="/img/fluxos-assistenciais/cardiologia/cirurgia/fluxo.png"
                         alt="Fluxo Assistencial Angioplastia"
-                        width={800}
-                        height={600}
+                        width={1081} // não força tamanho fixo
+                        height={1382} // não força tamanho fixo
+                        sizes="100vw" // ocupa largura disponível
                         className="cardiologia-fluxo-img"
                         onClick={() => setZoomImage("img/fluxos-assistenciais/cardiologia/cirurgia/fluxo.png")}
                     />
@@ -167,8 +194,9 @@ export default function CardiologiaPage() {
                     <Image
                         src="/img/fluxos-assistenciais/cardiologia/eletrofisiologia/fluxo.png"
                         alt="Fluxo Assistencial Angioplastia"
-                        width={800}
-                        height={600}
+                        width={836} // não força tamanho fixo
+                        height={1332} // não força tamanho fixo
+                        sizes="100vw" // ocupa largura disponível
                         className="cardiologia-fluxo-img"
                         onClick={() => setZoomImage("img/fluxos-assistenciais/cardiologia/eletrofisiologia/fluxo.png")}
                     />
@@ -196,15 +224,17 @@ export default function CardiologiaPage() {
       <h1 className="cardiologia-titulo">Cardiologia</h1>
 
       <div className="cardiologia-botoes">
-            {botoes.map((btn) => (
-            <button
-                key={btn}
-                className="cardiologia-botao"
-                onClick={() => setSelected(btn)}
-            >
-                {btn}
-            </button>
-            ))}
+        {botoes.map((btn) => (
+          <button
+            key={btn}
+            className={`cardiologia-botao ${
+              selected === btn ? "cardiologia-botao-ativo" : ""
+            }`}
+            onClick={() => setSelected(btn)}
+          >
+            {btn}
+          </button>
+        ))}
       </div>
 
       {selected && (
@@ -217,12 +247,28 @@ export default function CardiologiaPage() {
 
       {zoomImage && (
         <div className="cardiologia-modal" onClick={() => setZoomImage(null)}>
-          <div className="cardiologia-modal-img-wrapper">
-            <Image
-              src={zoomImage}
+          <div
+            className="cardiologia-modal-img-wrapper"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="cardiologia-modal-close"
+              onClick={() => setZoomImage(null)}
+            >
+              ✕
+            </button>
+            <Image              
+            src={zoomImage}
               alt="Zoom"
-              fill
               className="cardiologia-modal-img"
+              style={{
+                transform: `translate(${position.x}px, ${position.y}px) scale(${scale})`,
+                cursor: dragging ? "grabbing" : "grab",
+              }}
+              onWheel={handleWheel}
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
             />
           </div>
         </div>

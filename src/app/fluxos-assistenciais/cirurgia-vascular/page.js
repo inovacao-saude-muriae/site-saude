@@ -3,11 +3,9 @@
 import { useState } from "react";
 import Image from "next/image";
 import "../../../styles/cirurgiaVascular.css";
-import { label } from "framer-motion/client";
 
 export default function CirurgiaVascularPage() {
   const [selected, setSelected] = useState("AparelhoCirculatorio");
-  const [zoomImage, setZoomImage] = useState(null);
 
   const conteudos = {
     AparelhoCirculatorio: {
@@ -22,38 +20,23 @@ export default function CirurgiaVascularPage() {
         <div className="cirurgia-vascular-fluxo">
           <div className="cirurgia-vascular-bloco">
             <h3>Fluxo</h3>
-            <div className="cirurgia-vascular-fluxo-img-wrapper">
-              <Image
-                src="/img/fluxos-assistenciais/cirurgia-vascular/aparelhoCirculatorio/fluxo.png"
-                alt="Fluxo Assistencial Angioplastia"
-                width={800}
-                height={600}
-                className="cirurgia-vascular-fluxo-img"
-                onClick={() =>
-                  setZoomImage(
-                    "/img/fluxos-assistenciais/cirurgia-vascular/aparelhoCirculatorio/fluxo.png",
-                  )
-                }
-              />
-            </div>
+            <Image
+              src="/img/fluxos-assistenciais/cirurgia-vascular/aparelhoCirculatorio/fluxo.png"
+              alt="Fluxo Assistencial Angioplastia"
+              width={800}
+              height={600}
+              className="cirurgia-vascular-fluxo-img"
+            />
           </div>
-
           <div className="cirurgia-vascular-bloco">
             <h3>Pactuação</h3>
-            <div className="cirurgia-vascular-fluxo-img-wrapper">
-              <Image
-                src="/img/fluxos-assistenciais/cirurgia-vascular/aparelhoCirculatorio/pactuacao.png"
-                alt="Pactuação Endovascular"
-                width={800}
-                height={600}
-                className="cirurgia-vascular-pactuacao-img"
-                onClick={() =>
-                  setZoomImage(
-                    "/img/fluxos-assistenciais/cirurgia-vascular/aparelhoCirculatorio/pactuacao.png",
-                  )
-                }
-              />
-            </div>
+            <Image
+              src="/img/fluxos-assistenciais/cirurgia-vascular/aparelhoCirculatorio/pactuacao.png"
+              alt="Pactuação Endovascular"
+              width={800}
+              height={600}
+              className="cirurgia-vascular-pactuacao-img"
+            />
           </div>
         </div>
       ),
@@ -77,26 +60,16 @@ export default function CirurgiaVascularPage() {
               width={800}
               height={600}
               className="cirurgia-vascular-fluxo-img"
-              onClick={() =>
-                setZoomImage(
-                  "/img/fluxos-assistenciais/cirurgia-vascular/varizes/fluxo.png",
-                )
-              }
             />
           </div>
           <div className="cirurgia-vascular-bloco">
             <h3>Pactuação</h3>
             <Image
               src="/img/fluxos-assistenciais/cirurgia-vascular/varizes/pactuacao.png"
-              alt="Fluxo Assistencial Varizes"
+              alt="Pactuação Varizes"
               width={800}
               height={600}
               className="cirurgia-vascular-pactuacao-img"
-              onClick={() =>
-                setZoomImage(
-                  "/img/fluxos-assistenciais/cirurgia-vascular/varizes/pactuacao.png",
-                )
-              }
             />
           </div>
         </div>
@@ -129,22 +102,6 @@ export default function CirurgiaVascularPage() {
           </h2>
           <p className="cirurgia-vascular-texto">{conteudos[selected].texto}</p>
           {conteudos[selected].fluxo}
-        </div>
-      )}
-
-      {zoomImage && (
-        <div
-          className="cirurgia-vascular-modal"
-          onClick={() => setZoomImage(null)}
-        >
-          <div className="cirurgia-vascular-modal-img-wrapper">
-            <Image
-              src={zoomImage}
-              alt="Zoom"
-              fill
-              className="cirurgia-vascular-modal-img"
-            />
-          </div>
         </div>
       )}
     </div>

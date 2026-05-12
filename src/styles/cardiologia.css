@@ -4,18 +4,26 @@
   padding: 20px;
 }
 
-/* Título principal da página */
-.cardiologia-titulo {
-    font-size: 2.2rem;
-    font-weight: bold;
-    text-align: center;
-    color: var(--text-color-secondary);
-    margin-bottom: 30px;
-    border-bottom: 3px solid var(--text-color-secondary);
-    padding-bottom: 10px;
+.cardiologia-fluxo-img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+  cursor: zoom-in;
 }
 
-/* Título da seção selecionada (ex: Angioplastia) */
+/* -------------------- TÍTULOS -------------------- */
+.cardiologia-titulo {
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--text-color-secondary);
+  margin-bottom: 30px;
+  border-bottom: 3px solid var(--text-color-secondary);
+  padding-bottom: 10px;
+}
+
 .cardiologia-subtitulo {
   font-size: 1.8rem;
   font-weight: bold;
@@ -25,7 +33,6 @@
   padding-left: 12px;
 }
 
-/* Subtítulos internos (Fluxo, Pactuação) */
 .cardiologia-bloco h3 {
   font-size: 1.3rem;
   color: #3b3b3b;
@@ -38,6 +45,7 @@
   text-align: justify;
 }
 
+/* -------------------- BOTÕES -------------------- */
 .cardiologia-botoes {
   display: flex;
   flex-wrap: wrap;
@@ -73,6 +81,7 @@
   margin-top: 20px;
 }
 
+/* -------------------- FLUXO -------------------- */
 .cardiologia-fluxo {
   margin-top: 15px;
 }
@@ -85,14 +94,14 @@
 .cardiologia-fluxo-img {
   max-width: 100%;
   border-radius: 6px;
-  cursor: zoom-in; /* já mostra o cursor de lupa */
+  cursor: zoom-in;
 }
 
-/* Só aparece ao passar o mouse */
 .cardiologia-fluxo-img-wrapper:hover::after {
   opacity: 1;
 }
 
+/* -------------------- MODAL -------------------- */
 .cardiologia-modal {
   position: fixed;
   inset: 0;
@@ -100,7 +109,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: zoom-out;
   z-index: 9999;
 }
 
@@ -108,20 +116,53 @@
   position: relative;
   width: 90%;
   height: 90%;
+  overflow: hidden; /* necessário para pan/zoom */
 }
 
+/* Botão X */
+.cardiologia-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  font-size: 1.4rem;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: background 0.3s ease;
+  z-index: 10000;
+}
+
+.cardiologia-modal-close:hover {
+  background: #cc0000;
+}
+
+/* Imagem com zoom/pan */
 .cardiologia-modal-img {
+  max-width: none; /* permite expandir além do container */
+  max-height: none;
   object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 0 20px #000;
   padding: 20px;
+  cursor: grab;
+  transition: transform 0.2s ease;
 }
 
+/* -------------------- BLOCO -------------------- */
 .cardiologia-bloco {
-    margin-top: 20px;
-    padding: 15px;
-    border-radius: 6px;
-    background: rgb(231, 231, 231);
+  background: #f8f8f8;
+  border-radius: 6px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding: 15px;
+  display: flex;
 }
 
 .cardiologia-bloco h3 {
@@ -133,8 +174,6 @@
 }
 
 /* -------------------- RESPONSIVIDADE -------------------- */
-
-/* Telas pequenas (até 480px) */
 @media screen and (max-width: 480px) {
   .cardiologia-container {
     padding: 10px;
@@ -164,7 +203,6 @@
     height: 70%;
   }
 
-  /* Em mobile não existe hover, então mostra sempre a legenda */
   .cardiologia-fluxo-img-wrapper::after {
     opacity: 1;
     position: static;
@@ -176,7 +214,6 @@
   }
 }
 
-/* Telas médias (481px a 768px) */
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .cardiologia-container {
     padding: 15px;
@@ -202,7 +239,6 @@
   }
 }
 
-/* Telas grandes (769px a 1024px) */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .cardiologia-container {
     max-width: 95%;
@@ -223,7 +259,6 @@
   }
 }
 
-/* Telas extra grandes (1025px a 1366px) */
 @media screen and (min-width: 1025px) and (max-width: 1366px) {
   .cardiologia-container {
     max-width: 1100px;

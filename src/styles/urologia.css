@@ -6,72 +6,43 @@
 
 /* Título principal da página */
 .urologia-titulo {
-    font-weight: bold;
-    text-align: center;
-    color: var(--text-color-secondary);
-    margin-bottom: 30px;
-    border-bottom: 3px solid var(--text-color-secondary);
-    padding-bottom: 10px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--text-color-secondary);
+  margin-bottom: 30px;
+  border-bottom: 3px solid var(--text-color-secondary);
+  padding-bottom: 10px;
 }
 
 /* Texto explicativo */
 .urologia-texto {
-    text-align: justify;
-    color: #333;
+  text-align: justify;
+  color: #333;
 }
 
 /* Blocos internos (Fluxo e Pactuação) */
 .urologia-bloco {
-    margin-top: 20px;
-    padding: 15px;
-    border-radius: 6px;
-    background: rgb(231, 231, 231);
+  background: #f8f8f8;
+  border-radius: 6px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding: 15px;
+  display: flex;
 }
 
 .urologia-bloco h3 {
-    font-size: 1.3rem;
-    color: #3b3b3b;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
+  font-size: 1.3rem;
+  color: #3b3b3b;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
 }
 
-/* Imagens clicáveis */
-.urologia-fluxo-img-wrapper {
-    position: relative;
-    display: inline-block;
-}
-
+/* Imagens */
 .urologia-fluxo-img {
-    max-width: 100%;
-    border-radius: 6px;
-    cursor: zoom-in;
-}
-
-.urologia-fluxo-img-wrapper:hover::after {
-  opacity: 1;
-}
-
-/* Modal de zoom */
-.urologia-modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(255,255,255,0.95);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: zoom-out;
-  z-index: 9999;
-}
-
-.urologia-modal-img-wrapper {
-  position: relative;
-  width: 90%;
-  height: 90%;
-}
-
-.urologia-modal-img {
-  object-fit: contain;
-  border-radius: 8px;
-  box-shadow: 0 0 20px #000;
-  padding: 20px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 6px;
+  max-width: 100%;
+  height: auto;
 }
