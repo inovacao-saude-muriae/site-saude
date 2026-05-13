@@ -8,8 +8,7 @@ export default function UrologiaPage() {
     <div className="urologia-container">
       {/* Título principal */}
       <h1 className="urologia-titulo">Urologia</h1>
-
-      {/* Texto explicativo */}
+      
       <p className="urologia-texto">
         Cálculo renal: prevenir é o melhor remédio! O cálculo renal, conhecido
         como pedra nos rins, é uma das doenças urológicas mais comuns e pode
@@ -32,7 +31,7 @@ export default function UrologiaPage() {
         <Image
           src="/img/fluxos-assistenciais/urologia/fluxo.png"
           alt="Fluxo Assistencial Urologia"
-          width={800}
+          width={820}
           height={600}
           className="urologia-fluxo-img"
         />
