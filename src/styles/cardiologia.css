@@ -4,13 +4,13 @@
   padding: 20px;
 }
 
+/* -------------------- IMAGEM -------------------- */
 .cardiologia-fluxo-img {
   width: auto;
   height: auto;
   max-width: 100%;
   object-fit: contain;
   border-radius: 6px;
-  cursor: zoom-in;
 }
 
 /* -------------------- TÍTULOS -------------------- */
@@ -91,69 +91,6 @@
   display: inline-block;
 }
 
-.cardiologia-fluxo-img {
-  max-width: 100%;
-  border-radius: 6px;
-  cursor: zoom-in;
-}
-
-.cardiologia-fluxo-img-wrapper:hover::after {
-  opacity: 1;
-}
-
-/* -------------------- MODAL -------------------- */
-.cardiologia-modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.95);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.cardiologia-modal-img-wrapper {
-  position: relative;
-  width: 90%;
-  height: 90%;
-  overflow: hidden; /* necessário para pan/zoom */
-}
-
-/* Botão X */
-.cardiologia-modal-close {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  background: #ff4d4d;
-  color: white;
-  border: none;
-  font-size: 1.4rem;
-  font-weight: bold;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  transition: background 0.3s ease;
-  z-index: 10000;
-}
-
-.cardiologia-modal-close:hover {
-  background: #cc0000;
-}
-
-/* Imagem com zoom/pan */
-.cardiologia-modal-img {
-  max-width: none; /* permite expandir além do container */
-  max-height: none;
-  object-fit: contain;
-  border-radius: 8px;
-  box-shadow: 0 0 20px #000;
-  padding: 20px;
-  cursor: grab;
-  transition: transform 0.2s ease;
-}
-
 /* -------------------- BLOCO -------------------- */
 .cardiologia-bloco {
   background: #f8f8f8;
@@ -197,21 +134,6 @@
   .cardiologia-texto {
     font-size: 0.9rem;
   }
-
-  .cardiologia-modal-img-wrapper {
-    width: 100%;
-    height: 70%;
-  }
-
-  .cardiologia-fluxo-img-wrapper::after {
-    opacity: 1;
-    position: static;
-    display: block;
-    margin-top: 5px;
-    background: none;
-    color: #333;
-    text-align: center;
-  }
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
@@ -232,11 +154,6 @@
   .cardiologia-texto {
     font-size: 1rem;
   }
-
-  .cardiologia-modal-img-wrapper {
-    width: 95%;
-    height: 80%;
-  }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
@@ -252,11 +169,6 @@
   .cardiologia-texto {
     font-size: 1.05rem;
   }
-
-  .cardiologia-modal-img-wrapper {
-    width: 85%;
-    height: 85%;
-  }
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1366px) {
@@ -271,10 +183,5 @@
 
   .cardiologia-texto {
     font-size: 1.1rem;
-  }
-
-  .cardiologia-modal-img-wrapper {
-    width: 80%;
-    height: 85%;
   }
 }

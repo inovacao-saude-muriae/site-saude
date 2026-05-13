@@ -6,30 +6,6 @@ import "../../../styles/cardiologia.css";
 
 export default function CardiologiaPage() {
   const [selected, setSelected] = useState("Angioplastia");
-  const [zoomImage, setZoomImage] = useState(null);
-
-  // estados para zoom/pan
-  const [scale, setScale] = useState(1);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [dragging, setDragging] = useState(false);
-  const [start, setStart] = useState({ x: 0, y: 0 });
-
-  const handleWheel = (e) => {
-    e.preventDefault();
-    setScale((prev) => Math.min(Math.max(prev + e.deltaY * -0.001, 1), 5));
-  };
-
-  const handleMouseDown = (e) => {
-    setDragging(true);
-    setStart({ x: e.clientX - position.x, y: e.clientY - position.y });
-  };
-
-  const handleMouseMove = (e) => {
-    if (!dragging) return;
-    setPosition({ x: e.clientX - start.x, y: e.clientY - start.y });
-  };
-
-  const handleMouseUp = () => setDragging(false);
 
     const conteudos = {
         Angioplastia: {
@@ -245,34 +221,6 @@ export default function CardiologiaPage() {
         </div>
       )}
 
-      {zoomImage && (
-        <div className="cardiologia-modal" onClick={() => setZoomImage(null)}>
-          <div
-            className="cardiologia-modal-img-wrapper"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              className="cardiologia-modal-close"
-              onClick={() => setZoomImage(null)}
-            >
-              ✕
-            </button>
-            <Image              
-            src={zoomImage}
-              alt="Zoom"
-              className="cardiologia-modal-img"
-              style={{
-                transform: `translate(${position.x}px, ${position.y}px) scale(${scale})`,
-                cursor: dragging ? "grabbing" : "grab",
-              }}
-              onWheel={handleWheel}
-              onMouseDown={handleMouseDown}
-              onMouseMove={handleMouseMove}
-              onMouseUp={handleMouseUp}
-            />
-          </div>
-        </div>
-      )}
     </div>
   );
 }
