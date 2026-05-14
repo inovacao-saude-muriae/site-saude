@@ -20,7 +20,7 @@ export default function Footer() {
           <ul>
             <li><Link href="/">Página Inicial</Link></li>
             <li><Link href="/eventos">Eventos</Link></li>
-            <li><Link href="/servicos/atendimento-domiciliar">Atendimento Domiciliar</Link></li>
+            <li><Link href="/noticias">Notícias</Link></li>
             <li><Link href="/contatos/ouvidoria">Ouvidoria</Link></li>
           </ul>
         </div>
