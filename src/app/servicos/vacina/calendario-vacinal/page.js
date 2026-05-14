@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image"; // Importação do componente de imagem do Next.js
 import { Collapse } from "antd";
 import "../../../../styles/calendarioVacinal.css";
 import calendario from "../../../../data/calendario.json";
@@ -9,10 +10,14 @@ export default function CalendarioVacinal() {
   const [selecionado, setSelecionado] = useState("Gestante");
 
   const textosIntro = {
-    Gestante: "Tomar as vacinas recomendadas durante a gravidez ajuda a proteger você e seu bebê de doenças potencialmente graves.",
-    Criança: "A vacinação é a melhor maneira de proteger a criança contra doenças imunopreveníveis. O Calendário Nacional de Vacinação pode ajudar a descobrir quais vacinas seu filho precisa e quando. As vacinas disponibilizadas no Sistema Único de Saúde – SUS são seguras e de vital importância para proteção contra algumas doenças graves e muitas vezes fatais.",
-    Adolescente: "A vacinação é a melhor maneira de proteger o adolescente contra doenças imunopreveniveis. O Calendário Nacional de Vacinação pode ajudar a descobrir quais vacinas esse público precisa e quando. As vacinas disponibilizadas no Sistema Único de Saúde - SUS são seguras e de vital importância para proteção contra algumas doenças graves e muitas vezes fatais.",
-    Adulto: "Adultos e idosos também necessitam da proteção conferida pelas vacinas. Por isso, é importante que você procure o posto de vacinação mais próximo e verifique se a sua caderneta de vacinação está atualizada, conforme as indicações do Calendário Nacional de Vacinação do Adulto e Idoso."
+    Gestante:
+      "Tomar as vacinas recomendadas durante a gravidez ajuda a proteger você e seu bebê de doenças potencialmente graves.",
+    Criança:
+      "A vacinação é a melhor maneira de proteger a criança contra doenças imunopreveníveis. O Calendário Nacional de Vacinação pode ajudar a descobrir quais vacinas seu filho precisa e quando. As vacinas disponibilizadas no Sistema Único de Saúde – SUS são seguras e de vital importância para proteção contra algumas doenças graves e muitas vezes fatais.",
+    Adolescente:
+      "A vacinação é a melhor maneira de proteger o adolescente contra doenças imunopreveniveis. O Calendário Nacional de Vacinação pode ajudar a descobrir quais vacinas esse público precisa e quando. As vacinas disponibilizadas no Sistema Único de Saúde - SUS são seguras e de vital importância para proteção contra algumas doenças graves e muitas vezes fatais.",
+    Adulto:
+      "Adultos e idosos também necessitam da proteção conferida pelas vacinas. Por isso, é importante que você procure o posto de vacinação mais próximo e verifique se a sua caderneta de vacinação está atualizada, conforme as indicações do Calendário Nacional de Vacinação do Adulto e Idoso.",
   };
 
   return (
@@ -20,8 +25,9 @@ export default function CalendarioVacinal() {
       <header className="calendario-header">
         <h1>Calendário Vacinal</h1>
         <p>
-          Consulte abaixo o calendário vacinal conforme o grupo etário ou condição específica. 
-          Selecione uma das opções para visualizar as vacinas recomendadas.
+          Consulte abaixo o calendário vacinal conforme o grupo etário ou
+          condição específica. Selecione uma das opções para visualizar as
+          vacinas recomendadas.
         </p>
       </header>
 
@@ -35,11 +41,16 @@ export default function CalendarioVacinal() {
             onClick={() => setSelecionado(grupo.nome)}
           >
             <div
-              className={`circulo ${
-                selecionado === grupo.nome ? "ativo" : ""
-              }`}
+              className={`circulo ${selecionado === grupo.nome ? "ativo" : ""}`}
             >
-              <img src={grupo.imagem} alt={grupo.nome} />
+              {/* Substituição da tag img pelo componente Image do Next.js */}
+              <Image
+                src={grupo.imagem}
+                alt={grupo.nome}
+                width={60} // Ajuste conforme seu layout
+                height={60} // Ajuste conforme seu layout
+                priority={true} // Carrega as imagens do topo mais rápido
+              />
               <span className="titulo">{grupo.nome}</span>
             </div>
           </div>
@@ -57,7 +68,7 @@ export default function CalendarioVacinal() {
       {selecionado && (
         <Collapse
           accordion
-          defaultActiveKey={[calendario.cards[selecionado]?.[0]?.id]} 
+          defaultActiveKey={[calendario.cards[selecionado]?.[0]?.id]}
           style={{ marginTop: "30px", background: "#f9f9f9" }}
           items={calendario.cards[selecionado]?.map((card) => ({
             key: card.id,
@@ -82,14 +93,25 @@ export default function CalendarioVacinal() {
                   </div>
                 ))}
                 <div className="info-extra">
-                  {card.local && <p><strong>Onde tomar?</strong> {card.local}</p>}
-                  {card.horario && <p><strong>Dia e horário?</strong> {card.horario}</p>}
+                  {card.local && (
+                    <p>
+                      <strong>Onde tomar?</strong> {card.local}
+                    </p>
+                  )}
+                  {card.horario && (
+                    <p>
+                      <strong>Dia e horário?</strong> {card.horario}
+                    </p>
+                  )}
                   {card.documentos && (
-                    <p><strong>Documentos necessários:</strong> {card.documentos.join(", ")}</p>
+                    <p>
+                      <strong>Documentos necessários:</strong>{" "}
+                      {card.documentos.join(", ")}
+                    </p>
                   )}
                 </div>
               </div>
-            )
+            ),
           }))}
         />
       )}
