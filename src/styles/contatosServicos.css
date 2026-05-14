@@ -93,7 +93,14 @@
 .pagina-btn:hover {
   background: #005fa3;
 }
+.btn-mapa {
+  transition: transform 0.2s;
+}
 
+.btn-mapa:hover {
+  transform: scale(1.05);
+  color: #34a853; /* Cor verde do maps no hover */
+}
 .pagina-btn.ativo {
   background: #00aaff;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);

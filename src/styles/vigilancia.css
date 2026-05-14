@@ -1,40 +1,131 @@
-.vigilanciaSanitaria {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 0 20px;
-  animation: fadeIn 0.6s ease-in-out;
+/* vigilancia.css */
+
+.vigilancia-sanitaria {
+    width: 100%;
+    background-color: #fff;
 }
 
-.banner img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
+/* Estrutura do Banner com respiro lateral */
+.vigilancia-sanitaria .banner {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.conteudo {
-  margin-top: 2rem;
+.vigilancia-sanitaria .banner-img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 12px;
+    display: block;
+    object-fit: contain;
 }
 
-.conteudo h2 {
-  color: var(--primary-color);
-  margin-bottom: 1rem;
+/* Conteúdo alinhado com o padrão 1140px */
+.vigilancia-sanitaria .conteudo {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.conteudo h3 {
-  margin-top: 2rem;
-  color: var(--tertiary-color);
+/* Estilização de Títulos */
+.vigilancia-sanitaria h2 {
+    color: #145a86;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
 }
 
-.conteudo p {
-  margin: 0.5rem 0;
-  line-height: 1.6;
+.vigilancia-sanitaria h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: #1c76b2;
 }
 
-.conteudo ul {
-  margin: 0.5rem 0 1rem 1.5rem;
-  list-style: disc;
+.vigilancia-sanitaria h3 {
+    color: #1c76b2;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
 }
 
-.conteudo li {
-  margin-bottom: 0.5rem;
+.vigilancia-sanitaria p {
+    margin-bottom: 20px;
+    font-size: 17px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.vigilancia-sanitaria a {
+    color: #1c76b2;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.vigilancia-sanitaria a:hover {
+    text-decoration: underline;
+}
+
+/* Lista customizada com checkmark (✓) */
+.vigilancia-sanitaria .lista-atribuicoes {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.vigilancia-sanitaria .lista-atribuicoes li {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 18px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.vigilancia-sanitaria .lista-atribuicoes li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #1c76b2;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Bloco de nota informativa (Destaque para Denúncias) */
+.vigilancia-sanitaria .nota-informativa {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 25px;
+    background-color: #f0f7ff;
+    border-left: 5px solid #145a86;
+    border-radius: 4px;
+}
+
+.vigilancia-sanitaria .nota-informativa p {
+    margin: 0;
+    font-weight: 600;
+    color: #145a86;
+    text-align: left;
+}
+
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+    .vigilancia-sanitaria h2 {
+        font-size: 1.8rem;
+    }
+    
+    .vigilancia-sanitaria p, 
+    .vigilancia-sanitaria .lista-atribuicoes li {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .vigilancia-sanitaria .banner {
+        padding: 10px;
+    }
 }

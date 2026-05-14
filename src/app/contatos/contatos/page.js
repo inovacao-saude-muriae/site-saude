@@ -3,12 +3,20 @@
 import React, { useState } from "react";
 import contatosData from "../../../data/contatosServicos.json";
 import "../../../styles/contatosServicos.css";
-import { FaPhone, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
+import { FaPhone, FaMapMarkerAlt, FaEnvelope, FaMapMarkedAlt } from "react-icons/fa"; // Importei um novo ícone para o botão do mapa
 
 export default function Page() {
   const [categoria, setCategoria] = useState("Todos");
   const [paginaAtual, setPaginaAtual] = useState(1);
   const contatosPorPagina = 12;
+
+  // Função para criar o link do Google Maps
+  const gerarLinkMapa = (endereco) => {
+    if (!endereco) return "#";
+    // Adicionamos a cidade para garantir que o Maps encontre o local correto
+    const enderecoCompleto = `${endereco}, Muriaé - MG`;
+    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(enderecoCompleto)}`;
+  };
 
   const categorias = [
     "Todos",
@@ -57,6 +65,29 @@ export default function Page() {
             <p><FaPhone /> {contato.telefone}</p>
             <p><FaMapMarkerAlt /> {contato.endereco}</p>
             <p><FaEnvelope /> {contato.email}</p>
+            
+            {/* NOVO: Link para o Google Maps */}
+            {contato.endereco && (
+              <a 
+                href={gerarLinkMapa(contato.endereco)} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn-mapa"
+                title="Ver no Google Maps"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  marginTop: '10px',
+                  color: '#4285F4',
+                  textDecoration: 'none',
+                  fontWeight: 'bold',
+                  fontSize: '0.9rem'
+                }}
+              >
+                <FaMapMarkedAlt size={20} /> Ver localização
+              </a>
+            )}
           </div>
         ))}
       </div>

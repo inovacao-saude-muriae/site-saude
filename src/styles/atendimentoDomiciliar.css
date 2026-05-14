@@ -1,43 +1,110 @@
+/* atendimento.css */
+
 .atendimento {
-   max-width: 1000px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-.banner img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
+    width: 100%;
+    background-color: #fff;
 }
 
-.conteudo {
-  margin-top: 2rem;
+/* Estrutura do Banner com respiro lateral */
+.atendimento .banner {
+    width: 100%;
+    max-width: 1140px;    /* Mantendo o padrão da sua imagem */
+    margin: 0 auto;       /* Centraliza o container */
+    padding: 20px;        /* O padding da borda conforme o modelo */
+    box-sizing: border-box;
 }
 
-.conteudo h2 {
-  color: var(--primary-color);
-  margin-bottom: 1rem;
+.atendimento .banner-img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 12px;     /* Cantos arredondados do modelo */
+    display: block;
+    object-fit: contain;
 }
 
-.conteudo h3 {
-  margin-top: 2rem;
-  color: var(--tertiary-color);
+/* Conteúdo alinhado com o banner */
+.atendimento .conteudo {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.conteudo h4 {
-  margin-top: 1rem;
-  font-weight: bold;
+/* Tipografia e Estilos */
+.atendimento h2 {
+    color: #145a86; /* Padronizado com o modelo */
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
 }
 
-.conteudo p {
-  margin: 0.5rem 0;
-  line-height: 1.6;
+.atendimento h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: #1c76b2;
 }
 
-.conteudo ul {
-  margin: 0.5rem 0 1rem 1.5rem;
-  list-style: disc;
+.atendimento h3 {
+    color: #1c76b2;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
 }
 
-.conteudo li {
-  margin-bottom: 0.5rem;
+.atendimento h4 {
+    margin-top: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.atendimento p {
+    margin-bottom: 20px;
+    font-size: 17px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* Lista customizada com check (✓) igual ao modelo */
+.atendimento ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.atendimento li {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 18px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.atendimento li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #1c76b2;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Responsivo Mobile */
+@media (max-width: 768px) {
+    .atendimento h2 {
+        font-size: 1.8rem;
+    }
+    
+    .atendimento p, 
+    .atendimento li {
+        font-size: 16px;
+        text-align: left;
+    }
+    
+    .atendimento .banner {
+        padding: 10px; /* Reduz um pouco o respiro no mobile */
+    }
 }

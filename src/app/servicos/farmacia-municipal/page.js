@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useEffect } from "react";
-import "../../../styles/farmacia.css"; // ajuste o caminho conforme sua estrutura
+import Image from "next/image";
+import "../../../styles/farmacia.css";
 
 export default function Page() {
   // 🔝 Sempre voltar ao topo ao carregar a página
@@ -11,15 +12,20 @@ export default function Page() {
 
   return (
     <section className="farmacia">
-      {/* Banner */}
+      {/* Banner - Proporção 1140x280 */}
       <div className="banner">
-        <img
+        <Image
           src="/img/banner-paginas/farmaciaMunicipal.jpg"
           alt="Assistência Farmacêutica do SUS em Muriaé"
+          width={1140}
+          height={280}
+          layout="responsive"
+          priority
+          className="banner-img"
         />
       </div>
 
-      {/* Conteúdo */}
+      {/* Conteúdo Centralizado */}
       <div className="conteudo">
         <h2>Assistência Farmacêutica do SUS em Muriaé</h2>
         <p>
@@ -36,59 +42,49 @@ export default function Page() {
           para o tratamento das doenças mais comuns. Eles fazem parte da Relação
           Municipal de Medicamentos Essenciais (REMUME).
         </p>
+        
         <h4>Quem pode retirar</h4>
         <p>
           Pacientes com receita médica válida e que atendem aos critérios de uso
           de medicamentos disponíveis na rede pública.
         </p>
+
         <h4>Como funciona a retirada</h4>
-        <ul>
-          <li>De segunda a sexta-feira, das 7h às 17h</li>
-          <li>Receita médica atualizada</li>
-          <li>Documento de identificação com foto</li>
-          <li>CPF</li>
-          <li>Cartão do SUS</li>
-          <li>Comprovante de residência atualizado</li>
+        <ul className="lista-atribuicoes">
+          <li>De segunda a sexta-feira, das 7h às 17h;</li>
+          <li>Receita médica atualizada;</li>
+          <li>Documento de identificação com foto;</li>
+          <li>CPF e Cartão do SUS;</li>
+          <li>Comprovante de residência atualizado.</li>
         </ul>
 
-        <h3>Componente Especializado da Assistência Farmacêutica (CEAF)</h3>
+        <h3>Componente Especializado (CEAF)</h3>
         <p>
           Programa do SUS que garante acesso a medicamentos de alto custo usados
           em tratamentos ambulatoriais, seguindo critérios dos Protocolos
           Clínicos e Diretrizes Terapêuticas (PCDT).
         </p>
-        <h4>Quem pode receber</h4>
-        <p>
-          Apenas pacientes que foram enquadrados nos critérios dos PCDTs. É
-          necessário apresentar receita médica, diagnóstico e documentação
-          relevante.
-        </p>
+
         <h4>Como funciona a retirada</h4>
-        <ul>
-          <li>Dispensação mensal, a cada 30 dias</li>
-          <li>Horário: das 7h às 15h</li>
-          <li>Último dia de atendimento do mês: dia 23</li>
-          <li>
-            Retirada apenas pelo paciente cadastrado ou representante legal
-          </li>
+        <ul className="lista-atribuicoes">
+          <li>Dispensação mensal, a cada 30 dias;</li>
+          <li>Horário: das 7h às 15h;</li>
+          <li>Último dia de atendimento do mês: dia 23;</li>
+          <li>Retirada apenas pelo paciente cadastrado ou representante legal.</li>
         </ul>
 
-        <h3>Componente Estratégico da Assistência Farmacêutica (CESAF)</h3>
+        <div className="nota-informativa">
+          <p>
+            <strong>Atenção:</strong> Para o Componente Especializado, é necessário que o paciente 
+            esteja enquadrado nos critérios dos PCDTs, apresentando diagnóstico e documentação específica.
+          </p>
+        </div>
+
+        <h3>Componente Estratégico (CESAF)</h3>
         <p>
           Reúne medicamentos para prevenção, controle e tratamento de doenças de
-          impacto epidemiológico. Faz parte de programas específicos do
-          Ministério da Saúde.
-        </p>
-        <h4>Quem pode receber</h4>
-        <p>
-          O acesso ocorre em farmácias públicas municipais, Farmácia de Minas,
-          unidades de referência e hospitais. Podem ser solicitados documentos,
-          exames e relatórios médicos.
-        </p>
-        <h4>Como funciona a retirada</h4>
-        <p>
-          A dispensação é realizada no setor de Epidemiologia, mediante receita
-          médica, formulários e exames exigidos.
+          impacto epidemiológico. A dispensação é realizada no setor de Epidemiologia, 
+          mediante receita médica, formulários e exames exigidos.
         </p>
       </div>
     </section>

@@ -1,0 +1,112 @@
+
+.camara-tecnica {
+    width: 100%;
+    background-color: #fff;
+}
+
+/* camara-tecnica.css */
+
+.camara-tecnica .banner {
+    width: 100%;
+    max-width: 1140px;    /* Largura máxima igual à sua imagem */
+    margin: 0 auto;       /* Centraliza */
+    padding: 20px;        /* O "padding da borda" que você pediu */
+    box-sizing: border-box;
+}
+
+.camara-tecnica .banner-img {
+    width: 100% !important;
+    height: auto !important; /* Deixa a altura ser definida pela proporção da imagem */
+    border-radius: 12px;     /* Cantos arredondados iguais aos da foto */
+    display: block;
+    object-fit: contain;     /* Garante que a imagem inteira apareça sem cortes */
+}
+
+.camara-tecnica .conteudo {
+    max-width: 1140px;       /* Alinha o texto com a largura da imagem */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.camara-tecnica h2 {
+    color: #145a86;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Detalhe da linha abaixo do título */
+.camara-tecnica h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: #1c76b2;
+}
+
+.camara-tecnica h3 {
+    color: #1c76b2;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.camara-tecnica p {
+    margin-bottom: 20px;
+    font-size: 17px;
+    text-align: justify;
+}
+
+/* Lista customizada */
+.camara-tecnica .lista-atribuicoes {
+    list-style: none;
+    padding: 0;
+}
+
+.camara-tecnica .lista-atribuicoes li {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 18px;
+    font-size: 16px;
+}
+
+.camara-tecnica .lista-atribuicoes li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #1c76b2;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Bloco de nota informativa final */
+.camara-tecnica .nota-informativa {
+    margin-top: 50px;
+    padding: 25px;
+    background-color: #f0f7ff;
+    border-left: 5px solid #145a86;
+    border-radius: 4px;
+}
+
+.camara-tecnica .nota-informativa p {
+    margin: 0;
+    font-weight: 600;
+    color: #145a86;
+    font-style: normal;
+}
+
+/* Responsivo Mobile */
+@media (max-width: 768px) {
+    .camara-tecnica h2 {
+        font-size: 1.8rem;
+    }
+    
+    .camara-tecnica p, 
+    .camara-tecnica .lista-atribuicoes li {
+        font-size: 16px;
+        text-align: left; /* Melhora leitura em telas pequenas */
+    }
+}

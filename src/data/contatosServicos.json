@@ -14,556 +14,556 @@
     "categoria": "Policlinica"
   },
   {
-      "nome": "UBS AEROPORTO",
-      "telefone": "(32) 2020-8060",
-      "endereco": "Rua Antônio Ramos, s/n",
-      "email": "ubsaeroporto2018@gmail.com ",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "BARRA I",
-      "telefone": "(32) 2020-8088 ",
-      "endereco": "Rua Rui Barbosa, 145",
-      "email": "ubsbarra1muriae@gmail.com ",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "UBS BARRA II",
-      "telefone": "(32) 2020-8067 ",
-      "endereco": "Rua Souza Castro, 73",
-      "email": "ubsbarra2muriae@gmail.com ",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "UBS BELISÁRIO",
-      "telefone": "(32) 2020-8098 ",
-      "endereco": "Rua Dona França Machado, s/n ",
-      "email": "ubsbelisariomuriae@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "SÃO DOMINGOS",
-      "telefone": "(32) 2020-8098 ",
-      "endereco": "Rua Principal, s/n ",
-      "email": "ubsbelisariomuriae@gmail.com",
-      "categoria": "Ponto de Apoio"
-    },
-    {
-      "nome": "SANTA LUCIA",
-      "telefone": "(32) 2020-8098",
-      "endereco": "Comunidade Santa Lucia",
-      "email": "ubsbelisariomuriae@gmail.com",
-      "categoria": "Ponto de Apoio"
-    },
-    {
-      "nome": "UBS BOA FAMÍLIA",
-      "telefone": "(32) 2020-8057",
-      "endereco": "Rua Nova, s/n",
-      "email": "ubsboafamiliamuriae@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "MACUCO",
-      "telefone": "(32) 2020-8100",
-      "endereco": "Avenida Rute do Carmo, 306",
-      "email": "ubsboafamiliamuriae@gmail.com",
-      "categoria": "Ponto de Apoio"
-    },
-    {
-      "nome": "SÃO FERNANDO",
-      "telefone": "(32) 2020-8057 ",
-      "endereco": "Comunidade São Fernando",
-      "email": "ubsboafamiliamuriae@gmail.com",
-      "categoria": "Ponto de Apoio"
-    },
-    {
-      "nome": "UBS BOM JESUS",
-      "telefone": "(32) 2020-8102",
-      "endereco": "Rua Antônio Teodoro Ribeiro, s/n",
-      "email": "ubsbomjesusmuriae@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "UBS CARDOSO DE MELO",
-      "telefone": "(32) 2020-8064",
-      "endereco": "Rua Jair Cardoso de Melo, s/n",
-      "email": "ubscardosodemelomuriae@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "UBS CERÂMICA",
-      "telefone": "(32) 2020-8072",
-      "endereco": "Rua Silvério Campos, s/n",
-      "email": "ubsceramicamuriae2018@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "UBS DORNELAS",
-      "telefone": "(32) 2020-8094",
-      "endereco": "Rua Doutor Wilson Alvim do Amaral, 69",
-      "email": "ubsdornelasmuriae@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "UBS DORNELAS II",
-      "telefone": "(32) 2020-8094",
-      "endereco": "Rua Nílton Henrique de Almeida, 175",
-      "email": "dornelas2ubsmuriae@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "UBS FRANCO SUIÇO",
-      "telefone": "(32) 2020-8077",
-      "endereco": "Rua Augusta da Silva,171 ",
-      "email": "ubsjosecirilomuriae@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "UBS GASPAR",
-      "telefone": "(32) 2020-8068",
-      "endereco": "Rua Maria Xavier Santana, s/n",
-      "email": "ubsgasparmuriae@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "UBS INCONFIDÊNCIA",
-      "telefone": "(32) 2020-8073",
-      "endereco": "Rua Claudio Manoel Costa, s/n",
-      "email": "ubsinconfidencia2018@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "UBS ITAMURI",
-      "telefone": "(32) 2020-8101",
-      "endereco": "Rua Largo da Matriz, s/n",
-      "email": "ubsitamurimuriae@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "SOFOCO",
-      "telefone": "(32) 2020-8101",
-      "endereco": "Rua Alvino Carlos de Souza, 97",
-      "email": "ubsitamurimuriae@gmail.com",
-      "categoria": "Ponto de Apoio"
-    },
-    {
-      "nome": "PAT. DOS CARNEIROS",
-      "telefone": "(32) 2020-8101",
-      "endereco": "Comunidade Patrimônio dos Carneiros",
-      "email": "ubsitamurimuriae@gmail.com",
-      "categoria": "Ponto de Apoio"
-    },
-    {
-      "nome": "CAPETINGA",
-      "telefone": "(32) 2020-8101",
-      "endereco": "Rua Principal",
-      "email": "ubsitamurimuriae@gmail.com",
-      "categoria": "Ponto de Apoio"
-    },
-    {
-      "nome": "BOM JARDIM",
-      "telefone": "(32) 2020-8101",
-      "endereco": "",
-      "email": "ubsitamurimuriae@gmail.com",
-      "categoria": "Ponto de Apoio"
-    },
-    {
-      "nome": "UBS JOÃO XXIII",
-      "telefone": "(32) 2020-8133",
-      "endereco": "Rua Judith Pompei, 996",
-      "email": "joao23ubsmuriae@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "UBS JOANÓPOLIS",
-      "telefone": "(32) 2020-8084",
-      "endereco": "Rua Antônio Tureta, s/n",
-      "email": "ubsjoanopolismuriae2018@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "SÃO JOAQUIM",
-      "telefone": "(32) 2020-8084",
-      "endereco": "Rua da Fazenda, 141",
-      "email": "ubsjoanopolismuriae2018@gmail.com",
-      "categoria": "Ponto de Apoio"
-    },
-    {
-      "nome": "UBS MARAMBAIA",
-      "telefone": "(32) 2020-8083",
-      "endereco": "Rua Espírito Santo, s/n",
-      "email": "ubsmarambaiamuriae@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "SÃO FRANCISCO DO GLÓRIA",
-      "telefone": "(32) 2020-8083",
-      "endereco": "",
-      "email": "ubsmarambaiamuriae@gmail.com",
-      "categoria": "Ponto de Apoio"
-    },
-    {
-      "nome": "UBS PATRIMÔNIO SÃO JOSÉ",
-      "telefone": "(32) 2020-8085",
-      "endereco": "Rua Pedro Muglia, s/n",
-      "email": "ubspatsaojosemuriae@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "UBS PLANALTO",
-      "telefone": "(32) 2020-8089",
-      "endereco": "Rua Leon Dala Paula, s/n",
-      "email": "ubsplanaltomuriae@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "UBS PORTO",
-      "telefone": "(32) 2020-8078",
-      "endereco": "Rua Coronel Pereira Sobrinho, s/n",
-      "email": "ubsportomuriae2018@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "UBS PRIMAVERA",
-      "telefone": "(32) 2020-8097",
-      "endereco": "Rua Alameda dos Oiti, s/n ",
-      "email": "ubsprimaveramuriae@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "UBS RECANTO VERDE",
-      "telefone": "(32) 2020-8061",
-      "endereco": "Rua dos Coqueiros, s/n",
-      "email": "ubsrecantoverdemuriae@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "UBS SAFIRA",
-      "telefone": "(32) 2020-8076",
-      "endereco": "Rua Silvério Campos, s/n ",
-      "email": "ubssafiramuriae@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "UBS SANTANA",
-      "telefone": "(32) 2020-8071",
-      "endereco": "Avenida Maria Cândida do Carmo, s/n",
-      "email": "ubssantana2017@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "UBS SANTO ANTÔNIO",
-      "telefone": "(32) 2020-8086",
-      "endereco": "Rua Santo Antônio, s/n",
-      "email": "ubssantoantoniomuriae@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "UBS SÃO CRISTOVÃO",
-      "telefone": "(32) 2020-8072",
-      "endereco": "Rua Itália, s/n",
-      "email": "ubssaocristovaomuriae@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "UBS SÃO FRANCISCO I",
-      "telefone": "(32) 2020-8081",
-      "endereco": "Avenida Cel. Francisco Gomes Campos, s/n",
-      "email": "ubssaofrancisco1muriae@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "UBS SÃO FRANCISCO II",
-      "telefone": "(32) 2020-8081",
-      "endereco": "Avenida Cel. Francisco Gomes Campos, s/n",
-      "email": "ubssaofrancisco2muriae@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "UBS SÃO FRANCISCO III",
-      "telefone": "(32) 2020-8081",
-      "endereco": "Avenida Cel. Francisco Gomes Campos, s/n",
-      "email": "ubssaofrancisco3muriae@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "UBS SÃO GOTARDO",
-      "telefone": "(32) 2020-8093",
-      "endereco": "Avenida Vicente Alves, 617",
-      "email": "ubssaogotardomuriae@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "UBS SÃO PEDRO",
-      "telefone": "(32) 2020-8069",
-      "endereco": "Praça da Liberdade, 428",
-      "email": "ubssaopedromuriae@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "UBS SANTA TEREZINHA I",
-      "telefone": "(32) 2020-8075",
-      "endereco": "Rua Visconde do Rio Branco, s/n ",
-      "email": "ubssantaterezinha1muriae@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "UBS SANTA TEREZINHA II",
-      "telefone": "(32) 2020-8075",
-      "endereco": "Rua Visconde do Rio Branco, s/n",
-      "email": "ubssantaterezinha2muriae@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "UBS VERMELHO",
-      "telefone": "(32) 2020-8099",
-      "endereco": "Rua Alberto Siqueira, s/n",
-      "email": "ubsvermelhomuriae@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "UBS VERMELHO II",
-      "telefone": "(32) 2020-8121",
-      "endereco": "Rua Francisco Pinto, s/n",
-      "email": "ubsvermelhomuriae2@gmail.com",
-      "categoria": "UBS"
-    },
-    {
-      "nome": "PIRAPANEMA",
-      "telefone": "(32) 2020-8103",
-      "endereco": "Rua Vereador Jacy Vargas, s/n",
-      "email": "ubsvermelhomuriae2@gmail.com",
-      "categoria": "Ponto de Apoio"
-    },
-    {
-      "nome": "POLICLÍNICA CAIC",
-      "telefone": "(32) 2020-8080",
-      "endereco": "R. Antônio Pereira Galvão, 555 - Encoberta",
-      "email": "",
-      "categoria": "Policlinica"
-    },
-    {
-      "nome": "POLICLÍNICA SANTA TEREZINHA",
-      "telefone": "(32) 2020-8079",
-      "endereco": "Praça dos Esportes, 0 - Santa Terezinha",
-      "email": "",
-      "categoria": "Policlinica"
-    },
-    {
-      "nome": "POLICLÍNICA CLOVIS DE AQUINO",
-      "telefone": "(32) 2020-8085",
-      "endereco": "R. Pedro Muglia, s/n",
-      "email": "",
-      "categoria": "Policlinica"
-    },
-    {
-      "nome": "POLICLÍNICA SAFIRA",
-      "telefone": "(32) 2020-8076",
-      "endereco": "R. Silvério Campos, s/n",
-      "email": "",
-      "categoria": "Policlinica"
-    },
-    {
-      "nome": "POLICLÍNICA JOSÉ CIRILO",
-      "telefone": "(32) 2020-8077",
-      "endereco": "Av. Altino Rodrigues Pereira, 300",
-      "email": "",
-      "categoria": "Policlinica"
-    },
-    {
-      "nome": "CAPS AD III",
-      "telefone": "(32) 2020-8091 / 2020-8184",
-      "endereco": "Antigo Sesc, localizado no km 269 da BR-356, 4.555",
-      "email": "capsadmuriae@gmail.com",
-      "categoria": "Saude Mental"
-    },
-    {
-      "nome": "CAPS III",
-      "telefone": "(32) 2020-8062 / (32) 9 8852-4814",
-      "endereco": "Antigo Sesc, localizado no km 269 da BR-356, 4.556",
-      "email": "caps2muriae@gmail.com",
-      "categoria": "Saude Mental"
-    },
-    {
-      "nome": "CAPSI",
-      "telefone": "(32) 2020-8148",
-      "endereco": "Antigo Sesc, localizado no km 269 da BR-356, 4.557",
-      "email": "capsimuriae@gmail.com",
-      "categoria": "Saude Mental"
-    },
-    {
-      "nome": "AMBULATÓRIO MULTI EM PEDIATRIA",
-      "telefone": "(32) 9 8702-7814",
-      "endereco": "Antigo Sesc, localizado no km 269 da BR-356, 4.555",
-      "email": "",
-      "categoria": "Outros"
-    },
-    {
-      "nome": "APAE",
-      "telefone": "(32) 3721-1905",
-      "endereco": "R. Estr. da Cerâmica, 370",
-      "email": "",
-      "categoria": "Outros"
-    },
-    {
-      "nome": "CÂMARA TÉCNICA (FARMÁCIA JUDICIAL)",
-      "telefone": "(32) 3696-3379",
-      "endereco": "Av. Maestro Sansão, embaixo do Teatro Zaccaria Marques",
-      "email": "",
-      "categoria": "Outros"
-    },
-    {
-      "nome": "CASA DE CARIDADE HSP",
-      "telefone": "(32) 3729-3700",
-      "endereco": "R. Cel. Izalino, 187",
-      "email": "",
-      "categoria": "Outros"
-    },
-    {
-      "nome": "CEAE",
-      "telefone": "(32) 2020-8059",
-      "endereco": "Dr. Ivan Americo Porcaro, 161",
-      "email": "",
-      "categoria": "Outros"
-    },
-    {
-      "nome": "CENTRO DE IMUNIZAÇÃO",
-      "telefone": " (32) 3696-3435",
-      "endereco": "Av. Maestro Sansão, 236",
-      "email": "",
-      "categoria": "Outros"
-    },
-    {
-      "nome": "CENTRO DE ESPECIALIDADES",
-      "telefone": " (32) 2020-8090",
-      "endereco": "R. Dr. Ivan Americo Porcaro, 161",
-      "email": "",
-      "categoria": "Outros"
-    },
-    {
-      "nome": "CENTRO DE REABILITAÇÃO",
-      "telefone": " (32) 2020-8096",
-      "endereco": "Antigo Sesc, localizado no km 269 da BR-356, 4.555",
-      "email": "",
-      "categoria": "Outros"
-    },
-    {
-      "nome": "CENTRO DE ESPECIALIDADES ODONTOLÓGICAS",
-      "telefone": " (32) 2020-8095",
-      "endereco": "Av. Maestro Sansão, 236",
-      "email": "",
-      "categoria": "Outros"
-    },
-    {
-      "nome": "CISLESTE",
-      "telefone": " (32) 3722-1999",
-      "endereco": "R. Sinval Florêncio da Silva, 250",
-      "email": "",
-      "categoria": "Outros"
-    },
-    {
-      "nome": "EPIDEMIOLOGIA",
-      "telefone": "(32) 2020-8123",
-      "endereco": "Antigo Sesc, localizado no km 269 da BR-356, 4.555",
-      "email": "",
-      "categoria": "Outros"
-    },
-    {
-      "nome": "FARMÁCIA MUNICIPAL",
-      "telefone": "(32) 2020-8065 / (32) 3696-3345 / (32) 99934-7167",
-      "endereco": "Av. Maestro Sansão, 236",
-      "email": "",
-      "categoria": "Outros"
-    },
-    {
-      "nome": "FUNDAÇÃO",
-      "telefone": "(32) 3729-7000",
-      "endereco": "Av. Cristiano Ferreira Varella, 555",
-      "email": "",
-      "categoria": "Outros"
-    },
-    {
-      "nome": "LABORÁTORIO MUNICIPAL",
-      "telefone": "(32) 2020-8074",
-      "endereco": "R. Cel. Izalino, 0",
-      "email": "",
-      "categoria": "Outros"
-    },
-    {
-      "nome": "PLANEJAMENTO FAMILIAR",
-      "telefone": "(32) 2020-8135",
-      "endereco": "R. Coronel Izalino, 154",
-      "email": "",
-      "categoria": "Outros"
-    },
-    {
-      "nome": "POSTO AVANÇADO DE COLETA EXTERNA",
-      "telefone": "(32) 3729-1280",
-      "endereco": "R. Dr. Ivan Americo",
-      "email": "",
-      "categoria": "Outros"
-    },
-    {
-      "nome": "PRONTOCOR",
-      "telefone": "(32) 3729-3800",
-      "endereco": "Av. Dr. Passos, 719",
-      "email": "",
-      "categoria": "Outros"
-    },
-    {
-      "nome": "SAÚDE AUDITIVA",
-      "telefone": "(32) 3696-3374",
-      "endereco": "Av. Maestro Sansão, 236",
-      "email": "",
-      "categoria": "Outros"
-    },
-    {
-      "nome": "SECRETARIA DE SAÚDE",
-      "telefone": "(32) 3696-3305",
-      "endereco": "Av. Maestro Sansão, 236",
-      "email": "saude@muriae.gov.mg.br",
-      "categoria": "Outros"
-    },
-    {
-      "nome": "SERVIÇO DE ATENÇÃO ESPECIALIZADA",
-      "telefone": "(32) 2020-8058",
-      "endereco": "Av. Maestro Sansão, 269",
-      "email": "",
-      "categoria": "Outros"
-    },
-    {
-      "nome": "TFD",
-      "telefone": "(32) 2020-8066",
-      "endereco": "Av. Maestro Sansão, 236 - C",
-      "email": "",
-      "categoria": "Outros"
-    },
-    {
-      "nome": "UPA",
-      "telefone": "(32) 99939-2771",
-      "endereco": "R. Itagibá de Oliveira, 445",
-      "email": "",
-      "categoria": "Outros"
-    },
-    {
-      "nome": "VIGILÂNCIA AMBIENTAL",
-      "telefone": "(32) 9 8854-4126",
-      "endereco": "Antigo Sesc, localizado no km 269 da BR-356 4.555",
-      "email": "",
-      "categoria": "Outros"
-    },
-    {
-      "nome": "VIGILÂNCIA SANITÁRIA",
-      "telefone": "(32) 2020-8105",
-      "endereco": "R. Sinval Florêncio da Silva, 2",
-      "email": "",
-      "categoria": "Outros"
-    },
-    {
-      "nome": "VIGILÂNCIA SANITÁRIA",
-      "telefone": "(32) 2020-8105",
-      "endereco": "R. Sinval Florêncio da Silva, 2",
-      "email": "",
-      "categoria": "Outros"
-    }
+    "nome": "UBS AEROPORTO",
+    "telefone": "(32) 2020-8060",
+    "endereco": "Rua Antônio Ramos, s/n",
+    "email": "ubsaeroporto2018@gmail.com ",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "BARRA I",
+    "telefone": "(32) 2020-8088 ",
+    "endereco": "Rua Rui Barbosa, 145",
+    "email": "ubsbarra1muriae@gmail.com ",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "UBS BARRA II",
+    "telefone": "(32) 2020-8067 ",
+    "endereco": "Rua Souza Castro, 73",
+    "email": "ubsbarra2muriae@gmail.com ",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "UBS BELISÁRIO",
+    "telefone": "(32) 2020-8098 ",
+    "endereco": "Rua Dona França Machado, s/n ",
+    "email": "ubsbelisariomuriae@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "SÃO DOMINGOS",
+    "telefone": "(32) 2020-8098 ",
+    "endereco": "Rua Principal, s/n ",
+    "email": "ubsbelisariomuriae@gmail.com",
+    "categoria": "Ponto de Apoio"
+  },
+  {
+    "nome": "SANTA LUCIA",
+    "telefone": "(32) 2020-8098",
+    "endereco": "Comunidade Santa Lucia",
+    "email": "ubsbelisariomuriae@gmail.com",
+    "categoria": "Ponto de Apoio"
+  },
+  {
+    "nome": "UBS BOA FAMÍLIA",
+    "telefone": "(32) 2020-8057",
+    "endereco": "Rua Nova, s/n",
+    "email": "ubsboafamiliamuriae@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "MACUCO",
+    "telefone": "(32) 2020-8100",
+    "endereco": "Avenida Rute do Carmo, 306",
+    "email": "ubsboafamiliamuriae@gmail.com",
+    "categoria": "Ponto de Apoio"
+  },
+  {
+    "nome": "SÃO FERNANDO",
+    "telefone": "(32) 2020-8057 ",
+    "endereco": "Comunidade São Fernando",
+    "email": "ubsboafamiliamuriae@gmail.com",
+    "categoria": "Ponto de Apoio"
+  },
+  {
+    "nome": "UBS BOM JESUS",
+    "telefone": "(32) 2020-8102",
+    "endereco": "Rua Antônio Teodoro Ribeiro, s/n",
+    "email": "ubsbomjesusmuriae@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "UBS CARDOSO DE MELO",
+    "telefone": "(32) 2020-8064",
+    "endereco": "Rua Jair Cardoso de Melo, s/n",
+    "email": "ubscardosodemelomuriae@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "UBS CERÂMICA",
+    "telefone": "(32) 2020-8072",
+    "endereco": "Rua Silvério Campos, s/n",
+    "email": "ubsceramicamuriae2018@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "UBS DORNELAS",
+    "telefone": "(32) 2020-8094",
+    "endereco": "Rua Doutor Wilson Alvim do Amaral, 69",
+    "email": "ubsdornelasmuriae@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "UBS DORNELAS II",
+    "telefone": "(32) 2020-8094",
+    "endereco": "Rua Nílton Henrique de Almeida, 175",
+    "email": "dornelas2ubsmuriae@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "UBS FRANCO SUIÇO",
+    "telefone": "(32) 2020-8077",
+    "endereco": "Rua Augusta da Silva,171 ",
+    "email": "ubsjosecirilomuriae@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "UBS GASPAR",
+    "telefone": "(32) 2020-8068",
+    "endereco": "Rua Maria Xavier Santana, s/n",
+    "email": "ubsgasparmuriae@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "UBS INCONFIDÊNCIA",
+    "telefone": "(32) 2020-8073",
+    "endereco": "Rua Claudio Manoel Costa, s/n",
+    "email": "ubsinconfidencia2018@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "UBS ITAMURI",
+    "telefone": "(32) 2020-8101",
+    "endereco": "Rua Largo da Matriz, s/n",
+    "email": "ubsitamurimuriae@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "SOFOCO",
+    "telefone": "(32) 2020-8101",
+    "endereco": "Rua Alvino Carlos de Souza, 97",
+    "email": "ubsitamurimuriae@gmail.com",
+    "categoria": "Ponto de Apoio"
+  },
+  {
+    "nome": "PAT. DOS CARNEIROS",
+    "telefone": "(32) 2020-8101",
+    "endereco": "Comunidade Patrimônio dos Carneiros",
+    "email": "ubsitamurimuriae@gmail.com",
+    "categoria": "Ponto de Apoio"
+  },
+  {
+    "nome": "CAPETINGA",
+    "telefone": "(32) 2020-8101",
+    "endereco": "Rua Principal",
+    "email": "ubsitamurimuriae@gmail.com",
+    "categoria": "Ponto de Apoio"
+  },
+  {
+    "nome": "BOM JARDIM",
+    "telefone": "(32) 2020-8101",
+    "endereco": "",
+    "email": "ubsitamurimuriae@gmail.com",
+    "categoria": "Ponto de Apoio"
+  },
+  {
+    "nome": "UBS JOÃO XXIII",
+    "telefone": "(32) 2020-8133",
+    "endereco": "Rua Judith Pompei, 996",
+    "email": "joao23ubsmuriae@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "UBS JOANÓPOLIS",
+    "telefone": "(32) 2020-8084",
+    "endereco": "Rua Antônio Tureta, s/n",
+    "email": "ubsjoanopolismuriae2018@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "SÃO JOAQUIM",
+    "telefone": "(32) 2020-8084",
+    "endereco": "Rua da Fazenda, 141",
+    "email": "ubsjoanopolismuriae2018@gmail.com",
+    "categoria": "Ponto de Apoio"
+  },
+  {
+    "nome": "UBS MARAMBAIA",
+    "telefone": "(32) 2020-8083",
+    "endereco": "Rua Espírito Santo, s/n",
+    "email": "ubsmarambaiamuriae@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "SÃO FRANCISCO DO GLÓRIA",
+    "telefone": "(32) 2020-8083",
+    "endereco": "",
+    "email": "ubsmarambaiamuriae@gmail.com",
+    "categoria": "Ponto de Apoio"
+  },
+  {
+    "nome": "UBS PATRIMÔNIO SÃO JOSÉ",
+    "telefone": "(32) 2020-8085",
+    "endereco": "Rua Pedro Muglia, s/n",
+    "email": "ubspatsaojosemuriae@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "UBS PLANALTO",
+    "telefone": "(32) 2020-8089",
+    "endereco": "Rua Leon Dala Paula, s/n",
+    "email": "ubsplanaltomuriae@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "UBS PORTO",
+    "telefone": "(32) 2020-8078",
+    "endereco": "Rua Coronel Pereira Sobrinho, s/n",
+    "email": "ubsportomuriae2018@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "UBS PRIMAVERA",
+    "telefone": "(32) 2020-8097",
+    "endereco": "Rua Alameda dos Oiti, s/n ",
+    "email": "ubsprimaveramuriae@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "UBS RECANTO VERDE",
+    "telefone": "(32) 2020-8061",
+    "endereco": "Rua dos Coqueiros, s/n",
+    "email": "ubsrecantoverdemuriae@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "UBS SAFIRA",
+    "telefone": "(32) 2020-8076",
+    "endereco": "Rua Silvério Campos, s/n ",
+    "email": "ubssafiramuriae@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "UBS SANTANA",
+    "telefone": "(32) 2020-8071",
+    "endereco": "Avenida Maria Cândida do Carmo, s/n",
+    "email": "ubssantana2017@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "UBS SANTO ANTÔNIO",
+    "telefone": "(32) 2020-8086",
+    "endereco": "Rua Santo Antônio, s/n",
+    "email": "ubssantoantoniomuriae@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "UBS SÃO CRISTOVÃO",
+    "telefone": "(32) 2020-8072",
+    "endereco": "Rua Itália, s/n",
+    "email": "ubssaocristovaomuriae@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "UBS SÃO FRANCISCO I",
+    "telefone": "(32) 2020-8081",
+    "endereco": "Avenida Cel. Francisco Gomes Campos, s/n",
+    "email": "ubssaofrancisco1muriae@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "UBS SÃO FRANCISCO II",
+    "telefone": "(32) 2020-8081",
+    "endereco": "Avenida Cel. Francisco Gomes Campos, s/n",
+    "email": "ubssaofrancisco2muriae@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "UBS SÃO FRANCISCO III",
+    "telefone": "(32) 2020-8081",
+    "endereco": "Avenida Cel. Francisco Gomes Campos, s/n",
+    "email": "ubssaofrancisco3muriae@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "UBS SÃO GOTARDO",
+    "telefone": "(32) 2020-8093",
+    "endereco": "Avenida Vicente Alves, 617",
+    "email": "ubssaogotardomuriae@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "UBS SÃO PEDRO",
+    "telefone": "(32) 2020-8069",
+    "endereco": "Praça da Liberdade, 428",
+    "email": "ubssaopedromuriae@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "UBS SANTA TEREZINHA I",
+    "telefone": "(32) 2020-8075",
+    "endereco": "Rua Visconde do Rio Branco, s/n ",
+    "email": "ubssantaterezinha1muriae@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "UBS SANTA TEREZINHA II",
+    "telefone": "(32) 2020-8075",
+    "endereco": "Rua Visconde do Rio Branco, s/n",
+    "email": "ubssantaterezinha2muriae@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "UBS VERMELHO",
+    "telefone": "(32) 2020-8099",
+    "endereco": "Rua Alberto Siqueira, s/n",
+    "email": "ubsvermelhomuriae@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "UBS VERMELHO II",
+    "telefone": "(32) 2020-8121",
+    "endereco": "Rua Francisco Pinto, s/n",
+    "email": "ubsvermelhomuriae2@gmail.com",
+    "categoria": "UBS"
+  },
+  {
+    "nome": "PIRAPANEMA",
+    "telefone": "(32) 2020-8103",
+    "endereco": "Rua Vereador Jacy Vargas, s/n",
+    "email": "ubsvermelhomuriae2@gmail.com",
+    "categoria": "Ponto de Apoio"
+  },
+  {
+    "nome": "POLICLÍNICA CAIC",
+    "telefone": "(32) 2020-8080",
+    "endereco": "R. Antônio Pereira Galvão, 555 - Encoberta",
+    "email": "",
+    "categoria": "Policlinica"
+  },
+  {
+    "nome": "POLICLÍNICA SANTA TEREZINHA",
+    "telefone": "(32) 2020-8079",
+    "endereco": "Praça dos Esportes, 0 - Santa Terezinha",
+    "email": "",
+    "categoria": "Policlinica"
+  },
+  {
+    "nome": "POLICLÍNICA CLOVIS DE AQUINO",
+    "telefone": "(32) 2020-8085",
+    "endereco": "R. Pedro Muglia, s/n",
+    "email": "",
+    "categoria": "Policlinica"
+  },
+  {
+    "nome": "POLICLÍNICA SAFIRA",
+    "telefone": "(32) 2020-8076",
+    "endereco": "R. Silvério Campos, s/n",
+    "email": "",
+    "categoria": "Policlinica"
+  },
+  {
+    "nome": "POLICLÍNICA JOSÉ CIRILO",
+    "telefone": "(32) 2020-8077",
+    "endereco": "Av. Altino Rodrigues Pereira, 300",
+    "email": "",
+    "categoria": "Policlinica"
+  },
+  {
+    "nome": "CAPS AD III",
+    "telefone": "(32) 2020-8091 / 2020-8184",
+    "endereco": "Antigo Sesc, localizado no km 269 da BR-356, 4.555",
+    "email": "capsadmuriae@gmail.com",
+    "categoria": "Saude Mental"
+  },
+  {
+    "nome": "CAPS III",
+    "telefone": "(32) 2020-8062 / (32) 9 8852-4814",
+    "endereco": "Antigo Sesc, localizado no km 269 da BR-356, 4.556",
+    "email": "caps2muriae@gmail.com",
+    "categoria": "Saude Mental"
+  },
+  {
+    "nome": "CAPSI",
+    "telefone": "(32) 2020-8148",
+    "endereco": "Antigo Sesc, localizado no km 269 da BR-356, 4.557",
+    "email": "capsimuriae@gmail.com",
+    "categoria": "Saude Mental"
+  },
+  {
+    "nome": "AMBULATÓRIO MULTI EM PEDIATRIA",
+    "telefone": "(32) 9 8702-7814",
+    "endereco": "Antigo Sesc, localizado no km 269 da BR-356, 4.555",
+    "email": "",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "APAE",
+    "telefone": "(32) 3721-1905",
+    "endereco": "R. Estr. da Cerâmica, 370",
+    "email": "",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CÂMARA TÉCNICA (FARMÁCIA JUDICIAL)",
+    "telefone": "(32) 3696-3379",
+    "endereco": "Av. Maestro Sansão, embaixo do Teatro Zaccaria Marques",
+    "email": "",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CASA DE CARIDADE HSP",
+    "telefone": "(32) 3729-3700",
+    "endereco": "R. Cel. Izalino, 187",
+    "email": "",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CEAE",
+    "telefone": "(32) 2020-8059",
+    "endereco": "Dr. Ivan Americo Porcaro, 161",
+    "email": "",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CENTRO DE IMUNIZAÇÃO",
+    "telefone": " (32) 3696-3435",
+    "endereco": "Av. Maestro Sansão, 236",
+    "email": "",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CENTRO DE ESPECIALIDADES",
+    "telefone": " (32) 2020-8090",
+    "endereco": "R. Dr. Ivan Americo Porcaro, 161",
+    "email": "",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CENTRO DE REABILITAÇÃO",
+    "telefone": " (32) 2020-8096",
+    "endereco": "Antigo Sesc, localizado no km 269 da BR-356, 4.555",
+    "email": "",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CENTRO DE ESPECIALIDADES ODONTOLÓGICAS",
+    "telefone": " (32) 2020-8095",
+    "endereco": "Av. Maestro Sansão, 236",
+    "email": "",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CISLESTE",
+    "telefone": " (32) 3722-1999",
+    "endereco": "R. Sinval Florêncio da Silva, 250",
+    "email": "",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "EPIDEMIOLOGIA",
+    "telefone": "(32) 2020-8123",
+    "endereco": "Antigo Sesc, localizado no km 269 da BR-356, 4.555",
+    "email": "",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FARMÁCIA MUNICIPAL",
+    "telefone": "(32) 2020-8065 / (32) 3696-3345 / (32) 99934-7167",
+    "endereco": "Av. Maestro Sansão, 236",
+    "email": "",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FUNDAÇÃO",
+    "telefone": "(32) 3729-7000",
+    "endereco": "Av. Cristiano Ferreira Varella, 555",
+    "email": "",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LABORÁTORIO MUNICIPAL",
+    "telefone": "(32) 2020-8074",
+    "endereco": "R. Cel. Izalino, 0",
+    "email": "",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PLANEJAMENTO FAMILIAR",
+    "telefone": "(32) 2020-8135",
+    "endereco": "R. Coronel Izalino, 154",
+    "email": "",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "POSTO AVANÇADO DE COLETA EXTERNA",
+    "telefone": "(32) 3729-1280",
+    "endereco": "R. Dr. Ivan Americo",
+    "email": "",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PRONTOCOR",
+    "telefone": "(32) 3729-3800",
+    "endereco": "Av. Dr. Passos, 719",
+    "email": "",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "SAÚDE AUDITIVA",
+    "telefone": "(32) 3696-3374",
+    "endereco": "Av. Maestro Sansão, 236",
+    "email": "",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "SECRETARIA DE SAÚDE",
+    "telefone": "(32) 3696-3305",
+    "endereco": "Av. Maestro Sansão, 236",
+    "email": "saude@muriae.gov.mg.br",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "SERVIÇO DE ATENÇÃO ESPECIALIZADA",
+    "telefone": "(32) 2020-8058",
+    "endereco": "Av. Maestro Sansão, 269",
+    "email": "",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "TFD",
+    "telefone": "(32) 2020-8066",
+    "endereco": "Av. Maestro Sansão, 236 - C",
+    "email": "",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "UPA",
+    "telefone": "(32) 99939-2771",
+    "endereco": "R. Itagibá de Oliveira, 445",
+    "email": "",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "VIGILÂNCIA AMBIENTAL",
+    "telefone": "(32) 9 8854-4126",
+    "endereco": "Antigo Sesc, localizado no km 269 da BR-356 4.555",
+    "email": "",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "VIGILÂNCIA SANITÁRIA",
+    "telefone": "(32) 2020-8105",
+    "endereco": "R. Sinval Florêncio da Silva, 2",
+    "email": "",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "VIGILÂNCIA SANITÁRIA",
+    "telefone": "(32) 2020-8105",
+    "endereco": "R. Sinval Florêncio da Silva, 2",
+    "email": "",
+    "categoria": "Outros"
+  }
 ]

@@ -1,38 +1,123 @@
+/* ouvidoria.css */
+
 .ouvidoria {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 0 20px;
-  font-family: var(--font-base, Arial, sans-serif);
-  color: var(--text-color-primary, #2c3e50);
-  line-height: 1.6;
+    width: 100%;
+    background-color: #fff;
 }
 
-.banner img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 30px;
+/* Estrutura do Banner com respiro lateral */
+.ouvidoria .banner {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.conteudo h2 {
-  margin-bottom: 20px;
-  color: #004080;
+.ouvidoria .banner-img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 12px;
+    display: block;
+    object-fit: contain;
 }
 
-.conteudo h3 {
-  margin-top: 30px;
-  margin-bottom: 15px;
-  color: #16a085;
+/* Conteúdo alinhado com o padrão 1140px */
+.ouvidoria .conteudo {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.conteudo p {
-  margin-bottom: 15px;
-  text-align: justify;
+/* Estilização de Títulos */
+.ouvidoria h2 {
+    color: #145a86;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
 }
 
-.conteudo ul {
-  margin-left: 1.5rem;
-  padding-left: 1rem;
-  list-style-type: disc;
-  margin-bottom: 20px;
+.ouvidoria h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: #1c76b2;
+}
+
+.ouvidoria h3 {
+    color: #1c76b2;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.ouvidoria p {
+    margin-bottom: 20px;
+    font-size: 17px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* Lista customizada com checkmark (✓) */
+.ouvidoria .lista-atribuicoes {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.ouvidoria .lista-atribuicoes li {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 18px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.ouvidoria .lista-atribuicoes li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #1c76b2;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Bloco de nota informativa */
+.ouvidoria .nota-informativa {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    padding: 25px;
+    background-color: #f0f7ff;
+    border-left: 5px solid #145a86;
+    border-radius: 4px;
+}
+
+.ouvidoria .nota-informativa p {
+    margin: 0;
+    font-weight: 600;
+    color: #145a86;
+    text-align: left;
+}
+
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+    .ouvidoria h2 {
+        font-size: 1.2rem;
+    }
+    .ouvidoria h3{
+        font-size: 1rem;
+    }
+    .ouvidoria p, 
+    .ouvidoria .lista-atribuicoes li {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .ouvidoria .banner {
+        padding: 10px;
+    }
 }

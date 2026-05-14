@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useEffect } from "react";
+import Image from "next/image";
 import { FaLaptop, FaApple, FaGooglePlay } from "react-icons/fa";
-import "../../../styles/susDigital.css"; // ajuste o caminho conforme sua estrutura
+import "../../../styles/susDigital.css";
 
 export default function Page() {
   useEffect(() => {
@@ -10,16 +11,21 @@ export default function Page() {
   }, []);
 
   return (
-    <section className="meuSusDigital">
-      {/* Banner */}
+    <section className="meu-sus-digital">
+      {/* Banner - Proporção 1140x280 */}
       <div className="banner">
-        <img
+        <Image
           src="/img/banner-paginas/susdigital.jpg"
           alt="Meu SUS Digital"
+          width={1140}
+          height={280}
+          layout="responsive"
+          priority
+          className="banner-img"
         />
       </div>
 
-      {/* Conteúdo */}
+      {/* Conteúdo Centralizado */}
       <div className="conteudo">
         <h2>Meu SUS Digital</h2>
         <p>
@@ -31,58 +37,43 @@ export default function Page() {
         </p>
         <p>
           Ele está disponível gratuitamente em versão web, Android e iOS, com
-          login via Gov.br para garantir segurança e integração com a Rede
+          login via <strong>Gov.br</strong> para garantir segurança e integração com a Rede
           Nacional de Dados em Saúde (RNDS).
         </p>
 
-        <h3>📲 Principais Funcionalidades</h3>
-        <ul>
+        <h3>Principais Funcionalidades</h3>
+        <ul className="lista-atribuicoes">
           <li>
-            <strong>Histórico clínico completo:</strong> consultas, internações
-            e procedimentos realizados no SUS.
+            <strong>Histórico clínico completo:</strong> consultas, internações e procedimentos realizados no SUS.
           </li>
           <li>
-            <strong>Carteira de Vacinação Digital:</strong> registro oficial de
-            todas as vacinas aplicadas, com emissão de certificados em diferentes
-            idiomas.
+            <strong>Carteira de Vacinação Digital:</strong> registro oficial de todas as vacinas aplicadas.
           </li>
           <li>
-            <strong>Resultados de exames laboratoriais:</strong> integrados à
-            RNDS, acessíveis em tempo real.
+            <strong>Resultados de exames laboratoriais:</strong> integrados à RNDS, acessíveis em tempo real.
           </li>
           <li>
-            <strong>Receitas médicas e medicamentos:</strong> acompanhamento de
-            prescrições e dispensações, incluindo Farmácia Popular.
+            <strong>Receitas médicas e medicamentos:</strong> acompanhamento de prescrições e dispensações.
           </li>
           <li>
-            <strong>Fila de transplantes:</strong> consulta à posição e
-            estimativa de tempo de espera.
+            <strong>Fila de transplantes:</strong> consulta à posição e estimativa de tempo de espera.
           </li>
           <li>
-            <strong>Documentos e certificados digitais:</strong> como Certificado
-            Internacional de Vacinação ou autorização de retirada de absorventes.
+            <strong>Documentos digitais:</strong> Certificado Internacional de Vacinação e outros.
           </li>
         </ul>
 
-        <h3>🔐 Segurança e Acesso</h3>
-        <ul>
-          <li>
-            Login realizado via <strong>Gov.br</strong> (nível prata ou ouro),
-            garantindo autenticação segura.
-          </li>
-          <li>
-            Dados atualizados pela <strong>Rede Nacional de Dados em Saúde
-            (RNDS)</strong>, com rastreabilidade e auditoria.
-          </li>
-          <li>
-            Possibilidade de acesso a informações de familiares, promovendo
-            cuidado compartilhado.
-          </li>
-        </ul>
+        <h3>Segurança e Acesso</h3>
+        <div className="nota-informativa">
+          <p>
+            O login é realizado via <strong>Gov.br</strong> (nível prata ou ouro),
+            garantindo autenticação segura e rastreabilidade dos seus dados de saúde.
+          </p>
+        </div>
 
-        {/* Seção de Download */}
-        <section className="susDownload">
-          <h3>Baixe o Meu SUS Digital</h3>
+        {/* Seção de Download Estilizada */}
+        <section className="sus-download">
+          <h3>Baixe ou Acesse o Meu SUS Digital</h3>
           <div className="download-buttons">
             <a
               href="https://meususdigital.saude.gov.br/login"
@@ -90,7 +81,7 @@ export default function Page() {
               rel="noopener noreferrer"
               className="download-btn web"
             >
-              <FaLaptop size={28} /> Versão Web
+              <FaLaptop size={22} /> Versão Web
             </a>
             <a
               href="https://apps.apple.com/br/app/meu-sus-digital/id1045754608"
@@ -98,7 +89,7 @@ export default function Page() {
               rel="noopener noreferrer"
               className="download-btn apple"
             >
-              <FaApple size={28} /> App Store
+              <FaApple size={24} /> App Store
             </a>
             <a
               href="https://play.google.com/store/apps/details?id=br.gov.datasus.cnsdigital"
@@ -106,7 +97,7 @@ export default function Page() {
               rel="noopener noreferrer"
               className="download-btn google"
             >
-              <FaGooglePlay size={28} /> Google Play
+              <FaGooglePlay size={22} /> Google Play
             </a>
           </div>
         </section>

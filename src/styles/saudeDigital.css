@@ -1,84 +1,180 @@
-.saudeDigital {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 0 20px;
-  animation: fadeIn 0.6s ease-in-out;
+/* saudeDigital.css */
+
+.saude-digital {
+    width: 100%;
+    background-color: #fff;
 }
 
-.banner img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
+/* Estrutura do Banner com respiro lateral */
+.saude-digital .banner {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.conteudo {
-  margin-top: 2rem;
+.saude-digital .banner-img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 12px;
+    display: block;
+    object-fit: contain;
 }
 
-.conteudo h2 {
-  color: var(--primary-color);
-  margin-bottom: 1rem;
+/* Conteúdo alinhado com o padrão 1140px */
+.saude-digital .conteudo {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.conteudo h3 {
-  margin-top: 2rem;
-  color: var(--secondary-color);
+/* Estilização de Títulos */
+.saude-digital h2 {
+    color: #145a86;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
 }
 
-.conteudo p {
-  margin: 0.5rem 0;
-  line-height: 1.6;
+.saude-digital h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: #1c76b2;
 }
 
-.conteudo ul {
-  margin: 0.5rem 0 1rem 1.5rem;
-  list-style: disc;
+.saude-digital h3 {
+    color: #1c76b2;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
 }
 
-.conteudo li {
-  margin-bottom: 0.5rem;
+.saude-digital p {
+    margin-bottom: 20px;
+    font-size: 17px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* Lista customizada com checkmark (✓) */
+.saude-digital .lista-atribuicoes {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.saude-digital .lista-atribuicoes li {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 18px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.saude-digital .lista-atribuicoes li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #1c76b2;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Bloco de nota informativa */
+.saude-digital .nota-informativa {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    padding: 25px;
+    background-color: #f0f7ff;
+    border-left: 5px solid #145a86;
+    border-radius: 4px;
+}
+
+.saude-digital .nota-informativa p {
+    margin: 0;
+    font-weight: 600;
+    color: #145a86;
+    text-align: left;
 }
 
 /* Seção de Download */
-.susDownload {
-  margin-top: 3rem;
-  text-align: center;
+.sus-download {
+    margin: 60px 0 30px;
+    padding: 40px 20px;
+    background-color: #fafafa;
+    border-radius: 12px;
+    text-align: center;
 }
 
-.susDownload h2 {
-  margin-bottom: 20px;
-  color: var(--primary-color);
+.sus-download h2 {
+    color: #145a86;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+/* Remover a linha decorativa do h2 específico de download */
+.sus-download h2::after {
+    display: none;
 }
 
 .download-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .download-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  border-radius: 8px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #fff;
-  transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.2s, box-shadow 0.2s;
+    min-width: 180px;
 }
 
-
 .download-btn.apple {
-  background: linear-gradient(135deg, #000000, #333333);
+    background: linear-gradient(135deg, #222, #000);
 }
 
 .download-btn.google {
-  background: linear-gradient(135deg, #34a853, #0f9d58);
+    background: linear-gradient(135deg, #34a853, #0f9d58);
 }
 
 .download-btn:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+    .saude-digital h2 {
+        font-size: 1.8rem;
+    }
+    
+    .saude-digital p, 
+    .saude-digital .lista-atribuicoes li {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .saude-digital .banner {
+        padding: 10px;
+    }
+
+    .download-btn {
+        width: 100%;
+    }
 }

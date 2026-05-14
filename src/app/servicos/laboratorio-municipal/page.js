@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useEffect } from "react";
-import "../../../styles/laboratorio.css"; // ajuste o caminho conforme sua estrutura
+import Image from "next/image";
+import "../../../styles/laboratorio.css";
 
 export default function Page() {
   // 🔝 Sempre voltar ao topo ao carregar a página
@@ -11,15 +12,20 @@ export default function Page() {
 
   return (
     <section className="laboratorio">
-      {/* Banner */}
+      {/* Banner - Proporção 1140x280 */}
       <div className="banner">
-        <img
+        <Image
           src="/img/banner-paginas/laboratorioMunicipal.jpg"
           alt="Laboratório Municipal de Muriaé"
+          width={1140}
+          height={280}
+          layout="responsive"
+          priority
+          className="banner-img"
         />
       </div>
 
-      {/* Conteúdo */}
+      {/* Conteúdo Centralizado */}
       <div className="conteudo">
         <h2>Laboratório Municipal</h2>
         <p>
@@ -36,35 +42,34 @@ export default function Page() {
 
         <h3>Agendamento de Exames</h3>
         <p>Para realizar o agendamento é necessário apresentar:</p>
-        <ul>
-          <li>Pedido médico do SUS</li>
-          <li>Documento de identidade com foto e CPF</li>
-          <li>Comprovante de residência atualizado</li>
-          <li>Cartão do SUS</li>
-          <li>Telefone de contato do paciente</li>
+        <ul className="lista-atribuicoes">
+          <li>Pedido médico do SUS;</li>
+          <li>Documento de identidade com foto e CPF;</li>
+          <li>Comprovante de residência atualizado;</li>
+          <li>Cartão do SUS;</li>
+          <li>Telefone de contato do paciente;</li>
           <li>
             No caso de menores de idade: certidão de nascimento da criança e
-            documento de identidade do responsável
+            documento de identidade do responsável.
           </li>
         </ul>
 
-        <h4>Gestantes</h4>
-        <p>
-          Além dos documentos citados, as gestantes deverão apresentar a
-          Caderneta de Pré-Natal do SUS.
-        </p>
+        <div className="nota-informativa">
+          <p>
+            <strong>Gestantes:</strong> Além dos documentos citados, as gestantes deverão apresentar a
+            Caderneta de Pré-Natal do SUS para prioridade e exames específicos.
+          </p>
+        </div>
 
         <h3>Como realizar o agendamento</h3>
         <p>O agendamento é realizado presencialmente.</p>
 
-        <h3>Horário de trabalho</h3>
-        <p>Segunda a sexta-feira, das 12h às 17h.</p>
-
-        <h3>Telefone para informações</h3>
-        <p>(32) 2020-8074</p>
-
-        <h3>Endereço</h3>
-        <p>Rua Coronel Izalino, s/n.</p>
+        <h3>Informações de Atendimento</h3>
+        <ul className="lista-atribuicoes">
+            <li><strong>Horário de trabalho:</strong> Segunda a sexta-feira, das 12h às 17h;</li>
+            <li><strong>Telefone:</strong> (32) 2020-8074;</li>
+            <li><strong>Endereço:</strong> Rua Coronel Izalino, s/n.</li>
+        </ul>
       </div>
     </section>
   );
