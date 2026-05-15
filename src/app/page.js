@@ -6,6 +6,7 @@ import EventosSection from "../components/EventosSection";
 export default function Page() {
   return (
     <section className={styles.container}>
+      
       <Carousel />
       <NoticiasSection />
       <EventosSection />

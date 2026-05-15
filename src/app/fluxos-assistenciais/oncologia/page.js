@@ -1,26 +1,36 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
-import "../../../styles/oncologia.css"; // podemos reaproveitar o mesmo CSS
+import { useEffect } from "react";
+import "../../../styles/oncologia.css";
 
 export default function OncologiaPage() {
-  const [zoomImage, setZoomImage] = useState(null);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
-    <div className="oncologia-container">
-      {/* Título principal */}
-      <h1 className="oncologia-titulo">Oncologia</h1>
+    <main className="oncologia-layout">
+      <div className="page-wrapper">
+        <section className="oncologia-page">
+          <h2 className="titulo-sessao">Oncologia</h2>
 
-      {/* Texto explicativo */}
-      <p className="oncologia-texto">
-            Cuidando de quem precisa: atendimento oncológico com carinho e responsabilidade.
-            A linha de cuidados da oncologia foi criada para garantir que pessoas com suspeita ou diagnóstico de câncer recebam atendimento rápido e de qualidade. 
-            A Fundação Cristiano Varella é uma referência nesse cuidado e realiza atendimentos para pacientes de mais de 290 cidades com pactuação, 
-            tanto nos casos de alta suspeita de câncer quanto quando o diagnóstico já está confirmado. Se você ou alguém da sua família estiver nessa situação, 
-            procure a unidade de saúde do seu município. Com o encaminhamento certo, a Fundação está pronta para acolher e cuidar com toda dedicação. 
-            Para os residentes em Muriaé, é necessário primeiro comparecer à UBS de referência de seu bairro para receber todas as orientações completas e corretas.
-      </p>
+          <div className="oncologia-display fade-in">
+            <div className="card-explicativo">
+              <h3>Atendimento Oncológico com Responsabilidade</h3>
+              <p>
+                A linha de cuidados da oncologia foi criada para garantir que pessoas com suspeita 
+                ou diagnóstico de câncer recebam atendimento rápido e de qualidade. A 
+                <strong> Fundação Cristiano Varella</strong> é a nossa referência nesse cuidado, 
+                atendendo pacientes de mais de 290 cidades pactuadas.
+              </p>
+              <p>
+                Para os residentes em Muriaé, o primeiro passo é comparecer à <strong>UBS de referência</strong> de seu bairro. 
+                Com o encaminhamento correto, a regulação garante o acolhimento necessário para o início do tratamento.
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
+    </main>
   );
 }

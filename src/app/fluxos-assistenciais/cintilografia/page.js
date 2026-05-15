@@ -72,7 +72,7 @@ export default function CintilografiaPage() {
               <div className="nota-informativa-destaque">
                 <div className="nota-ícone">i</div>
                 <p>
-                  Atenção ao formulário correto e fique atento às orientações e garanta o acesso ao examde de forma segura e organizada!
+                  Atenção ao formulário correto e fique atento às orientações e garanta o acesso ao exame de de forma segura e organizada!
                 </p>
               </div>
               <div className="nota-informativa-destaque">

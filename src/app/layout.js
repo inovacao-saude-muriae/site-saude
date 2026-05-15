@@ -1,12 +1,15 @@
 import React from "react";
 import Header from "../components/Header";
-import Banner from "../components/Banner"
+import Banner from "../components/Banner";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
+import Breadcrumbs from "../components/Breadcrumbs"; // Importando o novo componente
+import ScrollToTop from "./ScrollToTop";
 
 import styles from './layout.module.css';
 import "./globals.css";
-import ScrollToTop from "./ScrollToTop";
+// Se você criou um arquivo CSS separado para o Breadcrumb, importe-o aqui:
+// import "../styles/breadcrumbs.css"; 
 
 export const metadata = {
   title: "Secretaria Municipal de Saúde de Muriaé - MG",
@@ -14,7 +17,7 @@ export const metadata = {
   description: `
     Portal da Secretaria Municipal de Saúde de Muriaé - MG.
     Informações sobre serviços, campanhas, notícias e 
-      eventos relacionados à saúde pública na cidade e região.
+    eventos relacionados à saúde pública na cidade e região.
     Acesse para ficar atualizado sobre as ações e iniciativas da 
     Secretaria Municipal de Saúde.
   `,
@@ -40,10 +43,15 @@ export default function RootLayout({ children }) {
 
           <div className={styles.layoutBody}>
             <Sidebar />
+            
             <main className={styles.layoutContent}>
+              {/* O Breadcrumbs aparece aqui, no topo de todas as páginas internas */}
+              <Breadcrumbs />
+              
               {children}
             </main>
           </div>
+          
           <Footer />
         </div>
       </body>

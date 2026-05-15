@@ -1,33 +1,36 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
+import { useEffect } from "react";
 import "../../../styles/ginecologia.css";
 
 export default function GinecologiaPage() {
-  const [zoomImage, setZoomImage] = useState(null);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
-    <div className="ginecologia-container">
-      {/* Título principal */}
-      <h1 className="ginecologia-titulo">Ginecologia</h1>
+    <main className="ginecologia-layout">
+      <div className="page-wrapper">
+        <section className="ginecologia-page">
+          <h2 className="titulo-sessao">Ginecologia</h2>
 
-      {/* Texto explicativo */}
-      <p className="ginecologia-texto">
-        Cálculo renal: prevenir é o melhor remédio! O cálculo renal, conhecido
-        como pedra nos rins, é uma das doenças urológicas mais comuns e pode
-        causar dores intensas, infecções e até necessidade de internação. A
-        principal forma de prevenção é manter-se bem hidratado, consumindo água
-        ao longo do dia, além de manter uma alimentação equilibrada, com pouco
-        sal, gordura e alimentos industrializados. Em casos em que o tratamento
-        clínico não é suficiente, a intervenção cirúrgica pode ser necessária. A
-        Secretaria Municipal de Saúde de Muriaé oferece, no âmbito do SUS, a
-        cirurgia a laser para tratamento de cálculos renais, garantindo
-        tecnologia e qualidade no atendimento aos pacientes. Para ter acesso ao
-        procedimento, é fundamental seguir os fluxos estabelecidos e todas as
-        orientações médicas. Cuide da sua saúde urinária com prevenção e
-        acompanhamento profissional!
-      </p>
-    </div>
+          <div className="ginecologia-display fade-in">
+            <div className="card-explicativo">
+              <h3>Saúde da Mulher: Cuidado integral e humanizado</h3>
+              <p>
+                Cirurgias ginecológicas: cuidado integral pela saúde da mulher! As cirurgias ginecológicas mais comuns, como a histerectomia (retirada do útero), 
+                miomectomia (remoção de miomas uterinos), laqueadura tubária, entre outras, são frequentemente indicadas por médicos clínicos para tratar condições 
+                que afetam a saúde reprodutiva e ginecológica das mulheres. Para que esses procedimentos sejam realizados de forma segura e organizada, é essencial 
+                seguir os fluxos estabelecidos pela rede pública de saúde.
+              </p>
+              <p>
+                A Secretaria Municipal de Saúde de Muriaé, por meio do programa Opera Já Muriaé, garante a realização de todo o pré-operatório, 
+                oferecendo atendimento completo e gratuito aos nossos munícipes, sempre com cuidado e responsabilidade, dentro do SUS.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
   );
 }

@@ -1,21 +1,105 @@
-.oncologia-container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
+/* oncologia.css */
+
+/* --- LAYOUT GERAL --- */
+.oncologia-layout {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f4f7f9;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
 }
 
-/* Título principal da página */
-.oncologia-titulo {
-    font-weight: bold;
-    text-align: center;
-    color: var(--text-color-secondary);
+.page-wrapper {
+    width: 100%;
+    max-width: 1140px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin: 0 20px;
+    overflow: hidden;
+}
+
+.oncologia-page {
+    padding: 60px 40px;
+}
+
+.titulo-sessao {
+    color: #145a86;
+    font-size: 2.2rem;
     margin-bottom: 30px;
-    border-bottom: 3px solid var(--text-color-secondary);
-    padding-bottom: 10px;
+    position: relative;
+    padding-bottom: 15px;
+    border-bottom: 5px solid #1c76b2;
+    display: inline-block;
 }
 
-/* Texto explicativo */
-.oncologia-texto {
+/* --- CARD EXPLICATIVO --- */
+.card-explicativo {
+    background-color: #fdfdfd;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #eef2f6;
+}
+
+.card-explicativo h3 {
+    color: #145a86;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.card-explicativo p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #444;
     text-align: justify;
-    color: #333;
+}
+
+/* --- NOTA INFORMATIVA (ESTILO INSTITUCIONAL) --- */
+.nota-informativa-destaque {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #f0f7ff;
+    border: 1px solid #d0e5f5;
+    border-left: 5px solid #c58e00; /* Destaque Ouro */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nota-ícone {
+    background-color: #145a86;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.nota-informativa-destaque p {
+    margin: 0;
+    font-size: 16px;
+    color: #145a86;
+    line-height: 1.5;
+}
+
+/* --- ANIMAÇÃO --- */
+.fade-in {
+    animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .oncologia-page {
+        padding: 40px 20px;
+    }
 }

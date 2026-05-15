@@ -124,7 +124,62 @@ body > div {
 .hamburger-mobile-bar {
   display: none;
 }
+/* breadcrumbs.css */
+.breadcrumbs-container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 15px 20px 0 20px; /* Alinhado com o page-wrapper */
+}
 
+.breadcrumbs-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  font-family: sans-serif;
+  flex-wrap: wrap;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  color: #666;
+}
+
+.breadcrumb-item a {
+  color: #145a86; /* Azul Institucional */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.breadcrumb-item a:hover {
+  color: #1c76b2;
+  text-decoration: underline;
+}
+
+.separator {
+  margin: 0 10px;
+  color: #ccc;
+  font-weight: 300;
+}
+
+.current-page {
+  color: #c58e00; /* Destaque Ouro */
+  font-weight: 600;
+}
+
+/* Ajuste para mobile */
+@media (max-width: 768px) {
+  .breadcrumbs-container {
+    padding: 10px 20px 0 20px;
+  }
+  .breadcrumbs-list {
+    font-size: 12px;
+  }
+}
 @media (max-width: 768px) {
   /* 2. Transforma o botão em uma barra horizontal no Mobile */
   .hamburger-mobile-bar {
