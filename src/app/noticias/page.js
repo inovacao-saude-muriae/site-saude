@@ -5,42 +5,68 @@ import noticiasData from "../../data/noticias.json";
 import NoticiasCard from "../../components/NoticiasCard";
 import "../../styles/noticias.css";
 
-export default function Page() {
+export default function NoticiasListPage() {
   const [paginaAtual, setPaginaAtual] = useState(1);
   const noticiasPorPagina = 6;
 
-  // calcular índice inicial e final
+  // Cálculo da paginação
   const indiceInicial = (paginaAtual - 1) * noticiasPorPagina;
   const indiceFinal = indiceInicial + noticiasPorPagina;
+  
+  // Ordenar as notícias por data (mais recente primeiro) antes de paginar
+  const noticiasOrdenadas = [...noticiasData].sort((a, b) => {
+    return new Date(b.data_publicacao) - new Date(a.data_publicacao);
+  });
 
-  // pegar apenas as notícias da página atual
-  const noticiasPagina = noticiasData.slice(indiceInicial, indiceFinal);
-
-  // calcular total de páginas
+  const noticiasPagina = noticiasOrdenadas.slice(indiceInicial, indiceFinal);
   const totalPaginas = Math.ceil(noticiasData.length / noticiasPorPagina);
 
-  // 🔝 sempre voltar ao topo quando muda de página
+  // Voltar ao topo quando trocar de página
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [paginaAtual]);
 
   return (
-    <section className="noticias">
-        <h2>Notícias</h2>
-        <div className="noticiasGrid">
-            {noticiasPagina.map((noticia) => (
-            <NoticiasCard key={noticia.id} noticia={noticia} />
-            ))}
-        </div>
+    <main className="noticias-layout-container fade-in">
+      <div className="secao-header" style={{ marginBottom: '40px' }}>
+        <h2 className="titulo-sessao">Notícias</h2>
+      </div>
 
-        {/* Navegação de páginas */}
+      {/* Aqui está o segredo: usamos a classe "noticias-grid-global" 
+          que é a mesma usada na Home para garantir o visual idêntico.
+      */}
+      <div className="noticias-grid-global">
+        {noticiasPagina.map((noticia) => (
+          <NoticiasCard key={noticia.id} noticia={noticia} />
+        ))}
+      </div>
+
+      {/* Navegação de páginas */}
+      {totalPaginas > 1 && (
         <div className="paginacao">
-            <button onClick={() => setPaginaAtual((prev) => Math.max(prev - 1, 1))} disabled={paginaAtual === 1} > ← Anterior </button>
+          <button
+            className="btn-institucional"
+            style={{ padding: '8px 20px' }}
+            onClick={() => setPaginaAtual((prev) => Math.max(prev - 1, 1))}
+            disabled={paginaAtual === 1}
+          >
+            ← Anterior
+          </button>
 
-            <span> Página {paginaAtual} de {totalPaginas}</span>
+          <span className="pagina-info">
+            Página <strong>{paginaAtual}</strong> de {totalPaginas}
+          </span>
 
-            <button onClick={() => setPaginaAtual((prev) => Math.min(prev + 1, totalPaginas))}disabled={paginaAtual === totalPaginas}>Próxima →</button>
+          <button
+            className="btn-institucional"
+            style={{ padding: '8px 20px' }}
+            onClick={() => setPaginaAtual((prev) => Math.min(prev + 1, totalPaginas))}
+            disabled={paginaAtual === totalPaginas}
+          >
+            Próxima →
+          </button>
         </div>
-    </section>
+      )}
+    </main>
   );
 }

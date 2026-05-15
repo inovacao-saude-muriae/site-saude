@@ -1,129 +1,181 @@
-.noticias {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px;
+/* --- 1. CONFIGURAÇÕES DE GRID E LAYOUT --- */
+.noticias-grid-global {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    width: 100%;
+    margin-top: 20px;
 }
 
-.noticias h2 {
-  font-size: 1.8rem; /* título um pouco menor */
-  font-weight: bold;
-  margin-bottom: 20px;
+.noticias-layout-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
-.noticiasGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 15px; /* espaço reduzido entre os cards */
+/* --- 2. ESTILO DO CARD (USADO EM TODO O SITE) --- */
+.noticia-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s ease;
 }
 
-.noticia-card {
-  display: block;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background: #fafafa;
-  text-decoration: none;
-  color: #333;
-  transition: background 0.2s, transform 0.2s;
+.noticia-card-link:hover { transform: translateY(-5px); }
+
+.noticia-card-body {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #e0e6ed;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-.noticia-card:hover {
-  background: #e6f0ff;
-  transform: translateY(-3px);
+.noticia-card-banner-wrapper {
+    position: relative;
+    width: 100%;
+    height: 180px;
 }
 
-.noticia-card img {
-  width: 100%;
-  height: 150px; 
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 8px;
+.noticia-card-info { padding: 20px; flex-grow: 1; }
+
+.noticia-card-date {
+    color: #c58e00; /* Ouro */
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
 }
 
-.noticia-card h3 {
-  font-size: 1rem; 
-  margin-bottom: 6px;
+.noticia-card-title {
+    color: #145a86; /* Azul Institucional */
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    font-weight: 700;
 }
 
-.noticia-card p {
-  font-size: 0.85rem; 
-  color: #555;
+.noticia-card-excerpt {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
 }
 
-.noticia-banner {
-  width: 100%;
-  height: 160px; 
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 8px;
+/* --- 3. SEÇÃO DA PÁGINA INICIAL (HOME) --- */
+.noticias-home-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
 }
 
-.noticia-data {
-  font-size: 0.8rem;
-  color: #777;
-  margin-bottom: 6px;
-  display: block;
+.noticias-home-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
 }
 
-/* Paginação */
+/* --- 4. PÁGINA DE LEITURA (DETALHE) --- */
+.noticia-detail-article {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.noticia-detail-banner-container {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.noticia-detail-title {
+    font-size: 2.5rem;
+    color: #145a86;
+    margin: 20px 0;
+}
+
+.noticia-detail-content {
+    line-height: 1.8;
+    font-size: 1.15rem;
+    color: #333;
+}
+
+/* --- 5. BOTÕES E PAGINAÇÃO --- */
+.btn-institucional {
+    background: #145a86;
+    color: white;
+    padding: 12px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-institucional:hover { background: #1c76b2; }
+
 .paginacao {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+/* Estilização Refinada do Texto da Notícia */
+.noticia-detail-content {
+    line-height: 1.8;
+    color: #444;
+    font-size: 1.15rem;
 }
 
-.paginacao button {
-  padding: 6px 10px;
-  border: none;
-  border-radius: 6px;
-  background: #2563eb;
-  color: #fff;
-  cursor: pointer;
-  transition: background 0.2s;
+/* Títulos internos da notícia (Azul e com borda) */
+.noticia-detail-content h3 {
+    color: #145a86;
+    font-size: 1.6rem;
+    margin-top: 30px;
+    border-left: 4px solid #c58e00; /* Detalhe em Ouro */
+    padding-left: 15px;
 }
 
-.paginacao button:disabled {
-  background: #ccc;
-  cursor: not-allowed;
+/* Citações (Blockquotes) - Ideal para frases de secretários ou médicos */
+.noticia-detail-content blockquote {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #f0f7ff;
+    border-radius: 8px;
+    font-style: italic;
+    color: #145a86;
+    border-left: 5px solid #145a86;
 }
 
-.paginacao button:hover:not(:disabled) {
-  background: #1e40af;
+/* Listas com marcadores personalizados */
+.noticia-detail-content ul {
+    margin: 20px 0;
+    padding-left: 20px;
 }
 
-.paginacao span {
-  font-size: 0.9rem;
-  color: #333;
+.noticia-detail-content li {
+    margin-bottom: 10px;
 }
 
-/* Responsividade agrupada */
-
-/* >= 480px */
-@media screen and (min-width: 480px) {
-  .noticiasGrid {
-    grid-template-columns: repeat(1, 1fr);
-  }
+.noticia-detail-content li strong {
+    color: #145a86;
 }
 
-/* >= 768px */
-@media screen and (min-width: 768px) {
-  .noticiasGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* Destaque em negrito com a cor institucional */
+.noticia-detail-content strong {
+    color: #145a86;
+    font-weight: 700;
 }
-
-/* >= 1366px */
-@media screen and (min-width: 1366px) {
-  .noticiasGrid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* >= 1440px */
-@media screen and (min-width: 1440px) {
-  .noticiasGrid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+@media (max-width: 768px) {
+    .noticia-detail-banner-container { height: 250px; }
+    .noticia-detail-title { font-size: 1.8rem; }
 }
