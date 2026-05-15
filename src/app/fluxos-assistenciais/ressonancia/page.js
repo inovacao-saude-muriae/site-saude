@@ -64,12 +64,15 @@ export default function RessonanciaPage() {
           <div className="ressonancia-display fade-in">
             <div className="card-explicativo">
               <p>
-                A Secretaria Municipal de Saúde de Muriaé disponibiliza exames avançados como a Ressonância Magnética (RNM) pelo SUS. 
-                Esses exames são fundamentais para diagnósticos precisos e detalhados, auxiliando no tratamento de diversas condições.
+                Exames de imagem de alta complexidade: atenção ao formulário correto! A Secretaria Municipal de Saúde de Muriaé disponibiliza exames de imagem avançados 
+                como tomografia computadorizada (TC), ressonância magnética nuclear (RNM) e cintilografia pelo SUS, conforme indicação médica. Esses exames são 
+                fundamentais para diagnósticos mais precisos e detalhados, auxiliando no acompanhamento e tratamento de diversas condições de saúde.
               </p>
               <p>
-                Para que a solicitação seja autorizada, o pedido deve estar corretamente preenchido no formulário <strong>APAC</strong>. 
-                Siga as orientações para garantir o acesso ao exame de forma organizada e segura.
+                Para que a solicitação seja autorizada, é imprescindível que o pedido esteja corretamente preenchido no formulário APAC 
+                (Autorização de Procedimentos de Alta Complexidade), conforme as normas do sistema público de saúde. 
+                A falta de informações ou o uso de formulários incorretos pode atrasar a liberação do exame. 
+                Fique atento às orientações e garanta o acesso ao exame de forma segura e organizada!
               </p>
               
               
