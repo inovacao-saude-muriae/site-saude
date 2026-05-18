@@ -3,17 +3,18 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import eventosData from "../../../data/eventos.json";
-import "../../../styles/eventosDetalhes.css";
-import { formatIsoDateToPtBr } from "../../../lib/date";
 import Image from "next/image";
+import eventosData from "../../../data/eventos.json";
+import { formatIsoDateToPtBr } from "../../../lib/date";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
 import jsPDF from "jspdf";
 
-export default function EventosDetalhes() {
+import "swiper/css";
+import "swiper/css/pagination";
+import "../../../styles/eventos.css";
+
+export default function EventosDetalhesPage() {
   const params = useParams();
   const evento = eventosData.find((e) => e.id.toString() === params.id);
 
@@ -26,9 +27,8 @@ export default function EventosDetalhes() {
     window.scrollTo(0, 0);
   }, []);
 
-  if (!evento) return <p>Evento não encontrado</p>;
+  if (!evento) return <div className="noticia-error">Evento não encontrado</div>;
 
-  // Status
   const hoje = new Date();
   const dataEvento = new Date(evento.data);
   const hojeStr = hoje.toISOString().split("T")[0];
@@ -36,11 +36,11 @@ export default function EventosDetalhes() {
 
   let status = null;
   if (dataEventoStr < hojeStr) {
-    status = { texto: "Encerrado", classe: "evento-status encerrado" };
+    status = { texto: "Encerrado", classe: "evento-badge-status encerrado" };
   } else if (dataEventoStr === hojeStr) {
-    status = { texto: "Em andamento", classe: "evento-status andamento" };
+    status = { texto: "Em andamento", classe: "evento-badge-status andamento" };
   } else {
-    status = { texto: "Próximo", classe: "evento-status proximo" };
+    status = { texto: "Próximo", classe: "evento-badge-status proximo" };
   }
 
   const fecharModal = () => {
@@ -76,182 +76,161 @@ export default function EventosDetalhes() {
 
   const baixarComprovante = async () => {
     const doc = new jsPDF("p", "mm", "a4");
-
     const response = await fetch(evento.imgSrc);
     const blob = await response.blob();
     const reader = new FileReader();
 
     reader.onloadend = () => {
       const base64data = reader.result;
-
       doc.addImage(base64data, "PNG", 0, 0, 210, 60);
-
       doc.setFontSize(16);
       doc.text("Comprovante de Inscrição", 20, 80);
-
       doc.setFontSize(12);
       doc.text(`Local: ${evento.local || "—"}`, 20, 95);
       doc.text(`Nome: ${comprovante.nome}`, 20, 110);
       doc.text(`Evento: ${comprovante.evento}`, 20, 125);
       doc.text(`Data do Evento: ${formatIsoDateToPtBr(evento.data)}`, 20, 140);
-
-      const dataInscricao = new Date().toLocaleDateString("pt-BR");
-      doc.text(`Data da Inscrição: ${dataInscricao}`, 20, 155);
-
+      doc.text(`Data da Inscrição: ${new Date().toLocaleDateString("pt-BR")}`, 20, 155);
       doc.save("comprovante-inscricao.pdf");
     };
-
     reader.readAsDataURL(blob);
   };
 
   return (
-    <article className="evento-detalhe">
-      <Image
-        src={evento.imgSrc}
-        alt={evento.titulo}
-        width={1000}
-        height={200}
-        className="evento-banner"
-      />
+    <main className="eventos-layout-container">
+      <article className="evento-detail-article fade-in">
+        <div className="evento-detail-banner-container">
+          <Image src={evento.imgSrc} alt={evento.titulo} fill priority style={{ objectFit: 'cover' }} />
+        </div>
 
-      <h2>{evento.titulo}</h2>
-      <span className="evento-data">{formatIsoDateToPtBr(evento.data)}</span>
-      {status && <span className={status.classe}>{status.texto}</span>}
+        <span className="evento-card-date">{formatIsoDateToPtBr(evento.data)}</span>
+        {status && <span className={`${status.classe}`} style={{marginBottom: '15px'}}>{status.texto}</span>}
+        <h1 className="evento-detail-title">{evento.titulo}</h1>
+        
+        <p className="evento-detail-description">{evento.descricao}</p>
 
-      <p>{evento.descricao}</p>
-
-      {/* Cronograma só aparece se existir */}
-      {evento.cronograma && evento.cronograma.length > 0 && (
-        <>
-          <h3>Cronograma</h3>
-          <table className="cronograma">
-            <thead>
-              <tr>
-                <th>Horário</th>
-                <th>Tema</th>
-                <th>Palestrante</th>
-              </tr>
-            </thead>
-            <tbody>
-              {evento.cronograma.map((item, index) => (
-                <tr key={index}>
-                  <td>{item.hora}</td>
-                  <td>{item.tema}</td>
-                  <td>{item.palestrante}</td>
+        {evento.cronograma && evento.cronograma.length > 0 && (
+          <>
+            <h3>Cronograma</h3>
+            <table className="cronograma-table">
+              <thead>
+                <tr>
+                  <th>Horário</th>
+                  <th>Tema</th>
+                  <th>Palestrante</th>
                 </tr>
+              </thead>
+              <tbody>
+                {evento.cronograma.map((item, index) => (
+                  <tr key={index}>
+                    <td>{item.hora}</td>
+                    <td>{item.tema}</td>
+                    <td>{item.palestrante}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </>
+        )}
+
+        {evento.galeria && evento.galeria.length > 0 && (
+          <div className="evento-galeria-wrapper">
+            <h3>Galeria de Fotos</h3>
+            <Swiper
+              modules={[Pagination, Autoplay]}
+              spaceBetween={15}
+              slidesPerView={3}
+              pagination={{ clickable: true }}
+              autoplay={{ delay: 3000, disableOnInteraction: false }}
+              breakpoints={{
+                0: { slidesPerView: 1 },
+                500: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 }
+              }}
+            >
+              {evento.galeria.map((foto, index) => (
+                <SwiperSlide key={index}>
+                  <div style={{ position: 'relative', width: '100%', height: '160px' }}>
+                    <Image
+                      src={foto}
+                      alt={`${evento.titulo} - ${index + 1}`}
+                      fill
+                      className="evento-galeria-img"
+                      onClick={() => setFotoSelecionadaIndex(index)}
+                    />
+                  </div>
+                </SwiperSlide>
               ))}
-            </tbody>
-          </table>
-        </>
-      )}
+            </Swiper>
 
-      {/* Galeria só aparece se existir */}
-      {evento.galeria && evento.galeria.length > 0 && (
-        <div className="evento-galeria">
-          <h3>Galeria</h3>
-          <Swiper
-            modules={[Pagination, Autoplay]}
-            spaceBetween={10}
-            slidesPerView={3}
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 3000, disableOnInteraction: false }}
-          >
-            {evento.galeria.map((foto, index) => (
-              <SwiperSlide key={index}>
-                <Image
-                  src={foto}
-                  alt={`${evento.titulo} foto ${index + 1}`}
-                  width={250}   // largura da miniatura
-                  height={150}  // altura da miniatura
-                  className="evento-galeria-foto"
-                  onClick={() => setFotoSelecionadaIndex(index)}
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-
-          {/* Modal para ampliar foto */}
-          {fotoSelecionadaIndex !== null && (
-            <div className="modal">
-              <button className="modal-close" onClick={fecharModal}>✕</button>
-              <div className="modal-content">
-                <Image
-                  src={evento.galeria[fotoSelecionadaIndex]}
-                  alt="Foto ampliada"
-                  width={800}
-                  height={500}
-                  className="foto-ampliada"
-                />
+            {fotoSelecionadaIndex !== null && (
+              <div className="modal-overlay" onClick={fecharModal}>
+                <div className="modal-body-content modal-img-expand" onClick={(e) => e.stopPropagation()}>
+                  <button className="modal-close-btn" onClick={fecharModal}>✕</button>
+                  <Image src={evento.galeria[fotoSelecionadaIndex]} alt="Expandido" width={1000} height={600} style={{ objectFit: 'contain', borderRadius: '8px', maxWidth: '100%' }} />
+                </div>
               </div>
-            </div>
-          )}
-        </div>
-      )}
-
-      {/* Botão inscrição só aparece em simpósio */}
-      {evento.formulario && status?.texto === "Próximo" && step === 0 && (
-        <div className="formulario-inscricao">
-          <button onClick={() => setStep(1)} className="buttonYellow">
-            Inscreva-se no simpósio
-          </button>
-        </div>
-      )}
-
-      {/* Modal formulário */}
-      {step === 1 && evento.formulario && (
-        <div className="modal">
-          <div className="modal-content">
-            <button className="modal-close" onClick={fecharModal}>✕</button>
-            <h3>Inscrição no {evento.titulo}</h3>
-            <form onSubmit={handleSubmit} className="form-simposio">
-              {evento.formulario.map((campo, index) => (
-                <label key={index}>
-                  {campo.label} *
-                  <input
-                    name={campo.name}
-                    type={campo.name === "email" ? "email" : "text"} 
-                    required
-                    pattern={campo.name === "email" ? ".*@.*" : undefined}
-                    onInvalid={(e) => {
-                      if (campo.name === "email") {
-                        e.target.setCustomValidity("Este não é um email válido");
-                      }
-                    }}
-                    onInput={(e) => e.target.setCustomValidity("")} // limpa mensagem ao digitar
-                  />
-                </label>
-              ))}
-              <button type="submit" className="finalizar-btn" disabled={isSending}>
-                {isSending ? "Enviando..." : "Enviar inscrição"}
-              </button>
-            </form>
+            )}
           </div>
-        </div>
-      )}
+        )}
 
-
-      {/* Modal comprovante */}
-      {step === 2 && comprovante && (
-        <div className="modal">
-          <div className="modal-content">
-            <button className="modal-close" onClick={fecharModal}>✕</button>
-            <div className="check-icon">✔</div>
-            <h2>Inscrição concluída!</h2>
-            <p>Nome: {comprovante.nome}</p>
-            <p>Evento: {comprovante.evento}</p>
-            <p>Data: {formatIsoDateToPtBr(comprovante.data)}</p>
-            <p>Local: {evento.local}</p>
-
-            <button onClick={baixarComprovante} className="buttonGreen">
-              Baixar Comprovante (PDF)
+        {evento.formulario && status?.texto === "Próximo" && step === 0 && (
+          <div style={{ margin: '30px 0' }}>
+            <button onClick={() => setStep(1)} className="btn-institucional" style={{ backgroundColor: '#fdcc02', color: '#000' }}>
+              Inscreva-se no evento
             </button>
           </div>
-        </div>
-      )}
+        )}
 
-      <Link href="/eventos" className="voltar">
-        ← Voltar para Eventos
-      </Link>
-    </article>
+        {step === 1 && evento.formulario && (
+          <div className="modal-overlay" onClick={fecharModal}>
+            <div className="modal-body-content" onClick={(e) => e.stopPropagation()}>
+              <button className="modal-close-btn" onClick={fecharModal}>✕</button>
+              <h3 style={{ marginTop: 0 }}>Inscrição: {evento.titulo}</h3>
+              <form onSubmit={handleSubmit} className="form-inscricao-container">
+                {evento.formulario.map((campo, index) => (
+                  <label key={index}>
+                    {campo.label} *
+                    <input
+                      name={campo.name}
+                      type={campo.name === "email" ? "email" : "text"}
+                      required
+                    />
+                  </label>
+                ))}
+                <button type="submit" className="btn-institucional" style={{ backgroundColor: '#16a34a', marginTop: '15px' }} disabled={isSending}>
+                  {isSending ? "Enviando..." : "Finalizar Inscrição"}
+                </button>
+              </form>
+            </div>
+          </div>
+        )}
+
+        {step === 2 && comprovante && (
+          <div className="modal-overlay" onClick={fecharModal}>
+            <div className="modal-body-content" onClick={(e) => e.stopPropagation()}>
+              <button className="modal-close-btn" onClick={fecharModal}>✕</button>
+              <div className="check-icon-success">✔</div>
+              <h2>Inscrição Concluída!</h2>
+              <div style={{ textAlign: 'left', margin: '20px 0', padding: '15px', background: '#f8fafc', borderRadius: '6px' }}>
+                <p><strong>Nome:</strong> {comprovante.nome}</p>
+                <p><strong>Evento:</strong> {comprovante.evento}</p>
+                <p><strong>Data:</strong> {formatIsoDateToPtBr(comprovante.data)}</p>
+                <p><strong>Local:</strong> {evento.local}</p>
+              </div>
+              <button onClick={baixarComprovante} className="btn-institucional" style={{ backgroundColor: '#16a34a', width: '100%' }}>
+                Baixar Comprovante (PDF)
+              </button>
+            </div>
+          </div>
+        )}
+
+        <div style={{ marginTop: '40px', borderTop: '1px solid #eee', paddingTop: '20px' }}>
+          <Link href="/eventos" className="btn-institucional">
+            ← Voltar para Eventos
+          </Link>
+        </div>
+      </article>
+    </main>
   );
 }
