@@ -1,79 +1,74 @@
 "use client";
 
 import React, { useEffect } from "react";
-import Link from "next/link"; // se estiver usando Next.js
+import Link from "next/link";
+import Image from "next/image";
 import "../../../styles/ccz.css";
 
-export default function Page() {
+export default function CczPage() {
+  // 🔝 Sempre voltar ao topo ao carregar a página
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
-    <section className="ccz">
-      {/* Banner */}
-      <div className="banner">
-        <img
-          src="/img/banner-paginas/ccz.jpg"
-          alt="Centro de Controle de Zoonoses"
-        />
+    <main className="ccz-layout">
+      <div className="page-wrapper">
+        <section className="ccz-page fade-in">
+          
+          {/* Banner Otimizado Inteiro sem Cortes */}
+          <div className="ccz-banner-container">
+            <Image
+              src="/img/banner-paginas/ccz.jpg"
+              alt="Centro de Controle de Zoonoses"
+              fill
+              priority
+              style={{ objectFit: 'contain' }}
+              className="ccz-banner-img"
+            />
+          </div>
+
+          <div className="card-explicativo">
+            <p>
+              O <strong>Centro de Controle de Zoonoses Manuela Pereira da Marta</strong>,
+              vinculado à Secretaria Municipal de Saúde de Muriaé, é uma unidade fundamental
+              para a promoção da saúde pública e para o controle de doenças que podem ser
+              transmitidas entre animais e seres humanos.
+            </p>
+            <p>
+              Localizado na BR-356, no sentido Muriaé–Ervália, o CCZ atua diretamente ligado 
+              à vigilância e à prevenção dessas patologias, por meio de ações estratégicas 
+              voltadas à proteção e melhoria da qualidade de vida da população.
+            </p>
+          </div>
+
+          <h3>Principais atividades desenvolvidas</h3>
+          <ul className="ccz-lista-check">
+            <li>Monitoramento e controle ativo de doenças zoonóticas, como raiva, leishmaniose, escabiose e esporotricose;</li>
+            <li>Educação em saúde, com campanhas contínuas sobre prevenção de zoonoses e posse responsável de animais de estimação;</li>
+            <li>Campanhas estratégicas de adoção responsável, incentivando o bem-estar animal e o estreitamento de vínculos com a comunidade;</li>
+            <li>Vacinação antirrábica de cães e gatos durante os períodos de mobilização nacional promovidos pelo Governo de Minas Gerais;</li>
+            <li>Parcerias técnicas com o Instituto Mineiro de Agropecuária (IMA) para o controle da raiva, com foco no monitoramento de morcegos hematófagos;</li>
+            <li>Acolhimento e resgate direcionado de animais com suspeita clínica de zoonoses ou em estrito risco à saúde pública.</li>
+          </ul>
+
+          {/* Seção de adoção integrada e com o contêiner de botão estruturado */}
+          <div className="ccz-secao-adocao">
+            <h3>Adote um Amigo!</h3>
+            <p>
+              O CCZ disponibiliza cães e gatos para adoção de forma totalmente responsável. Ao adotar, você 
+              oferece uma nova chance de vida digna para um animal e contribui diretamente para o controle populacional e bem-estar da 
+              nossa comunidade. Venha conhecer nossos animais protegidos e encontre seu novo companheiro de vida!
+            </p>
+            <div className="ccz-wrapper-botao">
+              <Link href="/vigilancia/ccz/adocao" className="ccz-btn-adocao">
+                Conhecer Animais para Adoção
+              </Link>
+            </div>
+          </div>
+
+        </section>
       </div>
-
-      {/* Conteúdo principal */}
-      <div className="conteudo">
-        <h2>Centro de Controle de Zoonoses (CCZ): qual a importância desse órgão?</h2>
-        <p>
-          O <strong>Centro de Controle de Zoonoses Manuela Pereira da Marta</strong>,
-          vinculado à Secretaria Municipal de Saúde de Muriaé, é uma unidade fundamental
-          para a promoção da saúde pública e para o controle de doenças que podem ser
-          transmitidas entre animais e seres humanos.
-        </p>
-        <p>
-          Localizado na BR-356, no sentido Muriaé–Ervália, o CCZ passou recentemente por
-          uma ampla reforma e modernização. As melhorias ampliaram a capacidade de
-          atendimento e garantiram melhores condições para o cuidado com os animais e
-          para o desenvolvimento das ações de prevenção de zoonoses.
-        </p>
-        <p>
-          O trabalho do CCZ está diretamente ligado à vigilância e à prevenção dessas
-          doenças, por meio de ações estratégicas voltadas à proteção da população.
-        </p>
-
-        <h3>Principais atividades desenvolvidas</h3>
-        <ul>
-          <li>Monitoramento e controle de doenças zoonóticas, como raiva, leishmaniose, escabiose e esporotricose;</li>
-          <li>Educação em saúde, com campanhas de conscientização sobre prevenção de zoonoses e posse responsável de animais;</li>
-          <li>Campanhas de adoção responsável, incentivando o cuidado, o bem-estar animal e o vínculo com a comunidade;</li>
-          <li>Vacinação antirrábica de cães e gatos durante os períodos de campanha nacional promovidos pelo Governo de Minas Gerais;</li>
-          <li>Parcerias com o Instituto Mineiro de Agropecuária (IMA) para o controle da raiva, com atenção especial ao monitoramento de morcegos hematófagos;</li>
-          <li>Resgate de animais com suspeita de zoonoses ou em estado precário de saúde, visando reduzir riscos à saúde pública.</li>
-        </ul>
-
-        <p>
-          A atuação do CCZ é essencial para prevenir surtos e epidemias causados por
-          doenças transmitidas por animais. Por meio de ações educativas, monitoramento
-          constante e parcerias institucionais, o centro contribui para a redução de
-          riscos à saúde humana, o fortalecimento da vigilância epidemiológica, a
-          promoção do bem-estar animal dentro do conceito de Saúde Única e a melhoria da
-          qualidade de vida da população.
-        </p>
-      </div>
-
-      {/* Seção de adoção */}
-      <div className="adocao">
-        <h2>Adote um Amigo!</h2>
-        <p>
-          O CCZ disponibiliza cães e gatos para adoção responsável. Ao adotar, você
-          oferece uma nova chance de vida para um animal e contribui para o bem-estar da
-          comunidade. Venha conhecer nossos animais e encontre seu novo companheiro!
-        </p>
-       <Link href="/vigilancia/ccz/adocao" className="btn-adocao">
-        Conheça
-        </Link>
-
-
-
-      </div>
-    </section>
+    </main>
   );
 }

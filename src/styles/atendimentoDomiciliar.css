@@ -1,110 +1,167 @@
-/* atendimento.css */
+/* --- LAYOUT GERAL GLOBAL --- */
+.sad-layout {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f4f7f9;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0; /* Margem ideal para acomodar o Breadcrumb no topo */
+}
 
-.atendimento {
+.sad-layout .page-wrapper {
+  width: 100%;
+  max-width: 1440px; /* 🚀 Alinhado com o padrão global para telas grandes */
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  margin: 0 20px;
+  overflow: hidden;
+  transition: max-width 0.3s ease;
+}
+
+.sad-page {
+  padding: 40px; /* Padding superior ajustado para o topo iniciar com o banner */
+}
+
+/* --- CONTAINER DO BANNER (AJUSTADO PARA CONTAIN) --- */
+.sad-banner-container {
+  position: relative;
     width: 100%;
-    background-color: #fff;
+    height: 250px; /* Mantida a altura de 250px que funcionou no seu layout */
+    margin-bottom: 30px;
+    background-color: transparent; /* Mantém as laterais limpas */
+    border-radius: 10px; /* Cantos arredondados */
+    overflow: hidden; /* Força o recorte da imagem nas quinas */
+}
+/* --- CARD EXPLICATIVO --- */
+.card-explicativo {
+  background-color: #fdfdfd;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  border: 1px solid #eef2f6;
 }
 
-/* Estrutura do Banner com respiro lateral */
-.atendimento .banner {
-    width: 100%;
-    max-width: 1140px;    /* Mantendo o padrão da sua imagem */
-    margin: 0 auto;       /* Centraliza o container */
-    padding: 20px;        /* O padding da borda conforme o modelo */
-    box-sizing: border-box;
+.card-explicativo h3 {
+  color: #145a86;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
 }
 
-.atendimento .banner-img {
-    width: 100% !important;
-    height: auto !important;
-    border-radius: 12px;     /* Cantos arredondados do modelo */
-    display: block;
-    object-fit: contain;
+.card-explicativo p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #444;
+  text-align: justify;
+  margin: 0;
 }
 
-/* Conteúdo alinhado com o banner */
-.atendimento .conteudo {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 20px;
+/* --- ELEMENTOS DE TEXTO E TIPOGRAFIA --- */
+.sad-page h3 {
+  color: #145a86;
+  margin: 40px 0 20px;
+  font-size: 1.6rem;
+  font-weight: 700;
 }
 
-/* Tipografia e Estilos */
-.atendimento h2 {
-    color: #145a86; /* Padronizado com o modelo */
-    font-size: 2.2rem;
-    margin-bottom: 25px;
-    position: relative;
-    padding-bottom: 10px;
+.sad-page p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #444;
+  text-align: justify;
+  margin-bottom: 20px;
 }
 
-.atendimento h2::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 4px;
-    background-color: #1c76b2;
+/* --- LISTA CUSTOMIZADA COM O MARCADOR CHECK (✓) --- */
+.sad-lista-check {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 35px 0;
 }
 
-.atendimento h3 {
-    color: #1c76b2;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    font-size: 1.5rem;
+.sad-lista-check li {
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 16px;
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: #333;
 }
 
-.atendimento h4 {
-    margin-top: 1.5rem;
-    font-weight: bold;
-    color: #333;
+.sad-lista-check li::before {
+  content: "✓";
+  position: absolute;
+  left: 5px;
+  top: -2px;
+  color: #1c76b2; /* Azul padrão dos marcadores */
+  font-weight: 900;
+  font-size: 20px;
 }
 
-.atendimento p {
-    margin-bottom: 20px;
-    font-size: 17px;
-    line-height: 1.8;
-    text-align: justify;
+/* --- BLOCO DE NOTA INFORMATIVA (DESTAQUE OURO) --- */
+.nota-informativa-destaque {
+  margin-top: 35px;
+  padding: 20px;
+  background-color: #f0f7ff;
+  border: 1px solid #d0e5f5;
+  border-left: 5px solid #c58e00; /* Identidade Ouro ativa */
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-/* Lista customizada com check (✓) igual ao modelo */
-.atendimento ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 20px;
+.nota-ícone {
+  background-color: #145a86;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  flex-shrink: 0;
 }
 
-.atendimento li {
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 18px;
-    font-size: 16px;
-    line-height: 1.6;
+.nota-informativa-destaque p {
+  margin: 0;
+  font-size: 16px;
+  color: #145a86;
+  line-height: 1.5;
 }
 
-.atendimento li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #1c76b2;
-    font-weight: bold;
-    font-size: 20px;
+/* --- TRANSIÇÃO --- */
+.fade-in {
+  animation: fadeIn 0.4s ease-in;
 }
 
-/* Responsivo Mobile */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- RESPONSIVIDADE MOBILE --- */
 @media (max-width: 768px) {
-    .atendimento h2 {
-        font-size: 1.8rem;
-    }
-    
-    .atendimento p, 
-    .atendimento li {
-        font-size: 16px;
-        text-align: left;
-    }
-    
-    .atendimento .banner {
-        padding: 10px; /* Reduz um pouco o respiro no mobile */
-    }
+  .sad-page {
+    padding: 20px;
+  }
+
+  .sad-banner-container {
+    height: 140px; /* Altura responsiva mantendo a legibilidade da imagem */
+    margin-bottom: 20px;
+  }
+
+  .sad-page p,
+  .sad-lista-check li {
+    font-size: 16px;
+    text-align: left;
+  }
 }

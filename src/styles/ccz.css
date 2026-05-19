@@ -1,107 +1,200 @@
-.ccz {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 0 20px;
-  animation: fadeIn 0.6s ease-in-out;
+/* --- LAYOUT GERAL GLOBAL --- */
+.ccz-layout {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f4f7f9;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0; /* Margem ideal para o componente Breadcrumb */
 }
 
-.banner img {
-  width: 100%;
-  height: auto;       /* deixa a altura proporcional */
-  max-height: 250px;  /* limite em telas grandes */
-  object-fit: cover;
-  border-radius: 8px;
+.ccz-layout .page-wrapper {
+    width: 100%;
+    max-width: 1440px; /* Expandido para resoluções e monitores grandes */
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin: 0 20px;
+    overflow: hidden;
+    transition: max-width 0.3s ease;
 }
 
-.conteudo h {
-  color: var(--primary-color);
-  margin-bottom: 20px;
+.ccz-page {
+    padding: 40px; /* Respiro superior balanceado para iniciar com o banner */
 }
 
-.conteudo h3 {
-  margin-top: 20px;
-  color: var(--tertiary-color);
+/* --- CONTAINER DO BANNER (AJUSTADO PARA CONTAIN) --- */
+.ccz-banner-container {
+    position: relative;
+    width: 100%;
+    height: 320px; /* Proporção horizontal ideal em 1440px */
+    margin-bottom: 30px;
+    background-color: transparent; /* Remove fundos rígidos nas laterais */
 }
 
-.conteudo p {
-  margin: 0.5rem 0;
+/* --- CARD EXPLICATIVO --- */
+.card-explicativo {
+    background-color: #fdfdfd;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    border: 1px solid #eef2f6;
 }
 
-.conteudo ul {
-  margin: 1rem 0 1rem 1.5rem;
-  list-style: disc;
+.card-explicativo h3 {
+    color: #145a86;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
 }
 
-.conteudo li {
-  margin-bottom: 0.5rem;
+.card-explicativo p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #444;
+    text-align: justify;
+    margin-bottom: 15px;
 }
 
-.adocao {
-  background-color: #ffa866;
-  border: 2px solid var(--quinary-color);
-  border-radius: 8px;
-  padding: 30px;
-  max-width: 900px;
-  margin: 40px auto;
-  text-align: center;
+.card-explicativo p:last-child {
+    margin-bottom: 0;
 }
 
-.adocao h2 {
-  color: #fff;
-  margin-bottom: 15px;
+/* --- ELEMENTOS DE TEXTO E TIPOGRAFIA --- */
+.ccz-page h3 {
+    color: #145a86;
+    margin: 40px 0 20px;
+    font-size: 1.6rem;
+    font-weight: 700;
 }
 
-.adocao p {
-  text-align: justify;
-  margin-bottom: 20px;
-  color: #fff;
+.ccz-page p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #444;
+    text-align: justify;
+    margin-bottom: 20px;
 }
 
-.btn-adocao {
-  display: inline-block;
-  background-color: var(--quinary-color);
-  color: #fff;
-  text-decoration: none;
-  padding: 12px 24px;
-  border-radius: 6px;
-  font-size: 1rem;
-  transition: background 0.3s ease;
+/* --- LISTA CUSTOMIZADA COM O MARCADOR CHECK (✓) --- */
+.ccz-lista-check {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 35px 0;
 }
 
-.btn-adocao:hover {
-  background-color: var(--tertiary-color);
-}
-/* 📱 Celular pequeno */
-@media screen and (max-width: 480px) {
-  .banner img {
-    max-height: 140px;
-  }
-}
-
-/* 📱 Celular grande / Tablet pequeno */
-@media screen and (min-width: 481px) and (max-width: 768px) {
-  .banner img {
-    max-height: 180px;
-  }
+.ccz-lista-check li {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 16px;
+    font-size: 16.5px;
+    line-height: 1.6;
+    color: #333;
+    text-align: justify;
 }
 
-/* 💻 Tablet grande / Notebook pequeno */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  .banner img {
-    max-height: 200px;
-  }
+.ccz-lista-check li::before {
+    content: "✓";
+    position: absolute;
+    left: 5px;
+    top: -2px;
+    color: #1c76b2; /* Azul sutil institucional */
+    font-weight: 900;
+    font-size: 20px;
 }
 
-/* 💻 Notebook / Desktop médio */
-@media screen and (min-width: 1025px) and (max-width: 1366px) {
-  .banner img {
-    max-height: 250px;
-  }
+/* --- SEÇÃO INTERNA DE ADOÇÃO (ESTILIZADA COM PALETA INSTITUCIONAL) --- */
+.ccz-secao-adocao {
+    background-color: #f0f7ff;
+    border: 1px solid #d0e5f5;
+    border-left: 5px solid #145a86; /* Destaque no Azul Escuro */
+    padding: 35px;
+    border-radius: 10px;
+    margin-top: 45px;
+    box-shadow: 0 4px 15px rgba(20, 90, 134, 0.02);
 }
 
-/* 🖥️ Desktop grande */
-@media screen and (min-width: 1367px) {
-  .banner img {
-    max-height: 300px;
-  }
+.ccz-secao-adocao h3 {
+    color: #145a86;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+.ccz-secao-adocao p {
+    color: #444;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 0;
+    text-align: justify;
+}
+
+/* --- CONTÊINER E ESTILIZAÇÃO DO BOTÃO DE ACESSO --- */
+.ccz-wrapper-botao {
+    margin-top: 25px;
+    display: flex;
+    justify-content: flex-start; /* Alinhamento correto à esquerda */
+}
+
+.ccz-btn-adocao {
+    display: inline-block;
+    background-color: #c58e00; /* Cor Âmbar/Ouro institucional */
+    color: #ffffff !important; /* Força o texto a ficar branco */
+    text-decoration: none !important; /* Remove sublinhados nativos do Link */
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 10px rgba(197, 142, 0, 0.15);
+    border: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.ccz-btn-adocao:hover {
+    background-color: #a47600; /* Escurece sutilmente no hover */
+    transform: translateY(-2px); /* Efeito suave de elevação */
+    box-shadow: 0 6px 14px rgba(197, 142, 0, 0.25);
+}
+
+/* --- TRANSIÇÃO --- */
+.fade-in {
+    animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- RESPONSIVIDADE MOBILE --- */
+@media (max-width: 768px) {
+    .ccz-page {
+        padding: 20px;
+    }
+
+    .ccz-banner-container {
+        height: 140px; /* Evita o achatamento no mobile */
+        margin-bottom: 20px;
+    }
+
+    .ccz-secao-adocao {
+        padding: 25px 20px;
+    }
+
+    .ccz-wrapper-botao {
+        justify-content: center; /* Centraliza o botão em telas de celular */
+    }
+
+    .ccz-btn-adocao {
+        width: 100%; /* Faz o botão cobrir toda a largura no mobile para facilitar o toque */
+    }
+
+    .ccz-page p, 
+    .ccz-lista-check li {
+        font-size: 16px;
+        text-align: left;
+    }
 }

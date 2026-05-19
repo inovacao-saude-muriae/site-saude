@@ -1,129 +1,172 @@
-.vigilancia-sanitaria {
+/* --- LAYOUT GERAL GLOBAL --- */
+.vigilancia-layout {
     width: 100%;
-    background-color: #fff;
+    min-height: 100vh;
+    background-color: #f4f7f9;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0; /* Margem ideal para o componente Breadcrumb */
 }
 
-/* Estrutura do Banner com respiro lateral */
-.vigilancia-sanitaria .banner {
+.vigilancia-layout .page-wrapper {
     width: 100%;
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.vigilancia-sanitaria .banner-img {
-    width: 100% !important;
-    height: auto !important;
+    max-width: 1440px; /* Expandido para resoluções e monitores grandes */
+    background-color: #ffffff;
     border-radius: 12px;
-    display: block;
-    object-fit: contain;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin: 0 20px;
+    overflow: hidden;
+    transition: max-width 0.3s ease;
 }
 
-/* Conteúdo alinhado com o padrão 1140px */
-.vigilancia-sanitaria .conteudo {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 20px;
+.vigilancia-page {
+    padding: 40px; /* Respiro superior balanceado para iniciar com o banner */
 }
 
-/* Estilização de Títulos */
-.vigilancia-sanitaria h2 {
-    color: #145a86;
-    font-size: 2.2rem;
-    margin-bottom: 25px;
+/* --- CONTAINER DO BANNER (AJUSTADO PARA CONTAIN) --- */
+.vigilancia-banner-container {
     position: relative;
-    padding-bottom: 10px;
+    width: 100%;
+    height: 320px; /* Proporção horizontal ideal em 1440px */
+    margin-bottom: 30px;
+    background-color: transparent; /* Remove fundos rígidos nas laterais */
 }
 
-.vigilancia-sanitaria h2::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 4px;
-    background-color: #1c76b2;
+/* --- CARD EXPLICATIVO --- */
+.card-explicativo {
+    background-color: #fdfdfd;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    border: 1px solid #eef2f6;
 }
 
-.vigilancia-sanitaria h3 {
-    color: #1c76b2;
-    margin-top: 40px;
-    margin-bottom: 20px;
+.card-explicativo h3 {
+    color: #145a86;
+    margin-top: 0;
+    margin-bottom: 15px;
     font-size: 1.5rem;
 }
 
-.vigilancia-sanitaria p {
-    margin-bottom: 20px;
+.card-explicativo p {
     font-size: 17px;
     line-height: 1.8;
+    color: #444;
     text-align: justify;
+    margin: 0;
 }
 
-.vigilancia-sanitaria a {
+/* --- ELEMENTOS DE TEXTO E TIPOGRAFIA --- */
+.vigilancia-page h3 {
+    color: #145a86;
+    margin: 40px 0 20px;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.vigilancia-page p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #444;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.vigilancia-page a {
     color: #1c76b2;
     text-decoration: none;
     font-weight: 600;
 }
 
-.vigilancia-sanitaria a:hover {
+.vigilancia-page a:hover {
     text-decoration: underline;
 }
 
-/* Lista customizada com checkmark (✓) */
-.vigilancia-sanitaria .lista-atribuicoes {
+/* --- LISTA CUSTOMIZADA COM O MARCADOR CHECK (✓) --- */
+.vigilancia-lista-check {
     list-style: none;
     padding: 0;
-    margin-bottom: 20px;
+    margin: 20px 0 35px 0;
 }
 
-.vigilancia-sanitaria .lista-atribuicoes li {
+.vigilancia-lista-check li {
     position: relative;
     padding-left: 35px;
-    margin-bottom: 18px;
-    font-size: 16px;
+    margin-bottom: 16px;
+    font-size: 16.5px;
     line-height: 1.6;
+    color: #333;
+    text-align: justify;
 }
 
-.vigilancia-sanitaria .lista-atribuicoes li::before {
+.vigilancia-lista-check li::before {
     content: "✓";
     position: absolute;
-    left: 0;
-    color: #1c76b2;
-    font-weight: bold;
+    left: 5px;
+    top: -2px;
+    color: #1c76b2; /* Azul sutil institucional */
+    font-weight: 900;
     font-size: 20px;
 }
 
-/* Bloco de nota informativa (Destaque para Denúncias) */
-.vigilancia-sanitaria .nota-informativa {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    padding: 25px;
+/* --- BLOCO DE NOTA INFORMATIVA (DESTAQUE OURO) --- */
+.nota-informativa-destaque {
+    margin-top: 35px;
+    padding: 20px;
     background-color: #f0f7ff;
-    border-left: 5px solid #145a86;
-    border-radius: 4px;
+    border: 1px solid #d0e5f5;
+    border-left: 5px solid #c58e00; /* Identidade Ouro ativa */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-.vigilancia-sanitaria .nota-informativa p {
+.nota-ícone {
+    background-color: #145a86;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.nota-informativa-destaque p {
     margin: 0;
-    font-weight: 600;
+    font-size: 16px;
     color: #145a86;
-    text-align: left;
+    line-height: 1.5;
+    font-weight: 600;
 }
 
-/* Responsividade Mobile */
+/* --- TRANSIÇÃO --- */
+.fade-in {
+    animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- RESPONSIVIDADE MOBILE --- */
 @media (max-width: 768px) {
-    .vigilancia-sanitaria h2 {
-        font-size: 1.8rem;
+    .vigilancia-page {
+        padding: 20px;
     }
-    
-    .vigilancia-sanitaria p, 
-    .vigilancia-sanitaria .lista-atribuicoes li {
+
+    .vigilancia-banner-container {
+        height: 140px; /* Evita achatamento no mobile */
+        margin-bottom: 20px;
+    }
+
+    .vigilancia-page p, 
+    .vigilancia-lista-check li {
         font-size: 16px;
         text-align: left;
-    }
-
-    .vigilancia-sanitaria .banner {
-        padding: 10px;
     }
 }

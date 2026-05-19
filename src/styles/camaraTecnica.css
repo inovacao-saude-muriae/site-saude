@@ -1,112 +1,162 @@
-
-.camara-tecnica {
+/* --- LAYOUT GERAL GLOBAL --- */
+.camara-layout {
     width: 100%;
-    background-color: #fff;
+    min-height: 100vh;
+    background-color: #f4f7f9;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0; /* Margem ideal para o componente Breadcrumb */
 }
 
-/* camara-tecnica.css */
-
-.camara-tecnica .banner {
+.camara-layout .page-wrapper {
     width: 100%;
-    max-width: 1140px;    /* Largura máxima igual à sua imagem */
-    margin: 0 auto;       /* Centraliza */
-    padding: 20px;        /* O "padding da borda" que você pediu */
-    box-sizing: border-box;
+    max-width: 1440px; /* Expandido para resoluções e monitores grandes */
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin: 0 20px;
+    overflow: hidden;
+    transition: max-width 0.3s ease;
 }
 
-.camara-tecnica .banner-img {
-    width: 100% !important;
-    height: auto !important; /* Deixa a altura ser definida pela proporção da imagem */
-    border-radius: 12px;     /* Cantos arredondados iguais aos da foto */
-    display: block;
-    object-fit: contain;     /* Garante que a imagem inteira apareça sem cortes */
+.camara-page {
+    padding: 40px; /* Respiro superior balanceado para iniciar com o banner */
 }
 
-.camara-tecnica .conteudo {
-    max-width: 1140px;       /* Alinha o texto com a largura da imagem */
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.camara-tecnica h2 {
-    color: #145a86;
-    font-size: 2.2rem;
-    margin-bottom: 25px;
+/* --- CONTAINER DO BANNER (AJUSTADO PARA CONTAIN) --- */
+.camara-banner-container {
     position: relative;
-    padding-bottom: 10px;
+    width: 100%;
+    height: 320px; /* Proporção horizontal ideal em 1440px */
+    margin-bottom: 30px;
+    background-color: transparent; /* Remove fundos rígidos nas laterais */
 }
 
-/* Detalhe da linha abaixo do título */
-.camara-tecnica h2::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 4px;
-    background-color: #1c76b2;
+/* --- CARD EXPLICATIVO --- */
+.card-explicativo {
+    background-color: #fdfdfd;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    border: 1px solid #eef2f6;
 }
 
-.camara-tecnica h3 {
-    color: #1c76b2;
-    margin-top: 40px;
-    margin-bottom: 20px;
+.card-explicativo h3 {
+    color: #145a86;
+    margin-top: 0;
+    margin-bottom: 15px;
     font-size: 1.5rem;
 }
 
-.camara-tecnica p {
-    margin-bottom: 20px;
+.card-explicativo p {
     font-size: 17px;
+    line-height: 1.8;
+    color: #444;
     text-align: justify;
+    margin: 0;
 }
 
-/* Lista customizada */
-.camara-tecnica .lista-atribuicoes {
+/* --- ELEMENTOS DE TEXTO E TIPOGRAFIA --- */
+.camara-page h3 {
+    color: #145a86;
+    margin: 40px 0 20px;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.camara-page p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #444;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+/* --- LISTA CUSTOMIZADA COM O MARCADOR CHECK (✓) --- */
+.camara-lista-check {
     list-style: none;
     padding: 0;
+    margin: 20px 0 35px 0;
 }
 
-.camara-tecnica .lista-atribuicoes li {
+.camara-lista-check li {
     position: relative;
     padding-left: 35px;
     margin-bottom: 18px;
-    font-size: 16px;
+    font-size: 16.5px;
+    line-height: 1.6;
+    color: #333;
+    text-align: justify;
 }
 
-.camara-tecnica .lista-atribuicoes li::before {
+.camara-lista-check li::before {
     content: "✓";
     position: absolute;
-    left: 0;
-    color: #1c76b2;
-    font-weight: bold;
+    left: 5px;
+    top: -2px;
+    color: #1c76b2; /* Azul sutil institucional */
+    font-weight: 900;
     font-size: 20px;
 }
 
-/* Bloco de nota informativa final */
-.camara-tecnica .nota-informativa {
-    margin-top: 50px;
-    padding: 25px;
+/* --- BLOCO DE NOTA INFORMATIVA (DESTAQUE OURO) --- */
+.nota-informativa-destaque {
+    margin-top: 35px;
+    padding: 20px;
     background-color: #f0f7ff;
-    border-left: 5px solid #145a86;
-    border-radius: 4px;
+    border: 1px solid #d0e5f5;
+    border-left: 5px solid #c58e00; /* Identidade Ouro ativa */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-.camara-tecnica .nota-informativa p {
+.nota-ícone {
+    background-color: #145a86;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.nota-informativa-destaque p {
     margin: 0;
-    font-weight: 600;
+    font-size: 16px;
     color: #145a86;
-    font-style: normal;
+    line-height: 1.5;
+    font-weight: 600;
 }
 
-/* Responsivo Mobile */
+/* --- TRANSIÇÃO --- */
+.fade-in {
+    animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- RESPONSIVIDADE MOBILE --- */
 @media (max-width: 768px) {
-    .camara-tecnica h2 {
-        font-size: 1.8rem;
+    .camara-page {
+        padding: 20px;
     }
-    
-    .camara-tecnica p, 
-    .camara-tecnica .lista-atribuicoes li {
+
+    .camara-banner-container {
+        height: 140px; /* Evita achatamento no mobile */
+        margin-bottom: 20px;
+    }
+
+    .camara-page p, 
+    .camara-lista-check li {
         font-size: 16px;
-        text-align: left; /* Melhora leitura em telas pequenas */
+        text-align: left;
     }
 }
