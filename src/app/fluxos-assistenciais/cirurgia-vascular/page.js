@@ -7,29 +7,34 @@ import "../../../styles/cirurgiaVascular.css";
 const CONTEUDOS = {
   AparelhoCirculatorio: {
     label: "Aparelho Circulatório",
-    texto: `Cirurgias vasculares: saúde circulatória em dia pelo SUS! 
-    As cirurgias vasculares, principalmente para tratamento de varizes, são indicadas por médicos clínicos quando há comprometimento da circulação que causa dor, 
-    inchaço, desconforto ou risco de complicações. 
-    O tratamento cirúrgico pode ser necessário para melhorar a qualidade de vida e prevenir agravamentos. 
-    Para a realização desses procedimentos, é essencial seguir corretamente os fluxos estabelecidos pela rede de saúde, 
-    garantindo segurança e organização no atendimento. A Secretaria Municipal de Saúde de Muriaé, por meio do programa Opera Já Muriaé, 
-    assegura a realização de todo o pré-operatório para os pacientes indicados, oferecendo assistência completa e gratuita, com qualidade, 
-    responsabilidade e cuidado, através do SUS.`,
+    texto: `Assim como a angioplastia pode ser feita no coração, ela também pode ser realizada nas pernas e nas artérias do pescoço (carótidas). Esses procedimentos são chamados de angioplastias periféricas ou procedimentos endovasculares.
+    O objetivo do tratamento é desobstruir as artérias que estão com dificuldade na passagem do sangue, melhorando o funcionamento do organismo e diminuindo o risco de complicações.
+    Quando o médico angiologista, cardiologista ou clínico indica a angioplastia, é necessário que a Secretaria de Saúde de Muriaé faça o agendamento da consulta com o médico especialista em hemodinâmica do Hospital São Paulo, unidade habilitada pelo SUS para realizar esses procedimentos.
+    Quem mora em Muriaé deve levar toda a documentação até a Secretaria de Saúde para realizar o cadastro e o agendamento. 
+    Já quem mora em outra cidade deve procurar a Secretaria de Saúde do próprio município para cadastrar o pedido no sistema. 
+    Depois disso, a Regulação de Muriaé irá analisar a documentação e realizar o agendamento.
+    Antes do procedimento, é muito importante seguir todas as orientações médicas para que tudo aconteça da melhor forma possível.
+    `,
     imagens: [
       { titulo: "Fluxo Assistencial", src: "/img/fluxos-assistenciais/cirurgia-vascular/aparelhoCirculatorio/fluxo.png" },
-      { titulo: "Pactuação", src: "/img/fluxos-assistenciais/cirurgia-vascular/aparelhoCirculatorio/pactuacao.png" }
+      { titulo: "Pactuação", src: "/img/fluxos-assistenciais/cirurgia-vascular/aparelhoCirculatorio/Pactuacao1.png" }
     ]
   },
   Varizes: {
     label: "Varizes",
-    texto: `Cirurgias vasculares: saúde circulatória em dia pelo SUS! 
-    As cirurgias vasculares, principalmente para tratamento de varizes, são indicadas por médicos clínicos quando há comprometimento da circulação que causa dor, 
-    inchaço, desconforto ou risco de complicações. 
-    O tratamento cirúrgico pode ser necessário para melhorar a qualidade de vida e prevenir agravamentos. 
-    Para a realização desses procedimentos, é essencial seguir corretamente os fluxos estabelecidos pela rede de saúde, 
-    garantindo segurança e organização no atendimento. A Secretaria Municipal de Saúde de Muriaé, por meio do programa Opera Já Muriaé, 
-    assegura a realização de todo o pré-operatório para os pacientes indicados, oferecendo assistência completa e gratuita, com qualidade, 
-    responsabilidade e cuidado, através do SUS.`,
+    texto: `Cirurgias vasculares pelo SUS: mais saúde e qualidade de vida!
+    As cirurgias vasculares, principalmente para tratamento de varizes, são indicadas quando problemas na circulação causam dor, inchaço, desconforto ou risco de complicações. 
+    Nesses casos, o tratamento cirúrgico pode ajudar a melhorar a qualidade de vida e evitar o agravamento do problema.
+    Para realizar esses procedimentos pelo SUS, é importante seguir corretamente todas as etapas do atendimento, garantindo mais segurança e organização no cuidado com o paciente.
+    A Secretaria Municipal de Saúde de Muriaé, por meio do programa Opera Já Muriaé, garante a realização de todo o pré-operatório necessário, oferecendo atendimento gratuito, completo 
+    e de qualidade para a população.
+    Antes da cirurgia, é obrigatório passar pela consulta de pré-operatório com o cirurgião que irá realizar o procedimento. Essa etapa é fundamental para avaliação, 
+    orientações e planejamento da cirurgia.
+    Pelo SUS, as cirurgias para tratamento de varizes são realizadas no Hospital São Paulo. Por isso, a consulta de pré-operatório deve ser feita com um médico do corpo 
+    clínico do hospital, com agendamento pela Secretaria de Saúde.
+    Pacientes de outros municípios que possuem referência de atendimento em Muriaé devem procurar a Secretaria de Saúde da sua cidade. O agendamento poderá ser realizado pelo CISLESTE, 
+    conforme o contrato de cada município com o consórcio.
+    `,
     imagens: [
       { titulo: "Fluxo Assistencial", src: "/img/fluxos-assistenciais/cirurgia-vascular/varizes/fluxo.png" },
       { titulo: "Pactuação", src: "/img/fluxos-assistenciais/cirurgia-vascular/varizes/pactuacao.png" }

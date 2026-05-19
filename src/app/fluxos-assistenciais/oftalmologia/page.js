@@ -65,34 +65,50 @@ export default function OftalmologiaPage() {
             <div className="card-explicativo">
               <h3>Tratamento de Catarata e Pterígio</h3>
               <p>
-                Tratamento de Catarata e Pterígio pelo SUS em Muriaé A Secretaria Municipal de Saúde de Muriaé disponibiliza, por meio do Sistema Único de Saúde (SUS), 
-                tratamento completo e gratuito para catarata e pterígio. Os pacientes contam com atendimento pré-operatório realizado por médicos oftalmologistas especializados, 
-                cirurgia sem qualquer custo e acompanhamento pós-operatório com todo o cuidado necessário. 
+                Tratamento de Catarata e Pterígio pelo SUS em Muriaé A
+                Secretaria Municipal de Saúde de Muriaé disponibiliza, por meio
+                do Sistema Único de Saúde (SUS), tratamento completo e gratuito
+                para catarata e pterígio. Os pacientes contam com atendimento
+                pré-operatório realizado por médicos oftalmologistas
+                especializados, cirurgia sem qualquer custo e acompanhamento
+                pós-operatório com todo o cuidado necessário.
               </p>
               <p>
-                É mais saúde visual e qualidade de vida para a população muriaeense, com compromisso e responsabilidade. 
-                Para ter acesso à cirurgia de catarata ou pterígio, é necessário que o morador de Muriaé possua uma solicitação médica emitida por oftalmologista. 
-                A requisição, acompanhada de cópias dos documentos pessoais, deve ser entregue diretamente na Secretaria Municipal de Saúde, 
-                para que o pedido seja inserido no sistema de regulação.
+                É mais saúde visual e qualidade de vida para a população
+                muriaeense, com compromisso e responsabilidade. Para ter acesso
+                à cirurgia de catarata ou pterígio, é necessário que o morador
+                de Muriaé possua uma solicitação médica emitida por
+                oftalmologista. A requisição, acompanhada de cópias dos
+                documentos pessoais, deve ser entregue diretamente na Secretaria
+                Municipal de Saúde, para que o pedido seja inserido no sistema
+                de regulação.
               </p>
               <p>
-                á os demais procedimentos oftalmológicos são realizados por meio de pactuação com municípios vizinhos. 
-                Nesses casos, o cidadão deve procurar o setor de Tratamento Fora do Domicílio (TFD) para encaminhamento e orientações sobre o processo.
+                á os demais procedimentos oftalmológicos são realizados por meio
+                de pactuação com municípios vizinhos. Nesses casos, o cidadão
+                deve procurar o setor de Tratamento Fora do Domicílio (TFD) para
+                encaminhamento e orientações sobre o processo.
               </p>
-              
             </div>
 
             <div className="grid-fluxos-single">
               {/* Bloco Único: Pactuação */}
-              <div className="bloco-fluxo" onClick={() => setZoomImage("/img/fluxos-assistenciais/oftalmologia/pactuacao.png")}>
+              <div
+                className="bloco-fluxo"
+                onClick={() =>
+                  setZoomImage(
+                    "/img/fluxos-assistenciais/oftalmologia/pactuacao.png",
+                  )
+                }
+              >
                 <h4>Pactuação Assistencial</h4>
                 <div className="img-wrapper">
-                  <Image 
-                    src="/img/fluxos-assistenciais/oftalmologia/pactuacao.png" 
-                    alt="Pactuação Oftalmologia" 
-                    width={1200} 
-                    height={1600} 
-                    className="img-fluxo" 
+                  <Image
+                    src="/img/fluxos-assistenciais/oftalmologia/pactuacao.png"
+                    alt="Pactuação Oftalmologia"
+                    width={1200}
+                    height={1600}
+                    className="img-fluxo"
                   />
                   <div className="overlay-zoom">Clique para ampliar</div>
                 </div>
@@ -109,22 +125,39 @@ export default function OftalmologiaPage() {
             <div className="modal-header">
               <div className="controles-zoom">
                 <button onClick={aumentarZoom}>+</button>
-                <span className="zoom-porcentagem">{Math.round(zoomScale * 100)}%</span>
+                <span className="zoom-porcentagem">
+                  {Math.round(zoomScale * 100)}%
+                </span>
                 <button onClick={diminuirZoom}>-</button>
               </div>
-              <button className="btn-fechar-topo" onClick={fecharModal}>Fechar Visualização</button>
+              <button className="btn-fechar-topo" onClick={fecharModal}>
+                Fechar Visualização
+              </button>
             </div>
 
-            <div 
-              className={`img-zoom-viewport hide-scrollbar ${isDragging ? 'grabbing' : ''}`}
+            <div
+              className={`img-zoom-viewport hide-scrollbar ${isDragging ? "grabbing" : ""}`}
               ref={viewportRef}
               onMouseDown={handleMouseDown}
               onMouseMove={handleMouseMove}
               onMouseUp={stopDragging}
               onMouseLeave={stopDragging}
             >
-              <div className="img-container-scrollable" style={{ transform: `scale(${zoomScale})`, transformOrigin: "top center" }}>
-                <Image src={zoomImage} alt="Zoom" width={2000} height={2000} unoptimized className="img-full-modal" />
+              <div
+                className="img-container-scrollable"
+                style={{
+                  transform: `scale(${zoomScale})`,
+                  transformOrigin: "top center",
+                }}
+              >
+                <Image
+                  src={zoomImage}
+                  alt="Zoom"
+                  width={2000}
+                  height={2000}
+                  unoptimized
+                  className="img-full-modal"
+                />
               </div>
             </div>
           </div>

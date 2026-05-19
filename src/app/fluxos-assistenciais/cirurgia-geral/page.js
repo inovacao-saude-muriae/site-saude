@@ -65,14 +65,22 @@ export default function CirurgiaGeralPage() {
             <div className="card-explicativo">
               <h3>Cuidado e Compromisso com a Saúde</h3>
               <p>
-                Cirurgias gerais pelo SUS em Muriaé: cuidado e compromisso com a saúde! As cirurgias gerais mais comuns, como as de hérnia 
-                (umbilical, inguinal), vesícula biliar (colecistectomia), retirada de cistos, entre outras, 
-                são frequentemente indicadas por médicos clínicos após avaliação detalhada. Quando há indicação cirúrgica, 
-                é fundamental seguir os fluxos estabelecidos para garantir segurança, organização e efetividade no atendimento.
+                Cirurgias gerais pelo SUS em Muriaé: cuidado, segurança e compromisso com a sua saúde!
+                As cirurgias gerais mais comuns, como hérnia (umbilical e inguinal), retirada da vesícula biliar e remoção de cistos, 
+                normalmente são indicadas após avaliação médica detalhada. Quando existe a necessidade da cirurgia, é importante seguir todas as etapas do atendimento 
+                para garantir mais segurança e qualidade no tratamento.
+
               </p>
               <p>
-                A Secretaria Municipal de Saúde de Muriaé, por meio do programa Opera Já Muriaé, assegura a realização de todo o pré-operatório necessário, 
-                garantindo que nossos munícipes tenham acesso ao tratamento completo, com acolhimento, responsabilidade e sem custos, através do SUS.
+                A Secretaria Municipal de Saúde de Muriaé, por meio do programa Opera Já Muriaé, garante a realização de todos os exames e 
+                consultas do pré-operatório pelo SUS, oferecendo atendimento completo, acolhedor e sem custos para a população.
+              </p>
+              <p>
+                Antes da cirurgia, é obrigatório passar pela consulta de pré-operatório com o cirurgião responsável pelo procedimento. Essa etapa é essencial para avaliação, orientação e planejamento da cirurgia.
+                Quem mora em Muriaé deve procurar a Secretaria Municipal de Saúde para receber as orientações e realizar o agendamento.
+                Já os pacientes de outros municípios que possuem referência de atendimento em Muriaé devem procurar a Secretaria de Saúde da sua cidade. 
+                O agendamento poderá ser realizado pelo CISLESTE, conforme o contrato de cada município com o consórcio.
+                Os atendimentos e agendamentos são feitos com médicos do corpo clínico do hospital, seguindo as normas e contratos estabelecidos pelo SUS.
               </p>
               
             </div>

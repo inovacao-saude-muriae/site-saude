@@ -65,15 +65,25 @@ export default function UrologiaPage() {
             <div className="card-explicativo">
               <h3>Cálculo Renal: Prevenir é o melhor remédio</h3>
               <p>
-                Cálculo renal: prevenir é o melhor remédio! O cálculo renal, conhecido como pedra nos rins, é uma das doenças urológicas mais comuns e pode causar dores intensas, 
-                infecções e até necessidade de internação. A principal forma de prevenção é manter-se bem hidratado, 
-                consumindo água ao longo do dia, além de manter uma alimentação equilibrada, com pouco sal, gordura e alimentos industrializados. 
-                Em casos em que o tratamento clínico não é suficiente, a intervenção cirúrgica pode ser necessária.
+                O cálculo renal, conhecido como pedra nos rins, é uma das doenças urológicas mais comuns. 
+                Ele pode causar dores fortes, infecções e, em alguns casos, até necessidade de internação.
+                A melhor forma de prevenir o problema é manter uma boa hidratação, bebendo água ao longo do dia, além de ter uma alimentação equilibrada, 
+                com menos sal, gordura e alimentos industrializados.
+
               </p>
               <p>
-                A Secretaria Municipal de Saúde de Muriaé oferece, no âmbito do SUS, a cirurgia a laser para tratamento de cálculos renais, garantindo tecnologia 
-                e qualidade no atendimento aos pacientes. Para ter acesso ao procedimento, é fundamental seguir os fluxos estabelecidos e todas as orientações médicas. 
-                Cuide da sua saúde urinária com prevenção e acompanhamento profissional!
+                Quando o tratamento com medicamentos e acompanhamento médico não é suficiente, pode ser necessário realizar cirurgia.
+                A Secretaria Municipal de Saúde de Muriaé oferece, pelo SUS e de forma eletiva (fora de situações de urgência), 
+                a cirurgia a laser para tratamento de cálculos renais, realizada no Prontocor. O objetivo é garantir atendimento de qualidade, 
+                segurança e acesso à tecnologia adequada para os pacientes.
+              </p>
+              <p>
+                Para realizar o procedimento, é importante seguir corretamente os fluxos de atendimento e todas as orientações médicas.
+                Nos casos de urgência urológica, o hospital de referência da nossa região é o Hospital São Paulo, que possui equipe especializada e 
+                equipamentos modernos para atendimento rápido e seguro.
+              </p>
+              <p>
+                Cuide da sua saúde urinária: prevenção e acompanhamento médico fazem toda a diferença!
               </p>
             </div>
 
