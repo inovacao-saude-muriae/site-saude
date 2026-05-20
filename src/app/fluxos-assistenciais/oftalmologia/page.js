@@ -84,7 +84,7 @@ export default function OftalmologiaPage() {
                 de regulação.
               </p>
               <p>
-                á os demais procedimentos oftalmológicos são realizados por meio
+                Já os demais procedimentos oftalmológicos são realizados por meio
                 de pactuação com municípios vizinhos. Nesses casos, o cidadão
                 deve procurar o setor de Tratamento Fora do Domicílio (TFD) para
                 encaminhamento e orientações sobre o processo.
