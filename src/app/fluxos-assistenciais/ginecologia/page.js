@@ -23,7 +23,7 @@ const CONTEUDOS = {
     A seguir, apresentamos alguns fluxos de atendimento disponíveis dentro da linha de cuidados da saúde da mulher.
     `,
     imagens: [
-      { titulo: "Fluxo Assistencial", src: "/img/fluxos-assistenciais/ginecologia/varizes/fluxo2.png" }
+      { titulo: "Fluxo Assistencial", src: "/img/fluxos-assistenciais/ginecologia/fluxo2.png" }
     ]
   }
 };
