@@ -49,7 +49,7 @@ const CONTEUDOS = {
     Seguindo todo o fluxo, que está logo abaixo, o tratamento é TODO feito pelo SUS, em um dos prestadores habilitados para a Cirurgia Cardíaca em Muriaé - Hospital São Paulo ou Prontocor.
     `,
     imagens: [
-      { titulo: "Fluxo Assistencial", src: "/img/fluxos-assistenciais/cardiologia/cirurgia/fluxo.png" },
+      { titulo: "Fluxo Assistencial", src: "/img/fluxos-assistenciais/cardiologia/cirurgia/fluxo1.png" },
       { titulo: "Pactuação", src: "/img/fluxos-assistenciais/cardiologia/cirurgia/pactuacao.png" }
     ]
   },
