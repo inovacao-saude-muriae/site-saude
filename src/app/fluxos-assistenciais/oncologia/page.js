@@ -80,7 +80,7 @@ export default function OncologiaPage() {
             {/* Grid adaptado para exibir apenas 1 imagem centralizada */}
             <div className="grid-fluxos" style={{ gridTemplateColumns: "1fr", maxWidth: "600px", margin: "0 auto" }}>
               {/* Bloco Único de Fluxo */}
-              <div className="bloco-fluxo" onClick={() => setZoomImage("/img/fluxos-assistenciais/oncologia/fluxo.png")}>
+              <div className="bloco-fluxo" onClick={() => setZoomImage("/img/fluxos-assistenciais/oncologia/Fluxo.png")}>
                 <h4>Fluxo Assistencial</h4>
                 <div className="img-wrapper">
                   <Image 
