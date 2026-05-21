@@ -29,8 +29,8 @@ export default function OncologiaPage() {
     setZoomScale(1);
   };
 
-  const aumentarZoom = () => setZoomScale((prev) => Math.min(prev + 0.2, 5));
-  const diminuirZoom = () => setZoomScale((prev) => Math.max(prev - 0.2, 1));
+  const aumentarZoom = () => setZoomScale((prev) => Math.min(prev + 0.1, 5));
+  const diminuirZoom = () => setZoomScale((prev) => Math.max(prev - 0.1, 1));
 
   // Lógica de clicar e arrastar (Drag)
   const handleMouseDown = (e) => {
@@ -77,10 +77,10 @@ export default function OncologiaPage() {
             </div>
 
             {/* Grid adaptado para exibir apenas 1 imagem centralizada */}
-            <div className="grid-fluxos" style={{ gridTemplateColumns: "1fr", maxWidth: "600px", margin: "40px auto 0 auto" }}>
+            <div className="grid-fluxos" style={{ gridTemplateColumns: "1fr", maxWidth: "600px", margin: "0 auto" }}>
               {/* Bloco Único de Fluxo */}
               <div className="bloco-fluxo" onClick={() => setZoomImage("/img/fluxos-assistenciais/oncologia/fluxo1.png")}>
-                <h4 style={{ color: "#145a86", marginBottom: "15px", textAlign: "center" }}>Fluxo Assistencial</h4>
+                <h4>Fluxo Assistencial</h4>
                 <div className="img-wrapper">
                   <Image 
                     src="/img/fluxos-assistenciais/oncologia/fluxo1.png" 
@@ -88,7 +88,6 @@ export default function OncologiaPage() {
                     width={1200} 
                     height={1600} 
                     className="img-fluxo" 
-                    priority
                   />
                   <div className="overlay-zoom">Clique para ampliar</div>
                 </div>
@@ -120,23 +119,8 @@ export default function OncologiaPage() {
               onMouseUp={stopDragging}
               onMouseLeave={stopDragging}
             >
-              <div 
-                className="img-container-scrollable" 
-                style={{ 
-                  transform: `scale(${zoomScale})`, 
-                  transformOrigin: "top center",
-                  cursor: zoomScale > 1 ? (isDragging ? 'grabbing' : 'grab') : 'default'
-                }}
-              >
-                <Image 
-                  src={zoomImage} 
-                  alt="Zoom" 
-                  width={2000} 
-                  height={2000} 
-                  unoptimized 
-                  className="img-full-modal"
-                  onDragStart={(e) => e.preventDefault()} // Impede o arrasto nativo do navegador bugando o código
-                />
+              <div className="img-container-scrollable" style={{ transform: `scale(${zoomScale})`, transformOrigin: "top center" }}>
+                <Image src={zoomImage} alt="Zoom" width={2000} height={2000} unoptimized className="img-full-modal" />
               </div>
             </div>
           </div>

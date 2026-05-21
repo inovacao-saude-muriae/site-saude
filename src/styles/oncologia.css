@@ -1,3 +1,5 @@
+/* oncologia.css */
+
 /* --- LAYOUT GERAL --- */
 .oncologia-layout {
     width: 100%;
@@ -10,12 +12,13 @@
 
 .page-wrapper {
     width: 100%;
-    max-width: 1140px;
+    max-width: 1440px;
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     margin: 0 20px;
     overflow: hidden;
+    transition: max-width 0.3s ease;
 }
 
 .oncologia-page {
@@ -37,13 +40,13 @@
     background-color: #fdfdfd;
     padding: 30px;
     border-radius: 12px;
+    margin-bottom: 40px;
     border: 1px solid #eef2f6;
 }
 
 .card-explicativo h3 {
     color: #145a86;
     margin-bottom: 15px;
-    font-size: 1.8rem;
 }
 
 .card-explicativo p {
@@ -53,92 +56,82 @@
     text-align: justify;
 }
 
-/* --- ANIMAÇÃO --- */
-.fade-in {
-    animation: fadeIn 0.4s ease-in;
+/* --- GRID DE FLUXOGRAMAS --- */
+.grid-fluxos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+.bloco-fluxo h4 {
+    color: #1c76b2;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
 }
 
-/* --- COMPONENTE DE IMAGEM (PÁGINA PRINCIPAL) --- */
 .img-wrapper {
-    position: relative;
-    cursor: pointer;
+    border-radius: 10px;
     overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: transform 0.2s ease;
-}
-
-.img-wrapper:hover {
-    transform: scale(1.01);
+    border: 1px solid #d0e5f5;
+    cursor: pointer;
+    position: relative;
+    background-color: #fff;
 }
 
 .img-fluxo {
-    width: 100%;
-    height: auto;
+    width: 100% !important;
+    height: auto !important;
     display: block;
 }
 
 .overlay-zoom {
     position: absolute;
-    top: 0;
-    left: 0;
+    bottom: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(20, 90, 134, 0.6);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    font-size: 1.1rem;
+    background-color: rgba(20, 90, 134, 0.9);
+    color: #fff;
+    text-align: center;
+    padding: 8px;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: 0.3s;
 }
 
 .img-wrapper:hover .overlay-zoom {
     opacity: 1;
 }
 
-/* --- MODAL DE ZOOM AVANÇADO --- */
+/* --- MODAL DE ZOOM --- */
 .modal-zoom {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.96);
+    z-index: 5000;
     display: flex;
-    justify-content: center;
     align-items: center;
-    z-index: 9999; /* Fica acima de tudo na aplicação */
-    backdrop-filter: blur(4px);
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    overscroll-behavior: contain;
 }
 
 .modal-content {
-    position: relative;
-    background: #ffffff;
-    width: 90%;
-    max-width: 1000px;
-    height: 85vh;
-    border-radius: 12px;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
 .modal-header {
+    width: 100%;
+    background-color: rgba(20, 90, 134, 0.98);
+    padding: 15px 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #e9ecef;
+    z-index: 5100;
 }
 
 .controles-zoom {
@@ -148,97 +141,90 @@
 }
 
 .controles-zoom button {
-    background-color: #145a86;
-    color: white;
+    background-color: white;
     border: none;
     width: 35px;
     height: 35px;
-    border-radius: 6px;
-    font-size: 1.4rem;
+    border-radius: 50%;
     font-weight: bold;
     cursor: pointer;
+    color: #145a86;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background 0.2s;
-}
-
-.controles-zoom button:hover {
-    background-color: #1c76b2;
+    font-size: 20px;
 }
 
 .zoom-porcentagem {
+    color: white;
     font-weight: bold;
-    color: #145a86;
-    font-size: 16px;
     min-width: 60px;
     text-align: center;
 }
 
 .btn-fechar-topo {
-    background-color: #dc3545;
+    background-color: #c58e00;
     color: white;
     border: none;
-    padding: 8px 16px;
+    padding: 8px 20px;
     border-radius: 6px;
-    font-weight: 500;
+    font-weight: bold;
     cursor: pointer;
-    transition: background 0.2s;
 }
 
-.btn-fechar-topo:hover {
-    background-color: #bd2130;
-}
-
-/* Área interna onde o scroll acontece */
 .img-zoom-viewport {
     flex: 1;
+    background-color: #fff;
     overflow: auto;
-    position: relative;
-    background-color: #eaeded;
-    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    cursor: grab;
 }
 
-.img-container-scrollable {
-    transition: transform 0.1s ease-out;
-    display: inline-block;
-    max-width: 100%;
-}
-
-.img-full-modal {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    user-select: none;
-}
-
-/* Força o cursor de arrasto */
 .img-zoom-viewport.grabbing {
-    cursor: grabbing !important;
+    cursor: grabbing;
 }
 
-/* Esconder barra de rolagem padrão para melhor estética */
-.hide-scrollbar::-webkit-scrollbar {
-    display: none;
-}
 .hide-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
 
-/* --- RESPONSIVIDADE --- */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.img-container-scrollable {
+    transition: transform 0.1s ease-out;
+    display: flex;
+    justify-content: center;
+    min-width: 100%;
+}
+
+.img-full-modal {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    padding: 40px;
+    pointer-events: none;
+}
+
+/* --- ANIMAÇÕES E MEDIA QUERIES --- */
+.fade-in {
+    animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 @media (max-width: 768px) {
     .oncologia-page {
         padding: 40px 20px;
     }
-    .titulo-sessao {
-        font-size: 1.8rem;
-    }
-    .modal-content {
-        width: 95%;
-        height: 90vh;
+    .modal-header {
+        padding: 10px 15px;
     }
 }
