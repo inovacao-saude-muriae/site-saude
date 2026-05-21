@@ -84,7 +84,7 @@ export default function OncologiaPage() {
                 <h4>Fluxo Assistencial</h4>
                 <div className="img-wrapper">
                   <Image 
-                    src="/img/fluxos-assistenciais/oncologia/fluxo.png" 
+                    src="/img/fluxos-assistenciais/oncologia/fluxo1.png" 
                     alt="Fluxo Assistencial Oncologia" 
                     width={1200} 
                     height={1600} 
