@@ -29,8 +29,8 @@ export default function OncologiaPage() {
     setZoomScale(1);
   };
 
-  const aumentarZoom = () => setZoomScale((prev) => Math.min(prev + 0.1, 5));
-  const diminuirZoom = () => setZoomScale((prev) => Math.max(prev - 0.1, 1));
+  const aumentarZoom = () => setZoomScale((prev) => Math.min(prev + 0.2, 5));
+  const diminuirZoom = () => setZoomScale((prev) => Math.max(prev - 0.2, 1));
 
   // Lógica de clicar e arrastar (Drag)
   const handleMouseDown = (e) => {
@@ -74,14 +74,13 @@ export default function OncologiaPage() {
                 Para os residentes em Muriaé, o primeiro passo é comparecer à <strong>UBS de referência</strong> de seu bairro. 
                 Com o encaminhamento correto, a regulação garante o acolhimento necessário para o início do tratamento.
               </p>
-
             </div>
 
             {/* Grid adaptado para exibir apenas 1 imagem centralizada */}
-            <div className="grid-fluxos" style={{ gridTemplateColumns: "1fr", maxWidth: "600px", margin: "0 auto" }}>
+            <div className="grid-fluxos" style={{ gridTemplateColumns: "1fr", maxWidth: "600px", margin: "40px auto 0 auto" }}>
               {/* Bloco Único de Fluxo */}
               <div className="bloco-fluxo" onClick={() => setZoomImage("/img/fluxos-assistenciais/oncologia/fluxo1.png")}>
-                <h4>Fluxo Assistencial</h4>
+                <h4 style={{ color: "#145a86", marginBottom: "15px", textAlign: "center" }}>Fluxo Assistencial</h4>
                 <div className="img-wrapper">
                   <Image 
                     src="/img/fluxos-assistenciais/oncologia/fluxo1.png" 
@@ -89,6 +88,7 @@ export default function OncologiaPage() {
                     width={1200} 
                     height={1600} 
                     className="img-fluxo" 
+                    priority
                   />
                   <div className="overlay-zoom">Clique para ampliar</div>
                 </div>
@@ -105,9 +105,9 @@ export default function OncologiaPage() {
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <div className="modal-header">
               <div className="controles-zoom">
-                <button onClick={aumentarZoom}>+</button>
-                <span className="zoom-porcentagem">{Math.round(zoomScale * 100)}%</span>
                 <button onClick={diminuirZoom}>-</button>
+                <span className="zoom-porcentagem">{Math.round(zoomScale * 100)}%</span>
+                <button onClick={aumentarZoom}>+</button>
               </div>
               <button className="btn-fechar-topo" onClick={fecharModal}>Fechar Visualização</button>
             </div>
@@ -120,8 +120,23 @@ export default function OncologiaPage() {
               onMouseUp={stopDragging}
               onMouseLeave={stopDragging}
             >
-              <div className="img-container-scrollable" style={{ transform: `scale(${zoomScale})`, transformOrigin: "top center" }}>
-                <Image src={zoomImage} alt="Zoom" width={2000} height={2000} unoptimized className="img-full-modal" />
+              <div 
+                className="img-container-scrollable" 
+                style={{ 
+                  transform: `scale(${zoomScale})`, 
+                  transformOrigin: "top center",
+                  cursor: zoomScale > 1 ? (isDragging ? 'grabbing' : 'grab') : 'default'
+                }}
+              >
+                <Image 
+                  src={zoomImage} 
+                  alt="Zoom" 
+                  width={2000} 
+                  height={2000} 
+                  unoptimized 
+                  className="img-full-modal"
+                  onDragStart={(e) => e.preventDefault()} // Impede o arrasto nativo do navegador bugando o código
+                />
               </div>
             </div>
           </div>

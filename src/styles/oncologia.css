@@ -1,5 +1,3 @@
-/* oncologia.css */
-
 /* --- LAYOUT GERAL --- */
 .oncologia-layout {
     width: 100%;
@@ -55,39 +53,6 @@
     text-align: justify;
 }
 
-/* --- NOTA INFORMATIVA (ESTILO INSTITUCIONAL) --- */
-.nota-informativa-destaque {
-    margin-top: 25px;
-    padding: 20px;
-    background-color: #f0f7ff;
-    border: 1px solid #d0e5f5;
-    border-left: 5px solid #c58e00; /* Destaque Ouro */
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.nota-ícone {
-    background-color: #145a86;
-    color: white;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    flex-shrink: 0;
-}
-
-.nota-informativa-destaque p {
-    margin: 0;
-    font-size: 16px;
-    color: #145a86;
-    line-height: 1.5;
-}
-
 /* --- ANIMAÇÃO --- */
 .fade-in {
     animation: fadeIn 0.4s ease-in;
@@ -98,8 +63,182 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* --- COMPONENTE DE IMAGEM (PÁGINA PRINCIPAL) --- */
+.img-wrapper {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+}
+
+.img-wrapper:hover {
+    transform: scale(1.01);
+}
+
+.img-fluxo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.overlay-zoom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 90, 134, 0.6);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.img-wrapper:hover .overlay-zoom {
+    opacity: 1;
+}
+
+/* --- MODAL DE ZOOM AVANÇADO --- */
+.modal-zoom {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Fica acima de tudo na aplicação */
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    position: relative;
+    background: #ffffff;
+    width: 90%;
+    max-width: 1000px;
+    height: 85vh;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.controles-zoom {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.controles-zoom button {
+    background-color: #145a86;
+    color: white;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 6px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.2s;
+}
+
+.controles-zoom button:hover {
+    background-color: #1c76b2;
+}
+
+.zoom-porcentagem {
+    font-weight: bold;
+    color: #145a86;
+    font-size: 16px;
+    min-width: 60px;
+    text-align: center;
+}
+
+.btn-fechar-topo {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-fechar-topo:hover {
+    background-color: #bd2130;
+}
+
+/* Área interna onde o scroll acontece */
+.img-zoom-viewport {
+    flex: 1;
+    overflow: auto;
+    position: relative;
+    background-color: #eaeded;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.img-container-scrollable {
+    transition: transform 0.1s ease-out;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.img-full-modal {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    user-select: none;
+}
+
+/* Força o cursor de arrasto */
+.img-zoom-viewport.grabbing {
+    cursor: grabbing !important;
+}
+
+/* Esconder barra de rolagem padrão para melhor estética */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* --- RESPONSIVIDADE --- */
 @media (max-width: 768px) {
     .oncologia-page {
         padding: 40px 20px;
+    }
+    .titulo-sessao {
+        font-size: 1.8rem;
+    }
+    .modal-content {
+        width: 95%;
+        height: 90vh;
     }
 }
