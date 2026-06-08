@@ -4,14 +4,8 @@ services:
       context: .
       dockerfile: Dockerfile
     restart: unless-stopped
-    ports:
-      - "3007:3000"
+    expose:
+      - "3000"
     environment:
       - NODE_ENV=production
       - NEXT_TELEMETRY_DISABLED=1
-    healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:3000/api/health" ]
-      interval: 10s
-      timeout: 5s
-      retries: 3
-      start_period: 10s
