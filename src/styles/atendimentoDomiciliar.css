@@ -26,12 +26,12 @@
 /* --- CONTAINER DO BANNER (AJUSTADO PARA CONTAIN) --- */
 .sad-banner-container {
   position: relative;
-    width: 100%;
-    height: 250px; /* Mantida a altura de 250px que funcionou no seu layout */
-    margin-bottom: 30px;
-    background-color: transparent; /* Mantém as laterais limpas */
-    border-radius: 10px; /* Cantos arredondados */
-    overflow: hidden; /* Força o recorte da imagem nas quinas */
+  width: 100%;
+  height: 250px; /* Mantida a altura de 250px que funcionou no seu layout */
+  margin-bottom: 30px;
+  background-color: transparent; /* Mantém as laterais limpas */
+  border-radius: 10px; /* Cantos arredondados */
+  overflow: hidden; /* Força o recorte da imagem nas quinas */
 }
 /* --- CARD EXPLICATIVO --- */
 .card-explicativo {

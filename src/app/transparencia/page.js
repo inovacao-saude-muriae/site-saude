@@ -12,17 +12,17 @@ export default function TransparenciaPage() {
 
   const dashboards = {
     catarata:
-      "https://app.powerbi.com/view?r=eyJrIjoiMjkwY2U1MTEtNjEzNC00ZWViLWE0MmYtZjRiY2U2ODE2Njg4IiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9",
+      "https://app.powerbi.com/view?r=eyJrIjoiYmZiMmQwYWQtMTdmNi00MDk3LTljMDEtNzkyMmJlNGFhM2U5IiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9&pageName=a760f4c1a75a198ae63c",
     fisioterapia:
-      "https://app.powerbi.com/view?r=eyJrIjoiNTQwNDM0NWMtMDQ3MC00MjVkLTliOWEtOTg3Y2Y4OTkzYWIzIiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9",
+      "https://app.powerbi.com/view?r=eyJrIjoiMDU2MDI0NDMtNDE2Ny00ZTliLTlhMzEtOTAyZWJmM2Q5ZjBhIiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9&pageName=c0396bb665da58ed89cb",
     cirurgia:
-      "https://app.powerbi.com/view?r=eyJrIjoiM2MzMWRhNDQtYzAyMC00YmU4LTkyMmMtMjc0Y2QzNTg0YjAwIiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9",
+      "https://app.powerbi.com/view?r=eyJrIjoiYzA2MWRlMDMtZGRjYS00ZDIyLWJiNGMtOGM3YzcwOGI4NmI0IiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9&pageName=ebf699cda68ae23e4207",
     consultas:
-      "https://app.powerbi.com/view?r=eyJrIjoiZDVjMzcyOGQtY2I4YS00MzNiLTg5ZTUtZTg3Y2U0Mjg0M2RmIiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9",
+      "https://app.powerbi.com/view?r=eyJrIjoiMWMxMDY5NDMtNjA0Ny00YWE5LTk3NDMtNGE2NDVhY2RiNWNhIiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9&pageName=c0119bb5fc71da6189a4",
     tomografia:
-      "https://app.powerbi.com/view?r=eyJrIjoiOGY4ZWUyOTctNTU3NS00OWNjLTllMzgtOGQ5YzY3MjIyYzgzIiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9",
+      "https://app.powerbi.com/view?r=eyJrIjoiNjhhMzczZTctNzVmNi00MTU2LWJlZGMtNWFhY2UzY2E2ZGI3IiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9&pageName=7d9f7d0ddc0d93c214e5",
     ressonancia:
-      "https://app.powerbi.com/view?r=eyJrIjoiZjEzZDc0YjEtMjg4NS00NzVlLTg1NjgtMDZlN2YwZWQxZmVlIiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9",
+      "https://app.powerbi.com/view?r=eyJrIjoiZjA4MmE1YzMtMmE0Ny00NTk2LTliOGMtYmU5MTYyODVkYmFhIiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9&pageName=7d9f7d0ddc0d93c214e5",
   };
 
   return (
@@ -33,9 +33,11 @@ export default function TransparenciaPage() {
 
           <div className="card-explicativo">
             <p>
-              A transparência é a base de uma gestão pública responsável. Abaixo, você tem acesso 
-              direto aos painéis interativos de regulação de Muriaé, permitindo o acompanhamento 
-              em tempo real dos dados de exames, consultas, cirurgias eletivas e procedimentos especializados.
+              A transparência é a base de uma gestão pública responsável.
+              Abaixo, você tem acesso direto aos painéis interativos de
+              regulação de Muriaé, permitindo o acompanhamento em tempo real dos
+              dados de exames, consultas, cirurgias eletivas e procedimentos
+              especializados.
             </p>
           </div>
 
@@ -60,7 +62,7 @@ export default function TransparenciaPage() {
                 onClick={() => setSelected("consultas")}
               >
                 Consultas e Exames
-              </button>      
+              </button>
 
               <button
                 className={selected === "fisioterapia" ? "active" : ""}
