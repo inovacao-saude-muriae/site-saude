@@ -20,7 +20,7 @@ export default function TransparenciaPage() {
     consultas:
       "https://app.powerbi.com/view?r=eyJrIjoiMWMxMDY5NDMtNjA0Ny00YWE5LTk3NDMtNGE2NDVhY2RiNWNhIiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9&pageName=c0119bb5fc71da6189a4",
     tomografia:
-      "https://app.powerbi.com/view?r=eyJrIjoiNjhhMzczZTctNzVmNi00MTU2LWJlZGMtNWFhY2UzY2E2ZGI3IiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9&pageName=7d9f7d0ddc0d93c214e5",
+      "https://app.powerbi.com/view?r=eyJrIjoiZTg0NzQwMmYtY2UxNC00M2I5LTg3OTQtY2EyNWIyMjUxOWE5IiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9&pageName=7d9f7d0ddc0d93c214e5",
     ressonancia:
       "https://app.powerbi.com/view?r=eyJrIjoiZjA4MmE1YzMtMmE0Ny00NTk2LTliOGMtYmU5MTYyODVkYmFhIiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9&pageName=7d9f7d0ddc0d93c214e5",
   };
