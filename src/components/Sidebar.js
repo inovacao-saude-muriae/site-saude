@@ -239,6 +239,30 @@ export default function Sidebar() {
               )}
             </li>
 
+            {/* Fluxos Assistenciais */}
+            <li>
+              <Link href="/fluxos-assistenciais" className={styles.menuLink}>
+                <span className={styles.left}>
+                  <span className={styles.iconWrapper}>
+                    <Image
+                      src="/img/icon/servico-saude.png"
+                      alt="Fluxos Assistenciais"
+                      width={iconSize}
+                      height={iconSize}
+                      className={`${styles.icon} ${styles.iconDefault}`}
+                    />
+                    <Image
+                      src="/img/icon/servico-saude-hover.png"
+                      alt="Fluxos Assistenciais Hover"
+                      width={iconSize}
+                      height={iconSize}
+                      className={`${styles.icon} ${styles.iconHover}`}
+                    />
+                  </span>
+                  Fluxos Assistenciais
+                </span>
+              </Link>
+            </li>
             {/* Transparência */}
             <li>
               <Link href="/transparencia" className={styles.menuLink}>
@@ -263,28 +287,27 @@ export default function Sidebar() {
                 </span>
               </Link>
             </li>
-
-            {/* Fluxos Assistenciais */}
+            {/* Transparência */}
             <li>
-              <Link href="/fluxos-assistenciais" className={styles.menuLink}>
+              <Link href="/producao-hospitalar" className={styles.menuLink}>
                 <span className={styles.left}>
                   <span className={styles.iconWrapper}>
                     <Image
-                      src="/img/icon/servico-saude.png"
-                      alt="Fluxos Assistenciais"
+                      src="/img/icon/transparencia.png"
+                      alt="Producao Hospitalar"
                       width={iconSize}
                       height={iconSize}
                       className={`${styles.icon} ${styles.iconDefault}`}
                     />
                     <Image
-                      src="/img/icon/servico-saude-hover.png"
-                      alt="Fluxos Assistenciais Hover"
+                      src="/img/icon/transparencia-hover.png"
+                      alt="Transparência Hover"
                       width={iconSize}
                       height={iconSize}
                       className={`${styles.icon} ${styles.iconHover}`}
                     />
                   </span>
-                  Fluxos Assistenciais
+                  Produção Hospitalar
                 </span>
               </Link>
             </li>
