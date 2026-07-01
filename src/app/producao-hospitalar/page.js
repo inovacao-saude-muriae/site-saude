@@ -22,10 +22,12 @@ export default function TransparenciaPage() {
             </p>
           </div>
 
-          {/* Dashboard único */}
+          {/* Dashboard maior */}
           <div className="dashboard-container">
             <iframe
-              title="Transparência Muriaé"
+              title="BI_Gestão - munc_origem"
+              width="1024"
+              height="1060"
               src="https://app.powerbi.com/view?r=eyJrIjoiNGQwNjVlNGItZWZjYi00ZmI0LTliYjEtMzljMTkxMDIxOWNjIiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9&pageName=ce1a5222a98172a498ec"
               frameBorder="0"
               allowFullScreen={true}

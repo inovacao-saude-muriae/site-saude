@@ -92,7 +92,7 @@
 /* --- CONTAINER RESPONSIVO DO POWER BI --- */
 .dashboard-container {
     width: 100%;
-    height: 75vh; /* Proporção ideal dentro da folha branca sem criar scroll eterno */
+    height: 90vh; /* Proporção ideal dentro da folha branca sem criar scroll eterno */
     border-radius: 8px;
     overflow: hidden;
     border: 1px solid #eef2f6;
