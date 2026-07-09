@@ -24,40 +24,19 @@ export default function Page() {
 
             <h3>Linhas de Cuidado Disponíveis</h3>
             
-            {/* --- APARELHO GENITURINÁRIO --- */}
+            {/* --- Pequenas cirurgias, cirurgias de pele e subcutâneo --- */}
             <details className="accordion-procedimentos">
-                <summary className="accordion-header">Aparelho Geniturinário</summary>
+                <summary className="accordion-header">Pequenas cirurgias, cirurgias de pele e subcutâneo</summary>
                 <div className="accordion-content">
                 <ul className="lista-procedimentos-codigos">
-                    <li><span className="procedimento-codigo">0409010170</span><span className="procedimento-nome">INSTALACAO ENDOSCOPICA DE CATETER DUPLO J</span></li>
-                    <li><span className="procedimento-codigo">0409010308</span><span className="procedimento-nome">NEFROURETERECTOMIA TOTAL</span></li>
-                    <li><span className="procedimento-codigo">0409010383</span><span className="procedimento-nome">RESSECCAO ENDOSCOPICA DE LESAO VESICAL</span></li>
-                    <li><span className="procedimento-codigo">0409010561</span><span className="procedimento-nome">URETEROLITOTOMIA</span></li>
-                    <li><span className="procedimento-codigo">0409010596</span><span className="procedimento-nome">URETEROLITOTRIPSIA TRANSURETEROSCOPICA</span></li>
-                    <li><span className="procedimento-codigo">0409030023</span><span className="procedimento-nome">PROSTATECTOMIA SUPRAPUBICA</span></li>
-                    <li><span className="procedimento-codigo">0409040134</span><span className="procedimento-nome">ORQUIDOPEXIA UNILATERAL</span></li>
-                    <li><span className="procedimento-codigo">0409040177</span><span className="procedimento-nome">PLASTICA DA BOLSA ESCROTAL</span></li>
-                    <li><span className="procedimento-codigo">0409040215</span><span className="procedimento-nome">TRATAMENTO CIRURGICO DE HIDROCELE</span></li>
-                    <li><span className="procedimento-codigo">0409040240</span><span className="procedimento-nome">VASECTOMIA</span></li>
-                    <li><span className="procedimento-codigo">0409060020</span><span className="procedimento-nome">COLPOPERINEOPLASTIA ANTERIOR E POSTERIOR C/ AMPUTACAO DE COLO</span></li>
+                    <li><span className="procedimento-codigo">0401020088</span><span className="procedimento-nome">EXERESE DE CISTO SACRO-COCCIGEO</span></li>
+                    <li><span className="procedimento-codigo">0401020096</span><span className="procedimento-nome">EXERESE DE CISTO TIREOGLOSSO</span></li>
+                    <li><span className="procedimento-codigo">0401020100</span><span className="procedimento-nome">EXTIRPACAOE SUPRESSAO DE LESAO DE PELE E DE TECIDO CELULAR SUBCUTANEO</span></li>                   
                 </ul>
                 </div>
             </details>
 
-            {/* --- APARELHO LOCOMOTOR --- */}
-            <details className="accordion-procedimentos">
-                <summary className="accordion-header">Aparelho locomotor e de partes moles</summary>
-                <div className="accordion-content">
-                <ul className="lista-procedimentos-codigos">
-                    <li><span className="procedimento-codigo">0408060352</span><span className="procedimento-nome">RETIRADA DE FIO OU PINO INTRA-OSSEO</span></li>
-                    <li><span className="procedimento-codigo">0408060360</span><span className="procedimento-nome">RETIRADA DE FIXADOR EXTERNO</span></li>
-                    <li><span className="procedimento-codigo">0408060379</span><span className="procedimento-nome">RETIRADA DE PLACA E/OU PARAFUSOS</span></li>
-                    <li><span className="procedimento-codigo">0408060476</span><span className="procedimento-nome">TENOPLASTIA OU ENXERTO DE TENDAO UNICO</span></li>
-                </ul>
-                </div>
-            </details>
-
-            {/* --- GLÂNDULAS ENDÓCRINAS --- */}
+            {/* --- Glândulas endócrinas --- */}
             <details className="accordion-procedimentos">
                 <summary className="accordion-header">Glândulas endócrinas</summary>
                 <div className="accordion-content">
@@ -69,24 +48,61 @@ export default function Page() {
                 </div>
             </details>
 
-            {/* --- PEQUENAS CIRURGIAS --- */}
+            {/* --- Sistema nervoso central e periférico --- */}
             <details className="accordion-procedimentos">
-                <summary className="accordion-header">Pequenas cirurgias, cirurgias de pele e subcutâneo</summary>
+                <summary className="accordion-header">Sistema nervoso central e periférico</summary>
                 <div className="accordion-content">
                 <ul className="lista-procedimentos-codigos">
-                    <li><span className="procedimento-codigo">0401020088</span><span className="procedimento-nome">EXERESE DE CISTO SACRO-COCCIGEO</span></li>
-                    <li><span className="procedimento-codigo">0401020096</span><span className="procedimento-nome">EXERESE DE CISTO TIREOGLOSSO</span></li>
-                    <li><span className="procedimento-codigo">0401020100</span><span className="procedimento-nome">EXTIRPACAOE SUPRESSAO DE LESAO DE PELE E DE TECIDO CELULAR SUBCUTANEO</span></li>
+                    <li><span className="procedimento-codigo">0403010020</span><span className="procedimento-nome">CRANIOTOMIA DESCOMPRESSIVA</span></li>
+                    <li><span className="procedimento-codigo">0403020115</span><span className="procedimento-nome">TRATAMENTO CIRURGICO DE NEUROPATIA COMPRESSIVA COM OU SEM MICROCIRURGIA</span></li>
+                    <li><span className="procedimento-codigo">0403020123</span><span className="procedimento-nome">TRATAMENTO CIRURGICO DE SINDROME COMPRESSIVA EM TUNEL OSTEO-FIBROSO AO NIVEL DO CARPO</span></li>
+                    <li><span className="procedimento-codigo">0403050154</span><span className="procedimento-nome">TRATAMENTO DE LESAO DO SISTEMA NEUROVEGETATIVO POR AGENTES QUIMICOS</span></li>
                 </ul>
                 </div>
             </details>
 
-            {/* --- SISTEMA DA VISÃO --- */}
+            {/* --- Vias áereas e face --- */}
             <details className="accordion-procedimentos">
-                <summary className="accordion-header">Sistema da visão</summary>
+                <summary className="accordion-header">Vias áereas e face</summary>
                 <div className="accordion-content">
                 <ul className="lista-procedimentos-codigos">
-                    <li><span className="procedimento-codigo">0404010121</span><span className="procedimento-nome">EXERESE DE TUMOR DE VIAS AÉREAS / ANEXOS OCULARES</span></li>
+                    <li><span className="procedimento-codigo">0404010121</span><span className="procedimento-nome">EXERESE DE TUMOR DE VIAS AEREAS SUPERIORES, FACE E PESCOCO</span></li>
+                    <li><span className="procedimento-codigo">0404010466</span><span className="procedimento-nome">PAROTIDECTOMIA PARCIAL OU SUBTOTAL</span></li>
+                    <li><span className="procedimento-codigo">0404020089</span><span className="procedimento-nome">EXCISAO DE RANULA OU FENOMENO DE RETENCAO SALIVAR</span></li>
+                    <li><span className="procedimento-codigo">0404020240</span><span className="procedimento-nome">RECONSTRUCAO TOTAL OU PARCIAL DE NARIZ</span></li>
+                    <li><span className="procedimento-codigo">0404020313</span><span className="procedimento-nome">RETIRADA DE CORPO ESTRANHO DOS OSSOS DA FACE	</span></li>
+                    <li><span className="procedimento-codigo">0404020542</span><span className="procedimento-nome">REDUCAO CIRURGICA DE FRATURA DOS OSSOS PROPRIOS DO NARIZ</span></li>
+                </ul>
+                </div>
+            </details>
+
+            {/* --- Aparelho circulatório --- */}
+            <details className="accordion-procedimentos">
+                <summary className="accordion-header">Aparelho circulatório</summary>
+                <div className="accordion-content">
+                <ul className="lista-procedimentos-codigos">
+                    <li><span className="procedimento-codigo">0406010536</span><span className="procedimento-nome">FECHAMENTO DE COMUNICACAO INTERATRIAL</span></li>
+                    <li><span className="procedimento-codigo">0406010650</span><span className="procedimento-nome">IMPLANTE DE MARCAPASSO DE CAMARA DUPLA TRANSVENOSO</span></li>
+                    <li><span className="procedimento-codigo">0406010676</span><span className="procedimento-nome">IMPLANTE DE MARCAPASSO DE CAMARA UNICA TRANSVENOSO</span></li>
+                    <li><span className="procedimento-codigo">0406010692</span><span className="procedimento-nome">IMPLANTE DE PROTESE VALVAR</span></li>
+                    <li><span className="procedimento-codigo">0406010927</span><span className="procedimento-nome">REVASCULARIZACAO MIOCARDICA COM USO DE EXTRACORPOREA</span></li>
+                    <li><span className="procedimento-codigo">0406010935</span><span className="procedimento-nome">REVASCULARIZACAO MIOCARDICA C/ USO DE EXTRACORPOREA (C/ 2 OU MAIS ENXERTOS)</span></li>
+                    <li><span className="procedimento-codigo">0406020221</span><span className="procedimento-nome">LINFADENECTOMIA RADICAL AXILAR UNILATERAL</span></li>
+                    <li><span className="procedimento-codigo">0406020450</span><span className="procedimento-nome">REVASCULARIZACAO POR PONTE / TROMBOENDARTERECTOMIA FEMURO-POPLITEA PROXIMAL</span></li>
+                    <li><span className="procedimento-codigo">0406020493</span><span className="procedimento-nome">TRATAMENTO CIRURGICO DE LESOES VASCULARES TRAUMATICAS DA REGIAO CERVICAL</span></li>
+                    <li><span className="procedimento-codigo">0406020566</span><span className="procedimento-nome">TRATAMENTO CIRURGICO DE VARIZES (BILATERAL)</span></li>
+                    <li><span className="procedimento-codigo">0406020574</span><span className="procedimento-nome">TRATAMENTO CIRURGICO DE VARIZES (UNILATERAL)</span></li>
+                    <li><span className="procedimento-codigo">0406030014</span><span className="procedimento-nome">ANGIOPLASTIA CORONARIANA</span></li>
+                    <li><span className="procedimento-codigo">0406030022</span><span className="procedimento-nome">ANGIOPLASTIA CORONARIANA C/ IMPLANTE DE DOIS STENTS</span></li>
+                    <li><span className="procedimento-codigo">0406030030</span><span className="procedimento-nome">ANGIOPLASTIA CORONARIANA COM IMPLANTE DE STENT</span></li>
+                    <li><span className="procedimento-codigo">0406040028</span><span className="procedimento-nome">ANGIOPLASTIA INTRALUMINAL DE AORTA, VEIA CAVA / VASOS ILIACOS (COM STENT)</span></li>
+                    <li><span className="procedimento-codigo">0406040044</span><span className="procedimento-nome">ANGIOPLASTIA INTRALUMINAL DE AORTA, VEIA CAVA / VASOS ILIACOS (SEM STENT)</span></li>
+                    <li><span className="procedimento-codigo">0406040052</span><span className="procedimento-nome">ANGIOPLASTIA INTRALUMINAL DE VASOS DAS EXTREMIDADES (SEM STENT)</span></li>
+                    <li><span className="procedimento-codigo">0406040060</span><span className="procedimento-nome">ANGIOPLASTIA INTRALUMINAL DE VASOS DAS EXTREMIDADES (COM STENT NAO RECOBERTO)</span></li>
+                    <li><span className="procedimento-codigo">0406040095</span><span className="procedimento-nome">ANGIOPLASTIA INTRALUMINAL DE VASOS DO PESCOCO OU TRONCOS SUPRA-AORTICOS (COM STENT NAO RECOBERTO)</span></li>
+                    <li><span className="procedimento-codigo">0406040109</span><span className="procedimento-nome">ANGIOPLASTIA INTRALUMINAL DE VASOS VISCERAIS COM STENT NAO RECOBERTO</span></li>
+                    <li><span className="procedimento-codigo">0406040168</span><span className="procedimento-nome">CORRECAO ENDOVASCULAR DE ANEURISMA / DISSECCAO DA AORTA ABDOMINAL E ILIACAS COM ENDOPROTESE BIF</span></li>
+                    <li><span className="procedimento-codigo">0406040176</span><span className="procedimento-nome">CORRECAO ENDOVASCULAR DE ANEURISMA / DISSECCAO DA AORTA TORACICA COM ENDOPROTESE RETA OU CONIC</span></li>
                 </ul>
                 </div>
             </details>
