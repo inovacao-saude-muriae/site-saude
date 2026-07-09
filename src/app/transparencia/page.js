@@ -14,7 +14,7 @@ export default function TransparenciaPage() {
     catarata:
       "https://app.powerbi.com/view?r=eyJrIjoiYmZiMmQwYWQtMTdmNi00MDk3LTljMDEtNzkyMmJlNGFhM2U5IiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9&pageName=a760f4c1a75a198ae63c",
     fisioterapia:
-      "https://app.powerbi.com/view?r=eyJrIjoiMDU2MDI0NDMtNDE2Ny00ZTliLTlhMzEtOTAyZWJmM2Q5ZjBhIiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9&pageName=c0396bb665da58ed89cb",
+      "https://app.powerbi.com/view?r=eyJrIjoiNzM5OWYyZTEtY2JhYS00YzAzLWE0MjQtZjZjZmJiNzkxNzYxIiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9",
     cirurgia:
       "https://app.powerbi.com/view?r=eyJrIjoiYzA2MWRlMDMtZGRjYS00ZDIyLWJiNGMtOGM3YzcwOGI4NmI0IiwidCI6Ijg5N2M4NzA0LWRkMGMtNDczMy1hZjA1LWZmYmYyMTg1MzIxZSJ9&pageName=ebf699cda68ae23e4207",
     consultas:
