@@ -1,41 +1,50 @@
 .carousel {
   position: relative;
   width: 100%;
-  max-width: 1200px; /* reduzi o limite para não ficar tão largo */
+  max-width: 1920px; /* Alinhado com o tamanho máximo da sua imagem desktop */
   margin: 0 auto;
   border-radius: 12px;
   overflow: hidden;
 }
 
+/* CONTAINER DESKTOP */
 .carouselWrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3; /* menos alto que 16/9 */
-  max-height: 280px;   /* limite de altura menor */
+  /* 1920 / 555 simplifica para a proporção exata de 64/18.5 ou decimal abaixo */
+  aspect-ratio: 1920 / 555; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pictureWrapper {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .carouselImage {
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* garante que a imagem preencha sem distorcer */
+  object-fit: cover; /* Agora que as proporções batem com o arquivo, não haverá cortes severos */
   display: block;
-  border-radius: 12px;
 }
 
 .dots {
   position: absolute;
-  bottom: 5px; /* mais próximo da imagem */
+  bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 6px;
+  gap: 8px;
   z-index: 20;
 }
 
 .dot {
   width: 10px;
   height: 10px;
-  background: gray;
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   border: none;
   cursor: pointer;
@@ -44,51 +53,17 @@
 
 .activeDot {
   background: #2563eb;
-  transform: scale(1.2);
+  transform: scale(1.3);
 }
 
-/* Responsividade */
-
-/* 📱 Celular pequeno */
-@media screen and (max-width: 480px) {
+/* 📱 RESPONSIVIDADE PARA CELULAR (Abaixo de 768px de largura de tela) */
+@media screen and (max-width: 768px) {
   .carouselWrapper {
-    aspect-ratio: 1 / 1;
-    max-height: 160px;
+    /* Altera a proporção do container para a medida do seu banner mobile (466x304) */
+    aspect-ratio: 466 / 304; 
   }
-  .dot {
-    width: 8px;
-    height: 8px;
-  }
-}
-
-/* 📱 Celular grande / Tablet pequeno */
-@media screen and (min-width: 481px) and (max-width: 768px) {
-  .carouselWrapper {
-    aspect-ratio: 4 / 3;
-    max-height: 200px;
-  }
-}
-
-/* 💻 Tablet grande / Notebook pequeno */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  .carouselWrapper {
-    aspect-ratio: 16 / 9;
-    max-height: 240px;
-  }
-}
-
-/* 💻 Notebook / Desktop médio */
-@media screen and (min-width: 1025px) and (max-width: 1366px) {
-  .carouselWrapper {
-    aspect-ratio: 16 / 9;
-    max-height: 280px;
-  }
-}
-
-/* 🖥️ Desktop grande */
-@media screen and (min-width: 1367px) {
-  .carouselWrapper {
-    aspect-ratio: 16 / 9;
-    max-height: 320px;
+  
+  .dots {
+    bottom: 10px;
   }
 }

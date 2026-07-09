@@ -1,25 +1,46 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 import styles from "./carousel.module.css";
 
 export default function Carousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(1);
 
+  // Configure aqui as rotas internas das suas páginas (ex: "/editais", "/atendimento", "/saude-digital")
   const slides = [
-    { id: 1, content: "Editais", imgSrc: "/img/banner-paginas/saude-mulher.jpg" },
-    { id: 2, content: "Atendimento médico", imgSrc: "/img/banner-paginas/tuberculose.jpg" },
+    { 
+      id: 1, 
+      content: "Editais", 
+      desktopImg: "/img/banner-carousel/banner1.jpg",
+      mobileImg: "/img/banner-carousel/banner1.1.jpg",
+    },
+    { 
+      id: 2, 
+      content: "Atendimento médico", 
+      desktopImg: "/img/banner-carousel/banner2.jpg",
+      mobileImg: "/img/banner-carousel/banner2.1.jpg",
+    },
+    { 
+      id: 3, 
+      content: "Saúde Digital", 
+      desktopImg: "/img/banner-carousel/banner3.jpg",
+      mobileImg: "/img/banner-carousel/banner3.1.jpg",
+      link: "/digital/app-saude-digital" // Rota interna ajustada
+    },
+    { 
+      id: 4, 
+      content: "Saúde Digital", 
+      desktopImg: "/img/banner-carousel/banner4.jpg",
+      mobileImg: "/img/banner-carousel/banner4.1.jpg",
+    },
   ];
 
   const nextSlide = useCallback(() => {
     setDirection(1);
     setCurrentSlide((prev) => (prev + 1) % slides.length);
-  }, [slides.length]);
-
-  const prevSlide = useCallback(() => {
-    setDirection(-1);
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   }, [slides.length]);
 
   useEffect(() => {
@@ -35,22 +56,45 @@ export default function Carousel() {
     exit: (dir) => ({ x: dir > 0 ? "-100%" : "100%", position: "absolute" }),
   };
 
+  const activeSlide = slides[currentSlide];
+
+  // Elemento de imagem limpo e otimizado
+  const imageElement = (
+    <>
+      <source media="(max-width: 768px)" srcSet={activeSlide.mobileImg} />
+      <Image
+        src={activeSlide.desktopImg}
+        alt={activeSlide.content}
+        fill
+        priority={currentSlide === 0}
+        sizes="(max-width: 768px) 466px, 1920px"
+        className={styles.carouselImage}
+      />
+    </>
+  );
+
   return (
     <div className={styles.carousel}>
       <div className={styles.carouselWrapper}>
         <AnimatePresence custom={direction}>
-          <motion.img
-            key={slides[currentSlide].id}
-            src={slides[currentSlide].imgSrc}
-            alt={slides[currentSlide].content}
-            className={styles.carouselImage}
+          <motion.picture
+            key={activeSlide.id}
             custom={direction}
             variants={variants}
             initial="enter"
             animate="center"
             exit="exit"
             transition={{ duration: 0.8, ease: "easeInOut" }}
-          />
+            className={styles.pictureWrapper}
+          >
+            {activeSlide.link ? (
+              <Link href={activeSlide.link} className={styles.bannerLink}>
+                {imageElement}
+              </Link>
+            ) : (
+              imageElement
+            )}
+          </motion.picture>
         </AnimatePresence>
       </div>
 

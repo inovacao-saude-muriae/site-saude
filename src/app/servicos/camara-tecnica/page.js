@@ -17,7 +17,7 @@ export default function CamaraTecnicaPage() {
           {/* Banner Otimizado Inteiro sem Cortes (Utilizando contain) */}
           <div className="camara-banner-container">
             <Image
-              src="/img/banner-paginas/atendimentoDomiciliar.jpg" // Altere se tiver um arquivo de imagem específico
+              src="/img/banner-paginas/camara_tecnica1.jpg" // Altere se tiver um arquivo de imagem específico
               alt="Câmara Técnica de Saúde"
               fill
               priority

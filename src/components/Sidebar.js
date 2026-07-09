@@ -94,16 +94,22 @@ export default function Sidebar() {
               {activeMenu === "servicos" && (
                 <ul className={styles.submenu}>
                   <li>
-                    <Link href="/servicos/atendimento-domiciliar">Atendimento Domiciliar</Link>
+                    <Link href="/servicos/atendimento-domiciliar">
+                      Atendimento Domiciliar
+                    </Link>
                   </li>
                   <li>
                     <Link href="/servicos/camara-tecnica">Câmara Técnica</Link>
                   </li>
                   <li>
-                    <Link href="/servicos/farmacia-municipal">Farmácia Municipal</Link>
+                    <Link href="/servicos/farmacia-municipal">
+                      Farmácia Municipal
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/servicos/laboratorio-municipal">Laboratório Municipal</Link>
+                    <Link href="/servicos/laboratorio-municipal">
+                      Laboratório Municipal
+                    </Link>
                   </li>
                   <li>
                     <Link href="/servicos/pace">Doação de sangue</Link>
@@ -147,9 +153,14 @@ export default function Sidebar() {
               {activeMenu === "vigilancia" && (
                 <ul className={styles.submenu}>
                   <li>
-                    <Link href="/vigilancia/ccz">Centro de Controle de Zoonoses</Link></li>
+                    <Link href="/vigilancia/ccz">
+                      Centro de Controle de Zoonoses
+                    </Link>
+                  </li>
                   <li>
-                    <Link href="/vigilancia/vigilancia-sanitaria">Vigilância Sanitária</Link>
+                    <Link href="/vigilancia/vigilancia-sanitaria">
+                      Vigilância Sanitária
+                    </Link>
                   </li>
                 </ul>
               )}
@@ -178,7 +189,7 @@ export default function Sidebar() {
                       className={`${styles.icon} ${styles.iconHover}`}
                     />
                   </span>
-                  Saúde Digital
+                  App Saúde Digital
                 </span>
                 <span className={styles.right}>
                   <span className={styles.arrow}></span>
@@ -308,6 +319,30 @@ export default function Sidebar() {
                     />
                   </span>
                   Produção Hospitalar
+                </span>
+              </Link>
+            </li>
+            {/* Carteira der servicos */}
+            <li>
+              <Link href="/carteira-de-servicos" className={styles.menuLink}>
+                <span className={styles.left}>
+                  <span className={styles.iconWrapper}>
+                    <Image
+                      src="/img/icon/transparencia.png"
+                      alt="Producao Hospitalar"
+                      width={iconSize}
+                      height={iconSize}
+                      className={`${styles.icon} ${styles.iconDefault}`}
+                    />
+                    <Image
+                      src="/img/icon/transparencia-hover.png"
+                      alt="Transparência Hover"
+                      width={iconSize}
+                      height={iconSize}
+                      className={`${styles.icon} ${styles.iconHover}`}
+                    />
+                  </span>
+                  Carteira de Serviços
                 </span>
               </Link>
             </li>

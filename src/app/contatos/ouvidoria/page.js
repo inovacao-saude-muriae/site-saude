@@ -18,7 +18,7 @@ export default function OuvidoriaPage() {
           {/* Banner Otimizado Inteiro sem Cortes (Utilizando contain) */}
           <div className="ouvidoria-banner-container">
             <Image
-              src="/img/banner-paginas/ouvidoria.jpg"
+              src="/img/banner-paginas/ouvidoria1.jpg"
               alt="Ouvidoria da Saúde de Muriaé"
               fill
               priority
