@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
@@ -8,33 +9,45 @@ import styles from "./carousel.module.css";
 export default function Carousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Configure aqui as rotas internas das suas páginas (ex: "/editais", "/atendimento", "/saude-digital")
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const slides = [
-    { 
-      id: 1, 
-      content: "Editais", 
-      desktopImg: "/img/banner-carousel/banner1.jpg",
-      mobileImg: "/img/banner-carousel/banner1.1.jpg",
+    {
+      id: 1,
+      content: "Julho Amarelo",
+      desktopImg: "/img/banner-carousel/banner1-desktop.jpg",
+      mobileImg: "/img/banner-carousel/banner1-mobile.jpg",
     },
-    { 
-      id: 2, 
-      content: "Atendimento médico", 
-      desktopImg: "/img/banner-carousel/banner2.jpg",
-      mobileImg: "/img/banner-carousel/banner2.1.jpg",
+    {
+      id: 2,
+      content: "Vacinação INFLUENZA",
+      desktopImg: "/img/banner-carousel/banner2-desktop.jpg",
+      mobileImg: "/img/banner-carousel/banner2-mobile.jpg",
     },
-    { 
-      id: 3, 
-      content: "Saúde Digital", 
-      desktopImg: "/img/banner-carousel/banner3.jpg",
-      mobileImg: "/img/banner-carousel/banner3.1.jpg",
-      link: "/digital/app-saude-digital" // Rota interna ajustada
+    {
+      id: 3,
+      content: "Saúde Digital",
+      desktopImg: "/img/banner-carousel/banner3-desktop.jpg",
+      mobileImg: "/img/banner-carousel/banner3-mobile.jpg",
+      link: "/digital/app-saude-digital",
     },
-    { 
-      id: 4, 
-      content: "Saúde Digital", 
-      desktopImg: "/img/banner-carousel/banner4.jpg",
-      mobileImg: "/img/banner-carousel/banner4.1.jpg",
+    {
+      id: 4,
+      content: "Saúde do coração",
+      desktopImg: "/img/banner-carousel/banner4-desktop.jpg",
+      mobileImg: "/img/banner-carousel/banner4-mobile.jpg",
     },
   ];
 
@@ -44,57 +57,70 @@ export default function Carousel() {
   }, [slides.length]);
 
   useEffect(() => {
-    const autoSlide = setInterval(() => {
-      nextSlide();
-    }, 5000);
+    const autoSlide = setInterval(nextSlide, 5000);
+
     return () => clearInterval(autoSlide);
   }, [nextSlide]);
 
   const variants = {
-    enter: (dir) => ({ x: dir > 0 ? "100%" : "-100%", position: "absolute" }),
-    center: { x: 0, position: "absolute" },
-    exit: (dir) => ({ x: dir > 0 ? "-100%" : "100%", position: "absolute" }),
+    enter: (dir) => ({
+      x: dir > 0 ? "100%" : "-100%",
+      zIndex: 2,
+    }),
+    center: {
+      x: 0,
+      zIndex: 2,
+    },
+    exit: (dir) => ({
+      x: dir > 0 ? "-100%" : "100%",
+      zIndex: 1,
+    }),
   };
 
   const activeSlide = slides[currentSlide];
 
-  // Elemento de imagem limpo e otimizado
-  const imageElement = (
-    <>
-      <source media="(max-width: 768px)" srcSet={activeSlide.mobileImg} />
-      <Image
-        src={activeSlide.desktopImg}
-        alt={activeSlide.content}
-        fill
-        priority={currentSlide === 0}
-        sizes="(max-width: 768px) 466px, 1920px"
-        className={styles.carouselImage}
-      />
-    </>
-  );
+  const banner = (
+  <motion.div
+    key={activeSlide.id}
+    custom={direction}
+    variants={variants}
+    initial="enter"
+    animate="center"
+    exit="exit"
+    transition={{
+      x: {
+        duration: 0.8,
+        ease: "easeInOut",
+      },
+    }}
+    className={styles.pictureWrapper}
+  >
+    <Image
+      src={isMobile ? activeSlide.mobileImg : activeSlide.desktopImg}
+      alt={activeSlide.content}
+      fill
+      priority={currentSlide === 0}
+      sizes="100vw"
+      className={styles.carouselImage}
+    />
+  </motion.div>
+);
 
   return (
     <div className={styles.carousel}>
       <div className={styles.carouselWrapper}>
-        <AnimatePresence custom={direction}>
-          <motion.picture
-            key={activeSlide.id}
-            custom={direction}
-            variants={variants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-            className={styles.pictureWrapper}
-          >
-            {activeSlide.link ? (
-              <Link href={activeSlide.link} className={styles.bannerLink}>
-                {imageElement}
-              </Link>
-            ) : (
-              imageElement
-            )}
-          </motion.picture>
+        <AnimatePresence initial={false} custom={direction}>
+          {activeSlide.link ? (
+            <Link
+              href={activeSlide.link}
+              className={styles.bannerLink}
+              key={activeSlide.id}
+            >
+              {banner}
+            </Link>
+          ) : (
+            banner
+          )}
         </AnimatePresence>
       </div>
 
