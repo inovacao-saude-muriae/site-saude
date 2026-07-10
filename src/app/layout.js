@@ -45,9 +45,7 @@ export default function RootLayout({ children }) {
             <Sidebar />
             
             <main className={styles.layoutContent}>
-              {/* O Breadcrumbs aparece aqui, no topo de todas as páginas internas */}
-              <Breadcrumbs />
-              
+              <Breadcrumbs />              
               {children}
             </main>
           </div>

@@ -11,22 +11,21 @@
 
 .sidebar {
     width: 220px;
-    height: 100vh; /* ocupa toda a altura da viewport */
+    height: 100vh; 
     background-color: #1E1E2F;
     color: #fff;
     padding: 20px;
 }
 
-
 .layoutContent {
-    background:var(--background-color); /* ou outra cor clara */
+    background:var(--background-color); 
     flex: 1;
     padding: 20px;
     min-height: 800px;
 }
 
 @media (max-width: 768px) {
-  .layoutBody {
-    display: block; /* não força flex quando Sidebar é overlay */
-  }
+    .layoutBody {
+        display: block; 
+    }
 }
